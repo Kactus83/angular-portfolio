@@ -1,0 +1,32 @@
+:host ::ng-deep .skill-detail-backdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  :host ::ng-deep .skill-detail-fullscreen .cdk-overlay-pane {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: 0 !important; left: 0 !important;
+    width: 100vw !important; height: 100vh !important;
+  }
+  
+  :host ::ng-deep .skill-detail-fullscreen .mat-dialog-container {
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  
+  /* Suppression des arrondis et animation “grow” */
+  :host ::ng-deep fuse-card {
+    border-radius: 0 !important;
+  }
+  
+  /* keyframes pour l’effet “grow” */
+  @keyframes growIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+  }
+  .animate-grow {
+    animation: growIn 200ms ease-out forwards;
+  }
+  

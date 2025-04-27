@@ -1,0 +1,132 @@
+<ng-container *ngIf="project$ | async as project">
+  <div class="flex flex-col min-h-[calc(100vh-64px)]">
+    <!-- Header -->
+    <div class="bg-card flex border-b p-6 sm:px-10 sm:py-8">
+      <div class="flex items-center justify-between w-full">
+        <h1 class="text-3xl font-extrabold">{{ project.title }}</h1>
+        <button mat-icon-button [routerLink]="['../']" aria-label="Fermer">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenu -->
+    <div class="flex-auto overflow-auto p-6 sm:p-10 space-y-6">
+      <!-- Couverture -->
+      <fuse-card class="overflow-hidden">
+        <img
+          *ngIf="project.imageUrl"
+          [src]="project.imageUrl"
+          [alt]="project.title"
+          class="w-full h-56 object-cover"
+        />
+      </fuse-card>
+
+      <!-- Description -->
+      <fuse-card class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">Description</h2>
+        <p class="text-base leading-relaxed">{{ project.description }}</p>
+      </fuse-card>
+
+      <!-- Répartition du code -->
+      <fuse-card *ngIf="project.languageUsage?.length" class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">Répartition du code</h2>
+        <div class="space-y-4">
+          <div
+            *ngFor="let lang of project.languageUsage"
+            class="grid grid-cols-[auto_1fr_auto] items-center gap-4"
+          >
+            <span class="font-medium">{{ lang.name }}</span>
+            <mat-progress-bar
+              [value]="lang.percent"
+              mode="determinate"
+              class="h-2 rounded-full"
+            ></mat-progress-bar>
+            <span class="text-secondary">{{ lang.percent }} %</span>
+          </div>
+        </div>
+      </fuse-card>
+
+      <!-- Sous-compétences -->
+      <fuse-card *ngIf="project.subSkills?.length" class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">Sous-compétences</h2>
+        <div class="space-y-4">
+          <div
+            *ngFor="let ss of project.subSkills"
+            class="grid grid-cols-[auto_1fr_auto] items-center gap-4"
+          >
+            <span class="font-medium">{{ ss.name }}</span>
+            <mat-progress-bar
+              [value]="ss.mastery"
+              mode="determinate"
+              class="h-2 rounded-full"
+            ></mat-progress-bar>
+            <span class="text-secondary">{{ ss.mastery }} %</span>
+          </div>
+        </div>
+      </fuse-card>
+
+      <!-- Galerie -->
+      <fuse-card *ngIf="project.gallery?.length" class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <img
+            *ngFor="let img of project.gallery"
+            [src]="img"
+            class="w-full h-32 object-cover rounded"
+            [alt]="project.title"
+          />
+        </div>
+      </fuse-card>
+
+      <!-- Détails techniques -->
+      <fuse-card class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">Détails techniques</h2>
+        <dl class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ng-container *ngIf="project.history">
+            <dt class="font-medium">Historique</dt>
+            <dd>{{ project.history }}</dd>
+          </ng-container>
+          <ng-container *ngIf="project.architecture">
+            <dt class="font-medium">Architecture</dt>
+            <dd>{{ project.architecture }}</dd>
+          </ng-container>
+          <ng-container *ngIf="project.technicalChoices">
+            <dt class="font-medium">Choix techniques</dt>
+            <dd>{{ project.technicalChoices }}</dd>
+          </ng-container>
+          <ng-container *ngIf="project.technicalReflections">
+            <dt class="font-medium">Réflexions techniques</dt>
+            <dd>{{ project.technicalReflections }}</dd>
+          </ng-container>
+          <ng-container *ngIf="project.difficulties">
+            <dt class="font-medium">Difficultés</dt>
+            <dd>{{ project.difficulties }}</dd>
+          </ng-container>
+        </dl>
+      </fuse-card>
+
+      <!-- Liens externes -->
+      <div class="flex space-x-4">
+        <a
+          *ngIf="project.repoUrl"
+          mat-stroked-button
+          color="primary"
+          [href]="project.repoUrl"
+          target="_blank"
+        >
+          <mat-icon>code</mat-icon>&nbsp;Dépôt
+        </a>
+        <a
+          *ngIf="project.demoUrl"
+          mat-flat-button
+          color="primary"
+          [href]="project.demoUrl"
+          target="_blank"
+        >
+          <mat-icon>launch</mat-icon>&nbsp;Démo
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-container>

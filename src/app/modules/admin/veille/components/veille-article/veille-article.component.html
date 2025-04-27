@@ -1,0 +1,86 @@
+<div
+  class="relative flex flex-col min-h-[calc(100vh-64px)] bg-default text-on-default overflow-auto p-6 sm:p-10"
+>
+  <!-- Bouton Retour -->
+  <button
+    mat-icon-button
+    (click)="goBack()"
+    class="text-secondary hover:text-on-default transition mb-6"
+    aria-label="Retour à la liste"
+  >
+    <mat-icon
+      svgIcon="heroicons_solid:arrow-left"
+      class="icon-size-6"
+    ></mat-icon>
+  </button>
+
+  <!-- Carte de l’article -->
+  <fuse-card class="flex flex-col max-w-4xl mx-auto space-y-8 p-8">
+    <ng-container *ngIf="article$ | async as article">
+
+      <!-- Secteur -->
+      <div class="uppercase text-sm font-medium text-accent-700 tracking-wide">
+        {{ article.sectorTitle }}
+      </div>
+
+      <!-- Titres -->
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-primary">
+        {{ article.title }}
+      </h1>
+      <h2
+        *ngIf="article.subtitle"
+        class="text-xl sm:text-2xl font-semibold text-secondary"
+      >
+        {{ article.subtitle }}
+      </h2>
+
+      <!-- Image principale -->
+      <img
+        *ngIf="article.imageUrl"
+        [src]="article.imageUrl"
+        [alt]="article.title"
+        class="w-full rounded-lg object-cover shadow"
+      />
+
+      <!-- Résumé/intro italique -->
+      <p
+        *ngIf="article.summary"
+        class="italic text-base sm:text-lg text-on-default"
+      >
+        {{ article.summary }}
+      </p>
+
+      <!-- Contenu détaillé : chaque paragraphe empilé verticalement -->
+      <div class="space-y-8">
+        <ng-container *ngFor="let p of article.paragraphs">
+          <div class="space-y-4">
+            <h3
+              *ngIf="p.title"
+              class="text-lg font-semibold text-primary"
+            >
+              {{ p.title }}
+            </h3>
+            <h4
+              *ngIf="p.subtitle"
+              class="text-md text-secondary"
+            >
+              {{ p.subtitle }}
+            </h4>
+            <p *ngIf="p.intro" class="italic">{{ p.intro }}</p>
+            <div
+              [innerHTML]="p.content"
+              class="prose prose-lg max-w-none"
+            ></div>
+            <img
+              *ngIf="p.imageUrl"
+              [src]="p.imageUrl"
+              [alt]="p.title"
+              class="w-full rounded-lg mt-2"
+            />
+          </div>
+        </ng-container>
+      </div>
+
+    </ng-container>
+  </fuse-card>
+</div>

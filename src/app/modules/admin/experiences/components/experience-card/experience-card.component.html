@@ -1,0 +1,24 @@
+<fuse-card class="p-6 hover:shadow-lg transition-shadow duration-200 flex flex-col">
+  <!-- En-tête : titre + dates -->
+  <div class="flex items-start justify-between">
+    <h4 class="text-lg font-semibold">{{ experience.title }}</h4>
+    <div class="text-xs text-secondary text-right">
+      <div>{{ experience.startDate }}</div>
+      <div>- {{ experience.endDate || 'Présent' }}</div>
+    </div>
+  </div>
+
+  <!-- Résumé & description -->
+  <p class="text-sm text-secondary mt-2">{{ experience.summary }}</p>
+  <p class="text-sm mt-1">{{ experience.description }}</p>
+
+  <!-- Technologies -->
+  <div class="mt-auto flex flex-wrap gap-2 pt-4">
+    <span
+      *ngFor="let tech of experience.technologies"
+      class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+    >
+      {{ tech }}
+    </span>
+  </div>
+</fuse-card>

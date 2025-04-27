@@ -1,0 +1,49 @@
+/* Barre de séparation sous chaque secteur */
+hr {
+  opacity: 0.2;
+}
+
+/* Bouton d’article sélectionné */
+button.font-bold {
+  color: var(--fuse-primary);
+}
+
+/* Override pour autoriser le wrapping des labels MDC dans les boutons de la sidebar */
+:host ::ng-deep aside nav button.mat-mdc-button .mdc-button__label {
+  /* Permettre le passage à la ligne */
+  white-space: normal !important;
+  word-break: break-word !important;
+  /* Faire du label un bloc 100% de la largeur du bouton */
+  display: block !important;
+  line-height: 1.2em !important;
+}
+
+/* Override pour gérer le flex-wrap et la hauteur auto du bouton */
+:host ::ng-deep aside nav button.mat-mdc-button {
+  /* Transformer le bouton en flex container qui wrappe ses enfants */
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  /* Laisser la hauteur s’ajuster à plusieurs lignes */
+  height: auto !important;
+}
+ 
+:host ::ng-deep aside nav button.mat-mdc-button {
+  /* largeur & wrapping */
+  width: 100% !important;
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  text-align: start;
+  align-items: center !important;  /* centre verticalement */
+  justify-content: flex-start !important;
+  padding: 0.5rem 1rem !important;  /* ajuster à votre goût */
+  height: auto !important;
+}
+
+:host ::ng-deep aside nav button.mat-mdc-button .mdc-button__label {
+  /* multi-ligne propre */
+  white-space: normal !important;
+  word-break: break-word !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}

@@ -1,0 +1,72 @@
+<fuse-card class="h-full flex flex-col rounded-none animate-grow">
+    <!-- Header -->
+    <div class="flex-shrink-0 p-6 bg-card border-b flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 rounded-full bg-primary-50 flex items-center justify-center">
+          <mat-icon [svgIcon]="data.skill.icon" class="text-primary icon-size-9"></mat-icon>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold">{{ data.skill.name }}</h2>
+          <span
+            class="mt-1 inline-block px-2 py-1 rounded-full text-sm font-medium"
+            [ngClass]="getBadgeClasses()"
+          >
+            {{ data.skill.masteryLevel }}
+          </span>
+        </div>
+      </div>
+      <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  
+    <!-- Body -->
+    <div class="flex-1 overflow-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Section Description -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold">Description</h3>
+        <p *ngIf="data.skill.description" class="text-base">{{ data.skill.description }}</p>
+  
+        <ng-container *ngIf="data.skill.personalNotes">
+          <h3 class="text-xl font-semibold mt-4">Notes personnelles</h3>
+          <p class="text-sm text-secondary">{{ data.skill.personalNotes }}</p>
+        </ng-container>
+  
+        <ng-container *ngIf="data.skill.subSkills?.length">
+          <h3 class="text-xl font-semibold mt-4">Sous-compétences</h3>
+          <div *ngFor="let ss of data.skill.subSkills" class="space-y-1">
+            <div class="flex justify-between text-sm">
+              <span>{{ ss.name }}</span>
+              <span>{{ ss.mastery }} %</span>
+            </div>
+            <mat-progress-bar
+              [value]="ss.mastery"
+              mode="determinate"
+              class="h-1 rounded-full"
+            ></mat-progress-bar>
+          </div>
+        </ng-container>
+      </div>
+  
+      <!-- Section Projets liés -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Projets liés</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li *ngFor="let p of data.projects">
+            <a
+              [routerLink]="['/admin/projects', p.id]"
+              class="text-primary-500 hover:underline"
+            >
+              {{ p.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <div class="flex-shrink-0 p-6 text-right border-t">
+      <button mat-flat-button color="accent" (click)="close()">Fermer</button>
+    </div>
+  </fuse-card>
+  

@@ -1,0 +1,21 @@
+<fuse-card
+  class="flex flex-col items-center p-6 cursor-pointer transition-colors duration-200 hover:bg-primary-300"
+  (click)="openDetail()"
+>
+  <!-- Cercle icône -->
+  <div class="w-16 h-16 rounded-full bg-primary-50 flex items-center justify-center mb-4">
+    <mat-icon [svgIcon]="skill.icon" class="text-primary icon-size-8"></mat-icon>
+  </div>
+
+  <!-- Nom du skill -->
+  <div class="font-semibold text-center">{{ skill.name }}</div>
+
+  <!-- Jauge à segments -->
+  <div class="flex space-x-1 mb-2">
+    <span
+      *ngFor="let i of [1,2,3,4]"
+      class="w-2 h-2 rounded-full"
+      [ngClass]="i <= segmentCount() ? 'bg-primary-500' : 'bg-gray-300'"
+    ></span>
+  </div>
+</fuse-card>

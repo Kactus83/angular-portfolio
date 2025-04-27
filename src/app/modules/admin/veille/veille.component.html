@@ -1,0 +1,77 @@
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-card p-4 overflow-y-auto border-r border-hover">
+    <ng-container *ngFor="let sector of sectors">
+      <div class="flex items-center mb-2">
+        <mat-icon
+          [svgIcon]="sector.icon"
+          class="icon-size-5 text-primary mr-2"
+        ></mat-icon>
+        <div>
+          <div class="font-semibold">{{ sector.title }}</div>
+          <div
+            *ngIf="sector.subtitle"
+            class="text-sm text-secondary"
+          >{{ sector.subtitle }}</div>
+        </div>
+      </div>
+      <nav class="ml-6 mb-4 space-y-1">
+        <button
+          mat-button
+          class="w-full justify-start text-sm"
+          *ngFor="let a of sector.articles"
+          [class.font-bold]="selected.id === a.id"
+          [class.text-primary]="selected.id === a.id"
+          (click)="select(a)"
+        >
+          <span class="line-clamp-2">
+            {{ a.title }}
+          </span>
+        </button>
+      </nav>
+      <hr class="border-t border-hover my-2" />
+    </ng-container>
+  </aside>
+
+  <!-- Preview -->
+  <section
+    class="flex-1 p-6 bg-default text-on-default overflow-auto"
+  >
+    <fuse-card class="flex flex-col justify-between h-full p-6 space-y-6">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold text-primary">
+          {{ selected.title }}
+        </h2>
+        <div
+          *ngIf="selected.subtitle"
+          class="text-lg text-secondary"
+        >{{ selected.subtitle }}</div>
+        <p class="text-base">{{ selected.summary }}</p>
+
+        <ng-container *ngIf="selected.paragraphs.length">
+          <!-- on affiche le premier paragraphe en aperçu -->
+          <p
+            *ngIf="selected.paragraphs[0].intro"
+            class="italic text-sm text-on-default"
+          >
+            {{ selected.paragraphs[0].intro }}
+          </p>
+          <div
+            [innerHTML]="selected.paragraphs[0].content"
+            class="prose prose-sm mt-2 max-w-none"
+          ></div>
+        </ng-container>
+      </div>
+
+      <div class="text-right">
+        <button
+          mat-flat-button
+          color="accent"
+          [routerLink]="['article', selected.id]"
+        >
+          Lire l’article complet
+        </button>
+      </div>
+    </fuse-card>
+  </section>
+</div>
