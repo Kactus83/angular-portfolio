@@ -112,7 +112,7 @@ export class HomeComponent implements AfterViewInit {
         : [{r:79,g:70,b:229},{r:199,g:210,b:254},{r:238,g:242,b:255}];
 
       // Nombre de particules proportionnel à la vélocité
-      const count = Math.min(Math.floor(velocity * 0.3), 6);
+      const count = Math.min(Math.floor(velocity * 0.45), 6);
       for (let i = 0; i < count; i++) {
         particles.push({
           baseX: Math.random() * canvasEl.width,
