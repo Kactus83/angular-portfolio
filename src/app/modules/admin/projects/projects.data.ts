@@ -230,6 +230,38 @@ export const PROJECTS: Project[] = [
     difficulties:
       '– Taille croissante du monorepo et complexité du déploiement en production;\n– Fréquence élevée des mises à jour Angular/CLI/Dépendances;\n– Charge de maintenance documentaire et code, notamment pour la synchronisation des submodules et la compatibilité infra;\n– Orchestration zéro-touch du provisioning cloud via Terraform & scripts.',
     gallery: []
-  }
+  },
+  {
+    id: "memory-game",
+    title: "Memory Game",
+    summary: "Jeu de mémoire implémenté en React (créé avec Create React App). Les cartes (ici des émojis) sont mélangées et présentées en grille ; l'utilisateur retourne deux cartes successivement pour trouver des paires correspondantes.",
+    description: `Implémenté de manière simple, il génère un jeu de paires de cartes (valeurs emoji) et affiche un message de victoire ou défaite lorsque les conditions sont atteintes.`,
+    technologies: [
+      "React",
+      "JavaScript (ES6+ / JSX)",
+      "CSS3",
+      "HTML5 (Create React App)"
+    ],
+    repoUrl: "https://github.com/Kactus83/memory-game",
+    demoUrl: "",
+    imageUrl: "project-ressources/memory/memory-cover.png",
+    languageUsage: [
+      { name: "JavaScript", percent: 53 },
+      { name: "CSS", percent: 42 },
+      { name: "HTML", percent: 5 }
+    ],
+    history: `Projet initié le 22 octobre 2024 comme exercice pédagogique pour découvrir React et les composants fonctionnels. Version v1, sans démo publique (clone du dépôt et \`npm start\`).`,
+    architecture: `Organisation initiale “tout-en-vrac” dans **src/** : tous les composants (MemoryGame, Card, Controls, GameOver) et la logique métier sont au même niveau, sans structure de dossiers claire. C’est l’un des premiers points à refondre pour améliorer la maintenabilité et la modularisation.`,
+    technicalChoices: `– Composants fonctionnels React avec hooks (*useState*, *useEffect*) pour la gestion d’état et les effets asynchrones.  
+  – Animation de retournement des cartes en CSS3 (transition + transform).  
+  – Séparation simple en quatre composants (MemoryGame, Card, Controls, GameOver) pour faciliter la lecture du code.`,
+    technicalReflections: `Cette v1 est stable mais minimaliste : le code “tout-en-vrac” doit être réorganisé (dossiers par feature), et on peut enrichir le jeu avec profils, niveaux de difficulté et stockage local des scores.`,
+    difficulties: `– Synchroniser le flip des cartes et le timer sans bloquer l’UI (management des clean-ups setTimeout/setInterval).  
+  – Désactiver temporairement les clics durant l’animation pour éviter les états incohérents.  
+  – Gérer le GameOver via plusieurs états combinés (timer et nombre de paires) de façon fiable.`,
+    gallery: [
+      "project-ressources/memory/memory-1.png"
+    ]
+  } 
   
 ];
