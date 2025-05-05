@@ -230,46 +230,6 @@ export const PROJECTS: Project[] = [
     difficulties:
       '– Taille croissante du monorepo et complexité du déploiement en production;\n– Fréquence élevée des mises à jour Angular/CLI/Dépendances;\n– Charge de maintenance documentaire et code, notamment pour la synchronisation des submodules et la compatibilité infra;\n– Orchestration zéro-touch du provisioning cloud via Terraform & scripts.',
     gallery: []
-  },
-  {
-    id: 'custom-logger',
-    title: 'Custom Logger',
-    summary: 'Package NPM modulaire de logging pour Node.js, configurable et extensible.',
-    description:
-      'Custom Logger est un module TypeScript pour Node.js fournissant un service de journalisation centralisé : gestion de niveaux (TRACE à ERROR), hiérarchie main/sub-process, styles colorés ou classiques, et configuration fine via une API fluent. Il s’intègre facilement dans toute application Node.js et se prête à l’enrichissement par de nouveaux transports.',
-    technologies: [
-      'Node.js',
-      'TypeScript',
-      'ANSI-Escapes (styles console)',
-      'Commander / prompts (packaging CLI)',
-      'JSON (config)'
-    ],
-    repoUrl: 'https://github.com/Kactus83/custom-logger',
-    demoUrl: 'https://github.com/Kactus83/custom-logging-module-TEST',
-    imageUrl: 'project-ressources/logger/logger-cover.png',
-    videoUrl: 'project-ressources/logger/demo.mp4',
-    languageUsage: [
-      { name: 'TypeScript', percent: 100 }
-    ],
-    history:
-      'Créé le 28 février 2024 et publié peu après sur NPM (v0.1.11) pour expérimenter la création d’un package modulable de logging en TypeScript.',
-    architecture:
-      'Module mono‐package avec un singleton `LoggingService` orchestrant plusieurs services internes (ProcessDatabase, RegistrationService, StyleManager, TreeVisualizer). Deux clients (`MainProcessLoggerClient` et `SubProcessLoggerClient`) héritent d’une base abstraite pour s’enregistrer et produire des logs hiérarchisés.',
-    technicalChoices:
-      '– Pattern Singleton pour le service global de logs ;  \n' +
-      '– Composition de petits services pour séparer responsabilités (format, couleurs, arborescence) ;  \n' +
-      '– Enums et interfaces TypeScript pour garantir la cohérence des niveaux et modes ;  \n' +
-      '– Sortie console via `console.log` avec styles ANSI, sans dépendance externe pour minimiser la footprint.',
-    technicalReflections:
-      'Le choix d’un singleton simplifie l’usage mais limite les instances multiples. La séparation en services est vertueuse, mais l’utilisation de l’héritage pour les clients aurait pu être remplacée par de la composition pour plus de flexibilité. L’ajout de transports (fichiers, HTTP) et de formats (JSON, CSV) est la prochaine étape logique.',
-    difficulties:
-      '– Publication NPM et gestion du packaging (ESM vs CommonJS) ;  \n' +
-      '– Choix entre héritage et composition pour les clients logger (l’héritage s’est avéré trop rigide) ;  \n' +
-      '– Conception d’une API de configuration intuitive tout en conservant la richesse des options ;  \n' +
-      '– Absence de tests unitaires au démarrage, nécessitant un mock manuel pour valider le format des messages.',
-    gallery: [
-      'project-ressources/logger/logger-1.png'
-    ]
   }
   
 ];
