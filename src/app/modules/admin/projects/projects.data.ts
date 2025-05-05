@@ -65,7 +65,6 @@ export const PROJECTS: Project[] = [
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: '',
     imageUrl: 'assets/images/projects/test-html.png',
-    // sections vides si non fournies
     history: '',
     architecture: '',
     technicalChoices: '',
@@ -81,7 +80,7 @@ export const PROJECTS: Project[] = [
       'Le Theme Color Generator permet de créer des palettes de couleurs personnalisées (HEX, RGB…), d’avoir un aperçu en temps réel et de générer automatiquement le code CSS associé.',
     technologies: ['TypeScript', 'Webpack', 'CSS Variables', 'HTML', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/theme-color-generator',
-    demoUrl: 'https://kactus83.github.io/theme-color-generator/',
+    demoUrl: '',
     imageUrl: 'assets/images/projects/theme-color-generator-cover.png',
     videoUrl: 'assets/videos/projects/color-generator/demo.mp4',
     languageUsage: [
@@ -93,17 +92,52 @@ export const PROJECTS: Project[] = [
     history:
       'Créé le 23 octobre 2023 pour centraliser la génération de thèmes colorés CSS, puis mis à jour le 5 mai 2025 pour améliorer l’ergonomie et le design.',
     architecture:
-      'Entrypoint `main.ts` initialise les services : `ColorsService`, `ColorsPaletteService`, `ThemeColorsService` et `ThemeDisplayService`. Structure DDD avec `models`, `services`, `value-objects` et `ThemeCSSGenerator`, packagés via Webpack.',
+      'Entrypoint `main.ts` initialise les services : `ColorsService`, `ColorsPaletteService`, `ThemeColorsService` et `ThemeDisplayService`. Structure DDD avec `models`, `services`, `value-objects` et `ThemeCSSGenerator`, packagés via Webpack.',
     technicalChoices:
       'TypeScript pour le typage strict, HTML/CSS pour l’interface, Webpack avec ts-loader pour bundler, architecture en services et value-objects pour séparer logiques métier et présentation.',
     technicalReflections:
-      'À l’avenir : proposer des export adaptés à Tailwind ou autres frameworks, permettre la configuration de templates de sortie (SCSS, JSON), et offrir une CLI pour intégration CI/CD.',
+      'À l’avenir : proposer des export adaptés à Tailwind ou autres frameworks, permettre la configuration de templates de sortie (SCSS, JSON), et offrir une CLI pour intégration CI/CD.',
     difficulties:
-      'Pas de défis majeurs, le projet étant volontairement simple. À améliorer : tests unitaires, workflow CI, gestion avancée des formats de sortie.',
+      'Pas de défis majeurs, le projet étant volontairement simple. À améliorer : tests unitaires, workflow CI, gestion avancée des formats de sortie.',
     gallery: [
       'assets/images/projects/color-generator-1.png',
       'assets/images/projects/color-generator-2.png',
       'assets/images/projects/color-generator-3.png'
+    ]
+  },
+  {
+    id: 'book-2023',
+    title: 'Book 2023',
+    summary: 'Portfolio web multi-pages responsive, avec animations et thème personnalisable.',
+    description:
+      'Site de portfolio statique composé de plusieurs pages (landing, home, CV, compétences, projets GitHub), servi via un mini-serveur Node.js maison. Intègre un curseur personnalisé, gestion de thèmes via CSS variables et chargement dynamique des données projets.',
+    technologies: [
+      'HTML5',
+      'CSS3 (variables, Flexbox, Grid)',
+      'JavaScript ES6 (modules, DOM, fetch)',
+      'Node.js (HTTP, routing fait à la main)'
+    ],
+    repoUrl: 'https://github.com/Kactus83/test-html',
+    demoUrl: 'https://kactus83.github.io/test-html/pages/landing/landing.html',
+    imageUrl: 'assets/images/projects/book-2023/portfolio-cover.png',
+    videoUrl: 'assets/videos/projects/book-2023/demo.mp4',
+    languageUsage: [
+      { name: 'JavaScript', percent: 50 },
+      { name: 'CSS', percent: 30 },
+      { name: 'HTML', percent: 20 }
+    ],
+    history:
+      'Créé le mardi 24 octobre 2023 comme template de portfolio anonyme, développé en quasi-one-shot sans mises à jour majeures par la suite.',
+    architecture:
+      'Architecture « multi-page » : chaque page (landing, home, CV, compétences, projets) est autonome (HTML/CSS/JS). Le `server.js` orchestre le routage et sert les fichiers statiques, tandis que `main.js` gère le curseur, le theming et la redirection initiale.',
+    technicalChoices:
+      'Vanilla JS et CSS sans frameworks pour garantir légèreté et accès direct au DOM ; CSS variables pour le theming ; mini-serveur Node.js maison pour apprendre le routing HTTP sans Express.',
+    technicalReflections:
+      'Le découpage en pages autonomes facilite la maintenance, mais un bundler (Webpack/Rollup) ou un framework léger (Vite/Next.js) améliorerait le workflow. Passer à un SPA pourrait aussi fluidifier la navigation.',
+    difficulties:
+      'Implémentation d’un curseur personnalisé cross-browser, gestion fine des CSS variables et des animations, mise en place d’une redirection sans FOUC et structuration d’un mini-serveur Node.js sans dépendance externe.',
+    gallery: [
+      'assets/images/projects/book-2023/portfolio-cover.png'
     ]
   }
 ];
