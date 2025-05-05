@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
     technologies: ['TypeScript', 'HTML5 Canvas', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/space-invaders',
     demoUrl: '',
-    imageUrl: 'assets/images/projects/space-invaders.png',
+    imageUrl: 'images/projects/space-invaders.png',
     languageUsage: [
       { name: 'TypeScript', percent: 70 },
       { name: 'Canvas API', percent: 20 },
@@ -27,9 +27,9 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Gestion de la physique basique et des collisions optimisées pour ne pas bloquer le framerate.',
     gallery: [
-      'assets/images/projects/si-screen1.png',
-      'assets/images/projects/si-screen2.png',
-      'assets/images/projects/si-screen3.png'
+      'images/projects/si-screen1.png',
+      'images/projects/si-screen2.png',
+      'images/projects/si-screen3.png'
     ]
   },
   {
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Node.js', 'TypeScript'],
     repoUrl: 'https://github.com/Kactus83/custom-logger',
     demoUrl: 'https://npmjs.com/package/custom-logger',
-    imageUrl: 'assets/images/projects/custom-logger.png',
+    imageUrl: 'images/projects/custom-logger.png',
     languageUsage: [{ name: 'TypeScript', percent: 100 }],
     history:
       'Réalisé à titre expérimental puis publié sur NPM fin 2022.',
@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript'],
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: '',
-    imageUrl: 'assets/images/projects/test-html.png',
+    imageUrl: 'images/projects/test-html.png',
     history: '',
     architecture: '',
     technicalChoices: '',
@@ -81,8 +81,8 @@ export const PROJECTS: Project[] = [
     technologies: ['TypeScript', 'Webpack', 'CSS Variables', 'HTML', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/theme-color-generator',
     demoUrl: '',
-    imageUrl: 'assets/images/projects/theme-color-generator-cover.png',
-    videoUrl: 'assets/videos/projects/color-generator/demo.mp4',
+    imageUrl: 'images/projects/theme-color-generator-cover.png',
+    videoUrl: 'videos/projects/color-generator/demo.mp4',
     languageUsage: [
       { name: 'TypeScript', percent: 84.5 },
       { name: 'HTML', percent: 7.9 },
@@ -100,9 +100,9 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Pas de défis majeurs, le projet étant volontairement simple. À améliorer : tests unitaires, workflow CI, gestion avancée des formats de sortie.',
     gallery: [
-      'assets/images/projects/color-generator-1.png',
-      'assets/images/projects/color-generator-2.png',
-      'assets/images/projects/color-generator-3.png'
+      'images/projects/color-generator-1.png',
+      'images/projects/color-generator-2.png',
+      'images/projects/color-generator-3.png'
     ]
   },
   {
@@ -119,8 +119,8 @@ export const PROJECTS: Project[] = [
     ],
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: 'https://kactus83.github.io/test-html/pages/landing/landing.html',
-    imageUrl: 'assets/images/projects/book-2023/portfolio-cover.png',
-    videoUrl: 'assets/videos/projects/book-2023/demo.mp4',
+    imageUrl: 'images/projects/book-2023/portfolio-cover.png',
+    videoUrl: 'videos/projects/book-2023/demo.mp4',
     languageUsage: [
       { name: 'JavaScript', percent: 50 },
       { name: 'CSS', percent: 30 },
@@ -137,7 +137,7 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Implémentation d’un curseur personnalisé cross-browser, gestion fine des CSS variables et des animations, mise en place d’une redirection sans FOUC et structuration d’un mini-serveur Node.js sans dépendance externe.',
     gallery: [
-      'assets/images/projects/book-2023/portfolio-cover.png'
+      'images/projects/book-2023/portfolio-cover.png'
     ]
   }
 ];
