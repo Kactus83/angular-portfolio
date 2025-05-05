@@ -114,9 +114,9 @@ export const PROJECTS: Project[] = [
       'Site de portfolio statique composé de plusieurs pages (landing, home, CV, compétences, projets GitHub), servi via un mini-serveur Node.js maison. Intègre un curseur personnalisé, gestion de thèmes via CSS variables et chargement dynamique des données projets.',
     technologies: [
       'HTML5',
-      'CSS3 (variables, Flexbox, Grid)',
-      'JavaScript ES6 (modules, DOM, fetch)',
-      'Node.js (HTTP, routing fait à la main)'
+      'CSS3',
+      'JavaScript ES6',
+      'Node.js'
     ],
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: 'https://kactus83.github.io/test-html/pages/landing/landing.html',
@@ -239,9 +239,9 @@ export const PROJECTS: Project[] = [
     description: `Implémenté de manière simple, il génère un jeu de paires de cartes (valeurs emoji) et affiche un message de victoire ou défaite lorsque les conditions sont atteintes.`,
     technologies: [
       "React",
-      "JavaScript (ES6+ / JSX)",
+      "JavaScript",
       "CSS3",
-      "HTML5 (Create React App)"
+      "HTML5"
     ],
     repoUrl: "https://github.com/Kactus83/memory-game",
     demoUrl: "",
