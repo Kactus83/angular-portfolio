@@ -56,26 +56,10 @@ export const PROJECTS: Project[] = [
     gallery: []
   },
   {
-    id: 'test-html',
-    title: 'Test HTML',
-    summary: 'Mini projet de design web.',
-    description:
-      'Un projet de design web rapide pour créer une interface responsive inspirée du Test HTML.',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    repoUrl: 'https://github.com/Kactus83/test-html',
-    demoUrl: '',
-    imageUrl: 'project-ressources/test-html/test-html.png',
-    history: '',
-    architecture: '',
-    technicalChoices: '',
-    technicalReflections: '',
-    difficulties: '',
-    gallery: []
-  },
-  {
     id: 'color-generator',
     title: 'Theme Color Generator',
-    summary: 'Un outil web pour générer dynamiquement des thèmes CSS (variables primaires, secondaires, nuances…) avec aperçu en temps réel.',
+    summary:
+      'Un outil web pour générer dynamiquement des thèmes CSS (variables primaires, secondaires, nuances…) avec aperçu en temps réel.',
     description:
       'Le Theme Color Generator permet de créer des palettes de couleurs personnalisées (HEX, RGB…), d’avoir un aperçu en temps réel et de générer automatiquement le code CSS associé.',
     technologies: ['TypeScript', 'Webpack', 'CSS Variables', 'HTML', 'CSS'],
@@ -136,9 +120,7 @@ export const PROJECTS: Project[] = [
       'Le découpage en pages autonomes facilite la maintenance, mais un bundler (Webpack/Rollup) ou un framework léger (Vite/Next.js) améliorerait le workflow. Passer à un SPA pourrait aussi fluidifier la navigation.',
     difficulties:
       'Implémentation d’un curseur personnalisé cross-browser, gestion fine des CSS variables et des animations, mise en place d’une redirection sans FOUC et structuration d’un mini-serveur Node.js sans dépendance externe.',
-    gallery: [
-      'project-ressources/portfolio/portfolio-cover.png'
-    ]
+    gallery: ['project-ressources/portfolio/portfolio-cover.png']
   },
   {
     id: 'idlesaur',
@@ -182,5 +164,54 @@ export const PROJECTS: Project[] = [
       'project-ressources/idlesaur/idlesaur-2.png',
       'project-ressources/idlesaur/idlesaur-3.png'
     ]
+  },
+  {
+    id: 'app-template',
+    title: 'App Template',
+    summary:
+      'Template d’application full-stack avec CLI, wizard desktop et infra-as-code pour accélérer la création, le développement et le déploiement d’apps professionnelles.',
+    description:
+      'App Template fournit un backend NestJS modulaire, un frontend Angular 16 responsive, un CLI “appwizard” et un setup-wizard desktop (Tauri + Rust) pour initialiser l’environnement. Tous les services (PostgreSQL, Vault, MailHog, Ganache/Hardhat, blockchain) sont conteneurisés via Docker Compose, avec provisioning cloud automatisé via Terraform vers AWS ou GCP.',
+    technologies: [
+      'NestJS (TypeScript)',
+      'Angular 16 (TypeScript, Tailwind CSS, i18n)',
+      'Tauri + Rust (setup-wizard)',
+      'Solidity (smart contracts)',
+      'HTML5',
+      'CSS3 / SCSS',
+      'Docker & Docker Compose',
+      'PostgreSQL (local & RDS)',
+      'Vault (HashiCorp)',
+      'Ganache/Hardhat (blockchain)',
+      'Prisma ORM',
+      'Terraform (AWS & GCP)',
+      'YAML / HCL (CI/CD, infra)',
+      'PowerShell & Bash (scripts déploiement)',
+      'Commander / prompts (CLI)'
+    ],
+    repoUrl: 'https://github.com/Kactus83/app-template',
+    demoUrl: 'https://app-template.fmorena.com',
+    imageUrl: 'project-ressources/app-template/app-template-logo.png',
+    languageUsage: [
+      { name: 'TypeScript', percent: 60 },
+      { name: 'Rust', percent: 10 },
+      { name: 'Solidity', percent: 10 },
+      { name: 'HTML', percent: 5 },
+      { name: 'CSS / SCSS', percent: 5 },
+      { name: 'YAML / HCL', percent: 5 },
+      { name: 'Shell (PS/Bash)', percent: 5 },
+      { name: 'SQL', percent: 5 }
+    ],
+    history:
+      'Fruit de plus de cinq années d’itérations (anciennement Auth-Boilerplate), unifié en monorepo via Git submodules pour template, CLI et wizard, et développé en 2024–2025 pour répondre aux attentes SLAM et aux standards de déploiement automatisé.',
+    architecture:
+      'Monorepo Git avec trois submodules (app-template, app-tooling, setup-wizard). Architecture 3-tiers conteneurisée : Backend NestJS + Prisma, Frontend Angular, services de support (DB, Vault, MailHog, blockchain), orchestrés via Docker Compose. Le CLI orchestre clone, build et deploy (Terraform + AWS/GCP), et le wizard Tauri gère l’installation des prérequis.',
+    technicalChoices:
+      '– Passport-JWT & AuthGuard/RolesGuard dans NestJS pour sécuriser API & CLI;\n– Prisma pour migrations et typage BD;\n– Angular PWA-ready + Tailwind/SCSS pour le front;\n– Solidity pour smart contracts blockchain;\n– Docker multi-stage et Terraform pour CI/CD reproductible;\n– Tauri/Rust pour UX native multi-plateforme.',
+    technicalReflections:
+      'J’envisage de refondre le domaine d’auth du backend pour utiliser uniformément les stratégies Passport (OAuth, JWT, etc.), et de réécrire le frontend en tant qu’“add-on” pour Fuse afin d’assurer une intégration transparente et pérenne.',
+    difficulties:
+      '– Taille croissante du monorepo et complexité du déploiement en production;\n– Fréquence élevée des mises à jour Angular/CLI/Dépendances;\n– Charge de maintenance documentaire et code, notamment pour la synchronisation des submodules et la compatibilité infra;\n– Orchestration zéro-touch du provisioning cloud via Terraform & scripts.',
+    gallery: []
   }
 ];
