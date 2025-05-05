@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
     technologies: ['TypeScript', 'HTML5 Canvas', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/space-invaders',
     demoUrl: '',
-    imageUrl: 'space-invaders.png',
+    imageUrl: 'images/project-ressources/space-invaders/space-invaders.png',
     languageUsage: [
       { name: 'TypeScript', percent: 70 },
       { name: 'Canvas API', percent: 20 },
@@ -27,9 +27,9 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Gestion de la physique basique et des collisions optimisées pour ne pas bloquer le framerate.',
     gallery: [
-      'si-screen1.png',
-      'si-screen2.png',
-      'si-screen3.png'
+      'images/project-ressources/space-invaders/si-screen1.png',
+      'images/project-ressources/space-invaders/si-screen2.png',
+      'images/project-ressources/space-invaders/si-screen3.png'
     ]
   },
   {
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Node.js', 'TypeScript'],
     repoUrl: 'https://github.com/Kactus83/custom-logger',
     demoUrl: 'https://npmjs.com/package/custom-logger',
-    imageUrl: 'custom-logger.png',
+    imageUrl: 'images/project-ressources/custom-logger/custom-logger.png',
     languageUsage: [{ name: 'TypeScript', percent: 100 }],
     history:
       'Réalisé à titre expérimental puis publié sur NPM fin 2022.',
@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript'],
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: '',
-    imageUrl: 'test-html.png',
+    imageUrl: 'images/project-ressources/test-html/test-html.png',
     history: '',
     architecture: '',
     technicalChoices: '',
@@ -81,8 +81,8 @@ export const PROJECTS: Project[] = [
     technologies: ['TypeScript', 'Webpack', 'CSS Variables', 'HTML', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/theme-color-generator',
     demoUrl: '',
-    imageUrl: 'theme-color-generator-cover.png',
-    videoUrl: 'demo.mp4',
+    imageUrl: 'images/project-ressources/theme-color-generator/theme-color-generator-cover.png',
+    videoUrl: 'images/project-ressources/theme-color-generator/demo.mp4',
     languageUsage: [
       { name: 'TypeScript', percent: 84.5 },
       { name: 'HTML', percent: 7.9 },
@@ -100,9 +100,9 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Pas de défis majeurs, le projet étant volontairement simple. À améliorer : tests unitaires, workflow CI, gestion avancée des formats de sortie.',
     gallery: [
-      'color-generator-1.png',
-      'color-generator-2.png',
-      'color-generator-3.png'
+      'images/project-ressources/theme-color-generator/color-generator-1.png',
+      'images/project-ressources/theme-color-generator/color-generator-2.png',
+      'images/project-ressources/theme-color-generator/color-generator-3.png'
     ]
   },
   {
@@ -119,8 +119,8 @@ export const PROJECTS: Project[] = [
     ],
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: 'https://kactus83.github.io/test-html/pages/landing/landing.html',
-    imageUrl: 'portfolio-cover.png',
-    videoUrl: 'demo.mp4',
+    imageUrl: 'images/project-ressources/book-2023/portfolio-cover.png',
+    videoUrl: 'images/project-ressources/book-2023/demo.mp4',
     languageUsage: [
       { name: 'JavaScript', percent: 50 },
       { name: 'CSS', percent: 30 },
@@ -137,7 +137,7 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Implémentation d’un curseur personnalisé cross-browser, gestion fine des CSS variables et des animations, mise en place d’une redirection sans FOUC et structuration d’un mini-serveur Node.js sans dépendance externe.',
     gallery: [
-      'portfolio-cover.png'
+      'images/project-ressources/book-2023/portfolio-cover.png'
     ]
   },
   {
@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
     ],
     repoUrl: 'https://github.com/Kactus83/thedelsaur',
     demoUrl: 'https://the-idlesaur.fmorena.com',
-    imageUrl: 'idlesaur-cover.png',
+    imageUrl: 'images/project-ressources/iddlesaur/idlesaur-cover.png',
     languageUsage: [
       { name: 'TypeScript', percent: 60 },
       { name: 'JavaScript', percent: 20 },
@@ -178,9 +178,9 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Implémenter un service d’authentification interne robuste (AuthService + AuthMiddleware) et gérer les rôles admin/user, configurer HTTPS via certificats AWS, automatiser les backups RDS et orchestrer un pipeline CI/CD sans outil dédié (scripts PowerShell + Dockerfiles).',
     gallery: [
-      'idlesaur-1.png',
-      'idlesaur-2.png',
-      'idlesaur-3.png'
+      'images/project-ressources/iddlesaur/idlesaur-1.png',
+      'images/project-ressources/iddlesaur/idlesaur-2.png',
+      'images/project-ressources/iddlesaur/idlesaur-3.png'
     ]
   }
 ];
