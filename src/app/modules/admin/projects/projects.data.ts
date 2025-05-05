@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
     technologies: ['TypeScript', 'HTML5 Canvas', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/space-invaders',
     demoUrl: '',
-    imageUrl: 'images/projects/space-invaders.png',
+    imageUrl: 'space-invaders.png',
     languageUsage: [
       { name: 'TypeScript', percent: 70 },
       { name: 'Canvas API', percent: 20 },
@@ -27,9 +27,9 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Gestion de la physique basique et des collisions optimisées pour ne pas bloquer le framerate.',
     gallery: [
-      'images/projects/si-screen1.png',
-      'images/projects/si-screen2.png',
-      'images/projects/si-screen3.png'
+      'si-screen1.png',
+      'si-screen2.png',
+      'si-screen3.png'
     ]
   },
   {
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Node.js', 'TypeScript'],
     repoUrl: 'https://github.com/Kactus83/custom-logger',
     demoUrl: 'https://npmjs.com/package/custom-logger',
-    imageUrl: 'images/projects/custom-logger.png',
+    imageUrl: 'custom-logger.png',
     languageUsage: [{ name: 'TypeScript', percent: 100 }],
     history:
       'Réalisé à titre expérimental puis publié sur NPM fin 2022.',
@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript'],
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: '',
-    imageUrl: 'images/projects/test-html.png',
+    imageUrl: 'test-html.png',
     history: '',
     architecture: '',
     technicalChoices: '',
@@ -81,8 +81,8 @@ export const PROJECTS: Project[] = [
     technologies: ['TypeScript', 'Webpack', 'CSS Variables', 'HTML', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/theme-color-generator',
     demoUrl: '',
-    imageUrl: 'images/projects/theme-color-generator-cover.png',
-    videoUrl: 'videos/projects/color-generator/demo.mp4',
+    imageUrl: 'theme-color-generator-cover.png',
+    videoUrl: 'demo.mp4',
     languageUsage: [
       { name: 'TypeScript', percent: 84.5 },
       { name: 'HTML', percent: 7.9 },
@@ -100,9 +100,9 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Pas de défis majeurs, le projet étant volontairement simple. À améliorer : tests unitaires, workflow CI, gestion avancée des formats de sortie.',
     gallery: [
-      'images/projects/color-generator-1.png',
-      'images/projects/color-generator-2.png',
-      'images/projects/color-generator-3.png'
+      'color-generator-1.png',
+      'color-generator-2.png',
+      'color-generator-3.png'
     ]
   },
   {
@@ -119,8 +119,8 @@ export const PROJECTS: Project[] = [
     ],
     repoUrl: 'https://github.com/Kactus83/test-html',
     demoUrl: 'https://kactus83.github.io/test-html/pages/landing/landing.html',
-    imageUrl: 'images/projects/book-2023/portfolio-cover.png',
-    videoUrl: 'videos/projects/book-2023/demo.mp4',
+    imageUrl: 'portfolio-cover.png',
+    videoUrl: 'demo.mp4',
     languageUsage: [
       { name: 'JavaScript', percent: 50 },
       { name: 'CSS', percent: 30 },
@@ -137,7 +137,50 @@ export const PROJECTS: Project[] = [
     difficulties:
       'Implémentation d’un curseur personnalisé cross-browser, gestion fine des CSS variables et des animations, mise en place d’une redirection sans FOUC et structuration d’un mini-serveur Node.js sans dépendance externe.',
     gallery: [
-      'images/projects/book-2023/portfolio-cover.png'
+      'portfolio-cover.png'
+    ]
+  },
+  {
+    id: 'iddlesaur',
+    title: 'The Iddlesaur',
+    summary:
+      'Idle game web où l’on suit des cycles de vie d’un dinosaure virtuel — gestion de ses besoins, progression par niveaux, karma influençant des événements aléatoires et boutique intégrée.',
+    description:
+      'The Iddlesaur est un idle game full-stack composé d’un frontend React 18 et d’un backend Express / TypeScript, persistant sur MariaDB. Le joueur gère la faim, l’expérience et le karma de son dinosaure à travers des cycles de vingt minutes, avec des actions (chasse, cueillette, exploration…) générant ressources, expérience et soul points. Un système de karma “bright/neutral/dark” module les événements aléatoires, et une boutique interne permet l’achat d’objets et compétences, remises à zéro à chaque renaissance pour maintenir l’équilibre du gameplay.',
+    technologies: [
+      'React 18 (Create React App)',
+      'Express.js',
+      'TypeScript / JavaScript ES6',
+      'SQL (MariaDB)',
+      'Docker & Docker Compose',
+      'Terraform (HCL)',
+      'PowerShell (scripts de déploiement)',
+      'YAML (Docker Compose, CI/CD)',
+      'AWS App Runner (HTTPS, backups)'
+    ],
+    repoUrl: 'https://github.com/Kactus83/thedelsaur',
+    demoUrl: 'https://the-idlesaur.fmorena.com',
+    imageUrl: 'idlesaur-cover.png',
+    languageUsage: [
+      { name: 'TypeScript', percent: 60 },
+      { name: 'JavaScript', percent: 20 },
+      { name: 'SQL', percent: 10 },
+      { name: 'YAML / HCL / PowerShell', percent: 10 }
+    ],
+    history:
+      'Développé de 2024 à 2025 dans le cadre du BTS SLAM à Campus Eductive Toulon. Initialement conçu à trois puis forké en projet personnel pour finaliser les modules de gameplay et l’infrastructure automatisée.',
+    architecture:
+      'Architecture 3-tiers conteneurisée : un frontend React 18, un backend Express / TypeScript et une base MariaDB, chacun déployé dans son propre container Docker et orchestré via Docker Compose, avec provisioning infra-as-code (Terraform) vers AWS App Runner.',
+    technicalChoices:
+      'Choix de React 18 et Express.js pour un découpage clair client/serveur, TypeScript pour le typage strict, scripts Docker multi-stage pour optimiser les images, et Terraform pour garantir la reproductibilité et la montée en charge automatique.',
+    technicalReflections:
+      'L’usage de scripts SQL brut (mysql2) facilite la transparence des requêtes, mais l’introduction future d’un ORM (Prisma) pourrait accélérer le développement de migrations. La mise en place d’un bus d’événements (Kafka / RabbitMQ) permettrait de découpler davantage les modules métier.',
+    difficulties:
+      'Implémenter un service d’authentification interne robuste (AuthService + AuthMiddleware) et gérer les rôles admin/user, configurer HTTPS via certificats AWS, automatiser les backups RDS et orchestrer un pipeline CI/CD sans outil dédié (scripts PowerShell + Dockerfiles).',
+    gallery: [
+      'idlesaur-1.png',
+      'idlesaur-2.png',
+      'idlesaur-3.png'
     ]
   }
 ];
