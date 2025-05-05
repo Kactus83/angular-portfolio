@@ -147,15 +147,15 @@ export const PROJECTS: Project[] = [
     description:
       'The idlesaur est un idle game full-stack composé d’un frontend React 18 et d’un backend Express / TypeScript, persistant sur MariaDB. Le joueur gère la faim, l’expérience et le karma de son dinosaure à travers des cycles de vingt minutes, avec des actions (chasse, cueillette, exploration…) générant ressources, expérience et soul points. Un système de karma “bright/neutral/dark” module les événements aléatoires, et une boutique interne permet l’achat d’objets et compétences, remises à zéro à chaque renaissance pour maintenir l’équilibre du gameplay.',
     technologies: [
-      'React 18 (Create React App)',
+      'React 18',
       'Express.js',
       'TypeScript / JavaScript ES6',
-      'SQL (MariaDB)',
+      'MariaDb',
       'Docker & Docker Compose',
       'Terraform (HCL)',
-      'PowerShell (scripts de déploiement)',
-      'YAML (Docker Compose, CI/CD)',
-      'AWS App Runner (HTTPS, backups)'
+      'PowerShell',
+      'YAML',
+      'AWS App Runner'
     ],
     repoUrl: 'https://github.com/Kactus83/thedelsaur',
     demoUrl: 'https://the-idlesaur.fmorena.com',
@@ -190,21 +190,22 @@ export const PROJECTS: Project[] = [
     description:
       'App Template fournit un backend NestJS modulaire, un frontend Angular 16 responsive, un CLI “appwizard” et un setup-wizard desktop (Tauri + Rust) pour initialiser l’environnement. Tous les services (PostgreSQL, Vault, MailHog, Ganache/Hardhat, blockchain) sont conteneurisés via Docker Compose, avec provisioning cloud automatisé via Terraform vers AWS ou GCP.',
     technologies: [
-      'NestJS (TypeScript)',
-      'Angular 16 (TypeScript, Tailwind CSS, i18n)',
-      'Tauri + Rust (setup-wizard)',
-      'Solidity (smart contracts)',
+      'NestJS',
+      'TypeScript',
+      'Angular 20',
+      'Tauri + Rust',
+      'Solidity',
       'HTML5',
       'CSS3 / SCSS',
       'Docker & Docker Compose',
-      'PostgreSQL (local & RDS)',
+      'PostgreSQL',
       'Vault (HashiCorp)',
-      'Ganache/Hardhat (blockchain)',
+      'Ganache/Hardhat',
       'Prisma ORM',
       'Terraform (AWS & GCP)',
-      'YAML / HCL (CI/CD, infra)',
-      'PowerShell & Bash (scripts déploiement)',
-      'Commander / prompts (CLI)'
+      'YAML / HCL',
+      'PowerShell & Bash',
+      'Commander / prompts'
     ],
     repoUrl: 'https://github.com/Kactus83/app-template',
     demoUrl: 'https://app-template.fmorena.com',
@@ -275,7 +276,7 @@ export const PROJECTS: Project[] = [
       '3. Renommer automatiquement fichiers et répertoires en fonction des mêmes paires.  \n' +
       '4. Afficher une barre de progression et des logs en temps réel via les événements Tauri.',
     technologies: [
-      'Angular 16 (TypeScript, SCSS)',
+      'Angular 20',
       'Rust 1.71 + Tauri',
       'HTML5',
       'CSS3',
