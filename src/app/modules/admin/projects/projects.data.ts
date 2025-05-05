@@ -262,6 +262,64 @@ export const PROJECTS: Project[] = [
     gallery: [
       "project-ressources/memory/memory-1.png"
     ]
-  } 
+  },
+  {
+    id: 'vf-robber',
+    title: 'VF Robber (Very Fast Robber)',
+    summary:
+      'Application desktop multiplateforme (Tauri) Angular+Rust pour renommer massivement fichiers, dossiers et occurrences de texte dans un projet, avec suivi de progression en temps réel.',
+    description:
+      'VF Robber (VeryfastRobber) est la refonte en Angular 16 + SCSS + Rust/Tauri d’un utilitaire initialement écrit en Python il y a deux ans. Commencée le 3 mai 2025, cette version offre une interface riche pour :\n' +
+      '1. Copier un dossier source vers une nouvelle destination (horodatée ou nommée).  \n' +
+      '2. Scanner tous les fichiers (texte) pour rechercher/remplacer des paires de mots/expressions (avec variants de casse).  \n' +
+      '3. Renommer automatiquement fichiers et répertoires en fonction des mêmes paires.  \n' +
+      '4. Afficher une barre de progression et des logs en temps réel via les événements Tauri.',
+    technologies: [
+      'Angular 16 (TypeScript, SCSS)',
+      'Rust 1.71 + Tauri',
+      'HTML5',
+      'CSS3',
+      'Node.js / npm'
+    ],
+    repoUrl: 'https://github.com/Kactus83/rust-robber',
+    demoUrl: 'project-ressources/robber/vf-robber-03-05-2025.exe',
+    imageUrl: 'project-ressources/robber/robber-logo.png',
+    // Pas de vidéo pour l’instant
+    languageUsage: [
+      { name: 'TypeScript', percent: 45 },
+      { name: 'Rust', percent: 35 },
+      { name: 'SCSS', percent: 10 },
+      { name: 'HTML', percent: 10 }
+    ],
+    history:
+      'Refonte complète entamée le 3 mai 2025, basée sur un script Python de renommage de classes/template WordPress. Objectif : passer d’un proof-of-concept à un outil structuré et évolutif.',
+    architecture:
+      'Monorepo Tauri + Angular :\n' +
+      '- **src-tauri/** (Rust) : gestion des commandes, accès au filesystem, moteur de renommage, émission d’événements de progression.  \n' +
+      '- **src/app/** (Angular) : UI en TypeScript/SCSS/HTML, modules et composants pour la configuration de la paire source/destination, la liste des remplacements et l’affichage en live de l’avancement.\n' +
+      'Le front déclenche les commandes Tauri via IPC et s’abonne aux événements pour mettre à jour la barre de progression et les logs.',
+    technicalChoices:
+      '– **Tauri + Rust** pour un exécutable natif et performant, garantissant la sûreté mémoire et un accès direct au filesystem.  \n' +
+      '– **Angular 16** pour bénéficier d’un framework structuré, du binding réactif et de SCSS pour le style.  \n' +
+      '– **Événements IPC** entre Rust et Angular pour un retour d’état temps réel et une UX fluide.  \n' +
+      '– **npm & Cargo** pour gérer les builds frontend et backend dans un seul repo.',
+    technicalReflections:
+      'Cette version prouve la viabilité d’un outil Tauri/Angular pour des tâches de refactoring de code. À l’avenir, on pourrait :\n' +
+      '- Ajouter la génération de rapports (CSV/JSON) des remplacements.  \n' +
+      '- Intégrer un mode CLI pur Rust pour usage sans interface.  \n' +
+      '- Proposer des presets de renommage pour frameworks (WordPress, Laravel, etc.).',
+    difficulties:
+      '– Configurer Tauri pour Windows (VS Build Tools, GTK) et macOS/Linux.  \n' +
+      '– Synchroniser les événements IPC à haute fréquence sans bloquer l’UI.  \n' +
+      '– Gérer les cas de fichiers verrouillés ou de permissions restreintes.  \n' +
+      '– Disposer d’un exécutable multiplateforme packagé (signatures, auto-updates).',
+    gallery: [
+      'project-ressources/robber/robber-1.png',
+      'project-ressources/robber/robber-2.png',
+      'project-ressources/robber/robber-3.png',
+      'project-ressources/robber/robber-4.png'
+    ]
+  }
+  
   
 ];
