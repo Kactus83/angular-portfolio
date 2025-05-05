@@ -76,22 +76,34 @@ export const PROJECTS: Project[] = [
   {
     id: 'theme-color-generator',
     title: 'Theme Color Generator',
-    summary: 'Générateur de thèmes de couleurs CSS.',
+    summary: 'Un outil web pour générer dynamiquement des thèmes CSS (variables primaires, secondaires, nuances…) avec aperçu en temps réel.',
     description:
-      'Outil pour générer des palettes de couleurs en CSS via des variables, utilisé dans le projet Test HTML.',
-    technologies: ['TypeScript', 'CSS Variables'],
+      'Le Theme Color Generator permet de créer des palettes de couleurs personnalisées (HEX, RGB…), d’avoir un aperçu en temps réel et de générer automatiquement le code CSS associé.',
+    technologies: ['TypeScript', 'Webpack', 'CSS Variables', 'HTML', 'CSS'],
     repoUrl: 'https://github.com/Kactus83/theme-color-generator',
-    demoUrl: '',
-    imageUrl: 'assets/images/projects/theme-color-generator.png',
+    demoUrl: 'https://kactus83.github.io/theme-color-generator/',
+    imageUrl: 'assets/images/projects/theme-color-generator-cover.png',
+    videoUrl: 'assets/videos/projects/color-generator/demo.mp4',
     languageUsage: [
-      { name: 'TypeScript', percent: 80 },
-      { name: 'CSS Variables', percent: 20 }
+      { name: 'TypeScript', percent: 84.5 },
+      { name: 'HTML', percent: 7.9 },
+      { name: 'CSS', percent: 6.1 },
+      { name: 'JavaScript', percent: 1.5 }
     ],
-    history: '',
-    architecture: '',
-    technicalChoices: '',
-    technicalReflections: '',
-    difficulties: '',
-    gallery: []
+    history:
+      'Créé le 23 octobre 2023 pour centraliser la génération de thèmes colorés CSS, puis mis à jour le 5 mai 2025 pour améliorer l’ergonomie et le design.',
+    architecture:
+      'Entrypoint `main.ts` initialise les services : `ColorsService`, `ColorsPaletteService`, `ThemeColorsService` et `ThemeDisplayService`. Structure DDD avec `models`, `services`, `value-objects` et `ThemeCSSGenerator`, packagés via Webpack.',
+    technicalChoices:
+      'TypeScript pour le typage strict, HTML/CSS pour l’interface, Webpack avec ts-loader pour bundler, architecture en services et value-objects pour séparer logiques métier et présentation.',
+    technicalReflections:
+      'À l’avenir : proposer des export adaptés à Tailwind ou autres frameworks, permettre la configuration de templates de sortie (SCSS, JSON), et offrir une CLI pour intégration CI/CD.',
+    difficulties:
+      'Pas de défis majeurs, le projet étant volontairement simple. À améliorer : tests unitaires, workflow CI, gestion avancée des formats de sortie.',
+    gallery: [
+      'assets/images/projects/color-generator-1.png',
+      'assets/images/projects/color-generator-2.png',
+      'assets/images/projects/color-generator-3.png'
+    ]
   }
 ];

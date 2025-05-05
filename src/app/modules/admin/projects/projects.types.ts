@@ -12,6 +12,7 @@ export interface Project {
   repoUrl?: string;
   demoUrl?: string;
   imageUrl?: string;
+  videoUrl?: string;
   languageUsage?: LanguageUsage[];
   // Nouveaux champs optionnels
   history?: string;
