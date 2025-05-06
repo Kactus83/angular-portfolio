@@ -4,12 +4,12 @@ import { ExperiencesService } from './experiences.service';
 import { Experience } from './experiences.types';
 import { Observable } from 'rxjs';
 import { ExperienceCardComponent } from './components/experience-card/experience-card.component';
-import { FuseCardComponent } from '@fuse/components/card';
+import { PortfolioCardComponent } from '@portfolio/components/card';
 
 @Component({
   selector: 'app-experiences',
   standalone: true,
-  imports: [CommonModule, FuseCardComponent, ExperienceCardComponent],
+  imports: [CommonModule, PortfolioCardComponent, ExperienceCardComponent],
   templateUrl: './experiences.component.html'
 })
 export class ExperiencesComponent implements OnInit {

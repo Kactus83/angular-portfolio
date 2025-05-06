@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService } from '@fuse/lib/mock-api';
+import { PortfolioMockApiService } from '@portfolio/lib/mock-api';
 import {
     faqCategories as faqCategoriesData,
     faqs as faqsData,
@@ -20,7 +20,7 @@ export class HelpCenterMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -36,7 +36,7 @@ export class HelpCenterMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ FAQs - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/help-center/faqs')
             .reply(({ request }) => {
                 // Get the category slug
@@ -86,7 +86,7 @@ export class HelpCenterMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Guides - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/help-center/guides')
             .reply(({ request }) => {
                 // Get the slug & limit
@@ -146,7 +146,7 @@ export class HelpCenterMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Guide - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/help-center/guide')
             .reply(({ request }) => {
                 // Get the slugs

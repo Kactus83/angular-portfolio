@@ -1,8 +1,8 @@
-import { FuseNavigationItem } from '@fuse/components/navigation';
+import { PortfolioNavigationItem } from '@portfolio/components/navigation';
 
 export interface Navigation {
-    compact: FuseNavigationItem[];
-    default: FuseNavigationItem[];
-    futuristic: FuseNavigationItem[];
-    horizontal: FuseNavigationItem[];
+    compact: PortfolioNavigationItem[];
+    default: PortfolioNavigationItem[];
+    futuristic: PortfolioNavigationItem[];
+    horizontal: PortfolioNavigationItem[];
 }

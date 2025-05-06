@@ -74,8 +74,8 @@
             <!-- Chat list -->
             <div
                 class="h-full w-16 flex-0 overflow-y-auto overscroll-y-contain sm:overflow-hidden sm:overscroll-auto"
-                fuseScrollbar
-                [fuseScrollbarOptions]="{ wheelPropagation: false }"
+                portfolioScrollbar
+                [portfolioScrollbarOptions]="{ wheelPropagation: false }"
             >
                 <div class="flex-auto">
                     @for (chat of chats; track trackByFn($index, chat)) {
@@ -245,7 +245,7 @@
                         class="flex items-end border-t bg-gray-50 p-4 dark:bg-transparent"
                     >
                         <mat-form-field
-                            class="fuse-mat-dense fuse-mat-rounded fuse-mat-bold w-full"
+                            class="portfolio-mat-dense portfolio-mat-rounded portfolio-mat-bold w-full"
                             [subscriptSizing]="'dynamic'"
                         >
                             <textarea

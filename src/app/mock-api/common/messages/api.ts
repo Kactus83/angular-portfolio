@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService, FuseMockApiUtils } from '@fuse/lib/mock-api';
+import { PortfolioMockApiService, PortfolioMockApiUtils } from '@portfolio/lib/mock-api';
 import { messages as messagesData } from 'app/mock-api/common/messages/data';
 import { assign, cloneDeep } from 'lodash-es';
 
@@ -10,7 +10,7 @@ export class MessagesMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -26,21 +26,21 @@ export class MessagesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Messages - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/common/messages')
             .reply(() => [200, cloneDeep(this._messages)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Messages - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/common/messages')
             .reply(({ request }) => {
                 // Get the message
                 const newMessage = cloneDeep(request.body.message);
 
                 // Generate a new GUID
-                newMessage.id = FuseMockApiUtils.guid();
+                newMessage.id = PortfolioMockApiUtils.guid();
 
                 // Unshift the new message
                 this._messages.unshift(newMessage);
@@ -52,7 +52,7 @@ export class MessagesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Messages - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/common/messages')
             .reply(({ request }) => {
                 // Get the id and message
@@ -86,7 +86,7 @@ export class MessagesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Messages - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/common/messages')
             .reply(({ request }) => {
                 // Get the id
@@ -113,7 +113,7 @@ export class MessagesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Mark all as read - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/common/messages/mark-all-as-read')
             .reply(() => {
                 // Go through all messages
@@ -132,7 +132,7 @@ export class MessagesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Toggle read status - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/common/messages/toggle-read-status')
             .reply(({ request }) => {
                 // Get the message

@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "fuse": {
+        "portfolio": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist/fuse",
+                        "outputPath": "dist/portfolio",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -42,13 +42,13 @@
                             }
                         ],
                         "stylePreprocessorOptions": {
-                            "includePaths": ["src/@fuse/styles"]
+                            "includePaths": ["src/@portfolio/styles"]
                         },
                         "styles": [
-                            "src/@fuse/styles/tailwind.scss",
-                            "src/@fuse/styles/themes.scss",
+                            "src/@portfolio/styles/tailwind.scss",
+                            "src/@portfolio/styles/themes.scss",
                             "src/styles/vendors.scss",
-                            "src/@fuse/styles/main.scss",
+                            "src/@portfolio/styles/main.scss",
                             "src/styles/styles.scss",
                             "src/styles/tailwind.scss"
                         ],
@@ -82,10 +82,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "buildTarget": "fuse:build:production"
+                            "buildTarget": "portfolio:build:production"
                         },
                         "development": {
-                            "buildTarget": "fuse:build:development"
+                            "buildTarget": "portfolio:build:development"
                         }
                     },
                     "defaultConfiguration": "development"

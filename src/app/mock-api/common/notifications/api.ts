@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService, FuseMockApiUtils } from '@fuse/lib/mock-api';
+import { PortfolioMockApiService, PortfolioMockApiUtils } from '@portfolio/lib/mock-api';
 import { notifications as notificationsData } from 'app/mock-api/common/notifications/data';
 import { assign, cloneDeep } from 'lodash-es';
 
@@ -10,7 +10,7 @@ export class NotificationsMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -26,21 +26,21 @@ export class NotificationsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Notifications - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/common/notifications')
             .reply(() => [200, cloneDeep(this._notifications)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Notifications - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/common/notifications')
             .reply(({ request }) => {
                 // Get the notification
                 const newNotification = cloneDeep(request.body.notification);
 
                 // Generate a new GUID
-                newNotification.id = FuseMockApiUtils.guid();
+                newNotification.id = PortfolioMockApiUtils.guid();
 
                 // Unshift the new notification
                 this._notifications.unshift(newNotification);
@@ -52,7 +52,7 @@ export class NotificationsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Notifications - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/common/notifications')
             .reply(({ request }) => {
                 // Get the id and notification
@@ -86,7 +86,7 @@ export class NotificationsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Notifications - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/common/notifications')
             .reply(({ request }) => {
                 // Get the id
@@ -113,7 +113,7 @@ export class NotificationsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Mark all as read - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/common/notifications/mark-all-as-read')
             .reply(() => {
                 // Go through all notifications
@@ -132,7 +132,7 @@ export class NotificationsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Toggle read status - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/common/notifications/toggle-read-status')
             .reply(({ request }) => {
                 // Get the notification

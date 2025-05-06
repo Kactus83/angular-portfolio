@@ -1,0 +1,97 @@
+/* Variables */
+:root {
+    --portfolio-vertical-navigation-thin-width: 80px;
+}
+
+portfolio-vertical-navigation {
+    /* Thin appearance overrides */
+    &.portfolio-vertical-navigation-appearance-thin {
+        width: var(--portfolio-vertical-navigation-thin-width);
+        min-width: var(--portfolio-vertical-navigation-thin-width);
+        max-width: var(--portfolio-vertical-navigation-thin-width);
+
+        /* Left positioned */
+        &.portfolio-vertical-navigation-position-left {
+            &.portfolio-vertical-navigation-mode-side {
+                margin-left: calc(
+                    var(--portfolio-vertical-navigation-thin-width) * -1
+                );
+            }
+
+            &.portfolio-vertical-navigation-opened {
+                margin-left: 0;
+            }
+        }
+
+        /* Right positioned */
+        &.portfolio-vertical-navigation-position-right {
+            &.portfolio-vertical-navigation-mode-side {
+                margin-right: calc(
+                    var(--portfolio-vertical-navigation-thin-width) * -1
+                );
+            }
+
+            &.portfolio-vertical-navigation-opened {
+                margin-right: 0;
+            }
+
+            .portfolio-vertical-navigation-aside-wrapper {
+                left: auto;
+                right: var(--portfolio-vertical-navigation-thin-width);
+            }
+        }
+
+        /* Wrapper */
+        .portfolio-vertical-navigation-wrapper {
+            /* Content */
+            .portfolio-vertical-navigation-content {
+                > portfolio-vertical-navigation-aside-item,
+                > portfolio-vertical-navigation-basic-item {
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 64px;
+                    min-height: 64px;
+                    max-height: 64px;
+                    padding: 0 16px;
+
+                    .portfolio-vertical-navigation-item-wrapper {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .portfolio-vertical-navigation-item {
+                            justify-content: center;
+                            padding: 12px;
+                            border-radius: 4px;
+
+                            .portfolio-vertical-navigation-item-icon {
+                                margin: 0;
+                            }
+
+                            .portfolio-vertical-navigation-item-arrow,
+                            .portfolio-vertical-navigation-item-badge-content,
+                            .portfolio-vertical-navigation-item-title-wrapper {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                > portfolio-vertical-navigation-collapsable-item {
+                    display: none;
+                }
+
+                > portfolio-vertical-navigation-group-item {
+                    > .portfolio-vertical-navigation-item-wrapper {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .portfolio-vertical-navigation-aside-wrapper {
+            left: var(--portfolio-vertical-navigation-thin-width);
+        }
+    }
+}

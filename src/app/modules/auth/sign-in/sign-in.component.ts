@@ -16,11 +16,11 @@ import {
   import { MatButtonModule } from '@angular/material/button';
   import { MatFormFieldModule } from '@angular/material/form-field';
   import { MatInputModule } from '@angular/material/input';
-  import { fuseAnimations } from '@fuse/animations';
+  import { portfolioAnimations } from '@portfolio/animations';
   import {
-    FuseAlertComponent,
-    FuseAlertType
-  } from '@fuse/components/alert';
+    PortfolioAlertComponent,
+    PortfolioAlertType
+  } from '@portfolio/components/alert';
   import { AuthService } from 'app/core/auth/auth.service';
 import { CommonModule } from '@angular/common';
   
@@ -28,7 +28,7 @@ import { CommonModule } from '@angular/common';
     selector: 'auth-sign-in',
     templateUrl: './sign-in.component.html',
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations,
+    animations: portfolioAnimations,
     standalone: true,
     imports: [
       CommonModule,
@@ -38,7 +38,7 @@ import { CommonModule } from '@angular/common';
       MatFormFieldModule,
       MatInputModule,
       MatButtonModule,
-      FuseAlertComponent
+      PortfolioAlertComponent
     ]
   })
   export class AuthSignInComponent implements OnInit {
@@ -57,7 +57,7 @@ import { CommonModule } from '@angular/common';
     /**
      * Type et message de l’alerte.
      */
-    alert: { type: FuseAlertType; message: string } = {
+    alert: { type: PortfolioAlertType; message: string } = {
       type: 'success',
       message: ''
     };

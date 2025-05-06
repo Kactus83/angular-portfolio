@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FuseNavigationItem } from '@fuse/components/navigation';
-import { FuseMockApiService } from '@fuse/lib/mock-api';
+import { PortfolioNavigationItem } from '@portfolio/components/navigation';
+import { PortfolioMockApiService } from '@portfolio/lib/mock-api';
 import {
     compactNavigation,
     defaultNavigation,
@@ -11,19 +11,19 @@ import { cloneDeep } from 'lodash-es';
 
 @Injectable({ providedIn: 'root' })
 export class NavigationMockApi {
-    private readonly _compactNavigation: FuseNavigationItem[] =
+    private readonly _compactNavigation: PortfolioNavigationItem[] =
         compactNavigation;
-    private readonly _defaultNavigation: FuseNavigationItem[] =
+    private readonly _defaultNavigation: PortfolioNavigationItem[] =
         defaultNavigation;
-    private readonly _futuristicNavigation: FuseNavigationItem[] =
+    private readonly _futuristicNavigation: PortfolioNavigationItem[] =
         futuristicNavigation;
-    private readonly _horizontalNavigation: FuseNavigationItem[] =
+    private readonly _horizontalNavigation: PortfolioNavigationItem[] =
         horizontalNavigation;
 
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -39,7 +39,7 @@ export class NavigationMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Navigation - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onGet('api/common/navigation').reply(() => {
+        this._portfolioMockApiService.onGet('api/common/navigation').reply(() => {
             // Fill compact navigation children using the default navigation
             this._compactNavigation.forEach((compactNavItem) => {
                 this._defaultNavigation.forEach((defaultNavItem) => {

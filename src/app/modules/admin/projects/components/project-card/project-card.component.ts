@@ -2,7 +2,7 @@ import { Component, Input }           from '@angular/core';
 import { CommonModule }               from '@angular/common';
 import { RouterModule, RouterLink }   from '@angular/router';
 import { MatIconModule }              from '@angular/material/icon';
-import { FuseCardComponent }          from '@fuse/components/card';
+import { PortfolioCardComponent }          from '@portfolio/components/card';
 import { Project }                    from '../../projects.types';
 
 @Component({
@@ -13,7 +13,7 @@ import { Project }                    from '../../projects.types';
     RouterModule,
     RouterLink,
     MatIconModule,
-    FuseCardComponent
+    PortfolioCardComponent
   ],
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.scss']

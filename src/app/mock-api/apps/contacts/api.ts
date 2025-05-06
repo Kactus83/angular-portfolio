@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService, FuseMockApiUtils } from '@fuse/lib/mock-api';
+import { PortfolioMockApiService, PortfolioMockApiUtils } from '@portfolio/lib/mock-api';
 import {
     contacts as contactsData,
     countries as countriesData,
@@ -17,7 +17,7 @@ export class ContactsMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -33,7 +33,7 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Contacts - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onGet('api/apps/contacts/all').reply(() => {
+        this._portfolioMockApiService.onGet('api/apps/contacts/all').reply(() => {
             // Clone the contacts
             const contacts = cloneDeep(this._contacts);
 
@@ -47,7 +47,7 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Contacts Search - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/contacts/search')
             .reply(({ request }) => {
                 // Get the search query
@@ -78,7 +78,7 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Contact - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/contacts/contact')
             .reply(({ request }) => {
                 // Get the id from the params
@@ -97,12 +97,12 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Contact - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/contacts/contact')
             .reply(() => {
                 // Generate a new contact
                 const newContact = {
-                    id: FuseMockApiUtils.guid(),
+                    id: PortfolioMockApiUtils.guid(),
                     avatar: null,
                     name: 'New Contact',
                     emails: [],
@@ -127,7 +127,7 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Contact - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/contacts/contact')
             .reply(({ request }) => {
                 // Get the id and contact
@@ -155,7 +155,7 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Contact - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/contacts/contact')
             .reply(({ request }) => {
                 // Get the id
@@ -175,28 +175,28 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Countries - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/contacts/countries')
             .reply(() => [200, cloneDeep(this._countries)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Tags - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/contacts/tags')
             .reply(() => [200, cloneDeep(this._tags)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Tags - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/contacts/tag')
             .reply(({ request }) => {
                 // Get the tag
                 const newTag = cloneDeep(request.body.tag);
 
                 // Generate a new GUID
-                newTag.id = FuseMockApiUtils.guid();
+                newTag.id = PortfolioMockApiUtils.guid();
 
                 // Unshift the new tag
                 this._tags.unshift(newTag);
@@ -208,7 +208,7 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tags - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/contacts/tag')
             .reply(({ request }) => {
                 // Get the id and tag
@@ -236,7 +236,7 @@ export class ContactsMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tag - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/contacts/tag')
             .reply(({ request }) => {
                 // Get the id
@@ -291,7 +291,7 @@ export class ContactsMockApi {
                 // Read the file as the
                 reader.readAsDataURL(file);
             });
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/contacts/avatar')
             .reply(({ request }) => {
                 // Get the id and avatar

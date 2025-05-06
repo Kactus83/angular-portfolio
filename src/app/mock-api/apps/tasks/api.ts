@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService } from '@fuse/lib/mock-api/mock-api.service';
-import { FuseMockApiUtils } from '@fuse/lib/mock-api/mock-api.utils';
+import { PortfolioMockApiService } from '@portfolio/lib/mock-api/mock-api.service';
+import { PortfolioMockApiUtils } from '@portfolio/lib/mock-api/mock-api.utils';
 import {
     tags as tagsData,
     tasks as tasksData,
@@ -15,7 +15,7 @@ export class TasksMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -31,21 +31,21 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tags - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/tasks/tags')
             .reply(() => [200, cloneDeep(this._tags)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Tags - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/tasks/tag')
             .reply(({ request }) => {
                 // Get the tag
                 const newTag = cloneDeep(request.body.tag);
 
                 // Generate a new GUID
-                newTag.id = FuseMockApiUtils.guid();
+                newTag.id = PortfolioMockApiUtils.guid();
 
                 // Unshift the new tag
                 this._tags.unshift(newTag);
@@ -56,7 +56,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tags - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/tasks/tag')
             .reply(({ request }) => {
                 // Get the id and tag
@@ -83,7 +83,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tag - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/tasks/tag')
             .reply(({ request }) => {
                 // Get the id
@@ -109,7 +109,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tasks - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onGet('api/apps/tasks/all').reply(() => {
+        this._portfolioMockApiService.onGet('api/apps/tasks/all').reply(() => {
             // Clone the tasks
             const tasks = cloneDeep(this._tasks);
 
@@ -122,7 +122,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tasks Search - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/tasks/search')
             .reply(({ request }) => {
                 // Get the search query
@@ -177,7 +177,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Tasks Orders - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/tasks/order')
             .reply(({ request }) => {
                 // Get the tasks
@@ -201,7 +201,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Task - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/tasks/task')
             .reply(({ request }) => {
                 // Get the id from the params
@@ -219,12 +219,12 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Task - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/tasks/task')
             .reply(({ request }) => {
                 // Generate a new task
                 const newTask = {
-                    id: FuseMockApiUtils.guid(),
+                    id: PortfolioMockApiUtils.guid(),
                     type: request.body.type,
                     title: '',
                     notes: null,
@@ -249,7 +249,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Task - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/tasks/task')
             .reply(({ request }) => {
                 // Get the id and task
@@ -276,7 +276,7 @@ export class TasksMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Task - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/tasks/task')
             .reply(({ request }) => {
                 // Get the id

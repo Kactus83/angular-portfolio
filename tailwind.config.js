@@ -2,7 +2,7 @@ const path = require('path');
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const generatePalette = require(
-    path.resolve(__dirname, 'src/@fuse/tailwind/utils/generate-palette')
+    path.resolve(__dirname, 'src/@portfolio/tailwind/utils/generate-palette')
 );
 
 /**
@@ -194,61 +194,61 @@ const config = {
             typography: ({ theme }) => ({
                 DEFAULT: {
                     css: {
-                        color: 'var(--fuse-text-default)',
+                        color: 'var(--portfolio-text-default)',
                         '[class~="lead"]': {
-                            color: 'var(--fuse-text-secondary)',
+                            color: 'var(--portfolio-text-secondary)',
                         },
                         a: {
-                            color: 'var(--fuse-primary-500)',
+                            color: 'var(--portfolio-primary-500)',
                         },
                         strong: {
-                            color: 'var(--fuse-text-default)',
+                            color: 'var(--portfolio-text-default)',
                         },
                         'ol > li::before': {
-                            color: 'var(--fuse-text-secondary)',
+                            color: 'var(--portfolio-text-secondary)',
                         },
                         'ul > li::before': {
-                            backgroundColor: 'var(--fuse-text-hint)',
+                            backgroundColor: 'var(--portfolio-text-hint)',
                         },
                         hr: {
-                            borderColor: 'var(--fuse-border)',
+                            borderColor: 'var(--portfolio-border)',
                         },
                         blockquote: {
-                            color: 'var(--fuse-text-default)',
-                            borderLeftColor: 'var(--fuse-border)',
+                            color: 'var(--portfolio-text-default)',
+                            borderLeftColor: 'var(--portfolio-border)',
                         },
                         h1: {
-                            color: 'var(--fuse-text-default)',
+                            color: 'var(--portfolio-text-default)',
                         },
                         h2: {
-                            color: 'var(--fuse-text-default)',
+                            color: 'var(--portfolio-text-default)',
                         },
                         h3: {
-                            color: 'var(--fuse-text-default)',
+                            color: 'var(--portfolio-text-default)',
                         },
                         h4: {
-                            color: 'var(--fuse-text-default)',
+                            color: 'var(--portfolio-text-default)',
                         },
                         'figure figcaption': {
-                            color: 'var(--fuse-text-secondary)',
+                            color: 'var(--portfolio-text-secondary)',
                         },
                         code: {
-                            color: 'var(--fuse-text-default)',
+                            color: 'var(--portfolio-text-default)',
                             fontWeight: '500',
                         },
                         'a code': {
-                            color: 'var(--fuse-primary)',
+                            color: 'var(--portfolio-primary)',
                         },
                         pre: {
                             color: theme('colors.white'),
                             backgroundColor: theme('colors.gray.800'),
                         },
                         thead: {
-                            color: 'var(--fuse-text-default)',
-                            borderBottomColor: 'var(--fuse-border)',
+                            color: 'var(--portfolio-text-default)',
+                            borderBottomColor: 'var(--portfolio-border)',
                         },
                         'tbody tr': {
-                            borderBottomColor: 'var(--fuse-border)',
+                            borderBottomColor: 'var(--portfolio-border)',
                         },
                         'ol[type="A" s]': false,
                         'ol[type="a" s]': false,
@@ -282,14 +282,14 @@ const config = {
         verticalAlign: false,
     },
     plugins: [
-        // Fuse - Tailwind plugins
+        // Portfolio - Tailwind plugins
         require(
-            path.resolve(__dirname, 'src/@fuse/tailwind/plugins/utilities')
+            path.resolve(__dirname, 'src/@portfolio/tailwind/plugins/utilities')
         ),
         require(
-            path.resolve(__dirname, 'src/@fuse/tailwind/plugins/icon-size')
+            path.resolve(__dirname, 'src/@portfolio/tailwind/plugins/icon-size')
         ),
-        require(path.resolve(__dirname, 'src/@fuse/tailwind/plugins/theming'))({
+        require(path.resolve(__dirname, 'src/@portfolio/tailwind/plugins/theming'))({
             themes,
         }),
 

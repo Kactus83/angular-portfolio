@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {
-    FuseNavigationItem,
-    FuseNavigationService,
-} from '@fuse/components/navigation';
-import { FuseMockApiService } from '@fuse/lib/mock-api';
+    PortfolioNavigationItem,
+    PortfolioNavigationService,
+} from '@portfolio/components/navigation';
+import { PortfolioMockApiService } from '@portfolio/lib/mock-api';
 import { contacts } from 'app/mock-api/apps/contacts/data';
 import { tasks } from 'app/mock-api/apps/tasks/data';
 import { defaultNavigation } from 'app/mock-api/common/navigation/data';
@@ -11,7 +11,7 @@ import { cloneDeep } from 'lodash-es';
 
 @Injectable({ providedIn: 'root' })
 export class SearchMockApi {
-    private readonly _defaultNavigation: FuseNavigationItem[] =
+    private readonly _defaultNavigation: PortfolioNavigationItem[] =
         defaultNavigation;
     private readonly _contacts: any[] = contacts;
     private readonly _tasks: any[] = tasks;
@@ -20,8 +20,8 @@ export class SearchMockApi {
      * Constructor
      */
     constructor(
-        private _fuseMockApiService: FuseMockApiService,
-        private _fuseNavigationService: FuseNavigationService
+        private _portfolioMockApiService: PortfolioMockApiService,
+        private _portfolioNavigationService: PortfolioNavigationService
     ) {
         // Register Mock API handlers
         this.registerHandlers();
@@ -36,14 +36,14 @@ export class SearchMockApi {
      */
     registerHandlers(): void {
         // Get the flat navigation and store it
-        const flatNavigation = this._fuseNavigationService.getFlatNavigation(
+        const flatNavigation = this._portfolioNavigationService.getFlatNavigation(
             this._defaultNavigation
         );
 
         // -----------------------------------------------------------------------------------------------------
         // @ Search results - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/common/search')
             .reply(({ request }) => {
                 // Get the search query

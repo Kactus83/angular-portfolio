@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiUtils } from '@fuse/lib/mock-api';
-import { FuseMockApiService } from '@fuse/lib/mock-api/mock-api.service';
+import { PortfolioMockApiUtils } from '@portfolio/lib/mock-api';
+import { PortfolioMockApiService } from '@portfolio/lib/mock-api/mock-api.service';
 import {
     labels as labelsData,
     notes as notesData,
@@ -15,7 +15,7 @@ export class NotesMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -31,19 +31,19 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/notes/labels')
             .reply(() => [200, cloneDeep(this._labels)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/notes/labels')
             .reply(({ request }) => {
                 // Create a new label
                 const label = {
-                    id: FuseMockApiUtils.guid(),
+                    id: PortfolioMockApiUtils.guid(),
                     title: request.body.title,
                 };
 
@@ -56,7 +56,7 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/notes/labels')
             .reply(({ request }) => {
                 // Get label
@@ -80,7 +80,7 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/notes/labels')
             .reply(({ request }) => {
                 // Get label id
@@ -101,7 +101,7 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Note Tasks - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/notes/tasks')
             .reply(({ request }) => {
                 // Get note and task
@@ -117,7 +117,7 @@ export class NotesMockApi {
                         }
 
                         note.tasks.push({
-                            id: FuseMockApiUtils.guid(),
+                            id: PortfolioMockApiUtils.guid(),
                             content: task,
                             completed: false,
                         });
@@ -139,7 +139,7 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Notes - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onGet('api/apps/notes/all').reply(() => {
+        this._portfolioMockApiService.onGet('api/apps/notes/all').reply(() => {
             // Clone the labels and notes
             const labels = cloneDeep(this._labels);
             let notes = cloneDeep(this._notes);
@@ -158,14 +158,14 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Notes - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/notes')
             .reply(({ request }) => {
                 // Get note
                 const note = request.body.note;
 
                 // Add an id
-                note.id = FuseMockApiUtils.guid();
+                note.id = PortfolioMockApiUtils.guid();
 
                 // Push the note
                 this._notes.push(note);
@@ -176,7 +176,7 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Notes - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/notes')
             .reply(({ request }) => {
                 // Get note
@@ -199,7 +199,7 @@ export class NotesMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Notes - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/notes')
             .reply(({ request }) => {
                 // Get the id

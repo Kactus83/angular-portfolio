@@ -10,9 +10,9 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import {
-    FuseNavigationService,
-    FuseVerticalNavigationComponent,
-} from '@fuse/components/navigation';
+    PortfolioNavigationService,
+    PortfolioVerticalNavigationComponent,
+} from '@portfolio/components/navigation';
 import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
 import { take } from 'rxjs';
 
@@ -35,7 +35,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
-        private _fuseNavigationService: FuseNavigationService,
+        private _portfolioNavigationService: PortfolioNavigationService,
         private _translocoService: TranslocoService
     ) {}
 
@@ -115,7 +115,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
 
         // Get the component -> navigation data -> item
         const navComponent =
-            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+            this._portfolioNavigationService.getComponent<PortfolioVerticalNavigationComponent>(
                 'mainNavigation'
             );
 
@@ -128,7 +128,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
         const navigation = navComponent.navigation;
 
         // Get the Project dashboard item and update its title
-        const projectDashboardItem = this._fuseNavigationService.getItem(
+        const projectDashboardItem = this._portfolioNavigationService.getItem(
             'dashboards.project',
             navigation
         );
@@ -146,7 +146,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
         }
 
         // Get the Analytics dashboard item and update its title
-        const analyticsDashboardItem = this._fuseNavigationService.getItem(
+        const analyticsDashboardItem = this._portfolioNavigationService.getItem(
             'dashboards.analytics',
             navigation
         );

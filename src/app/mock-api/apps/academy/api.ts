@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService } from '@fuse/lib/mock-api/mock-api.service';
+import { PortfolioMockApiService } from '@portfolio/lib/mock-api/mock-api.service';
 import {
     categories as categoriesData,
     courses as coursesData,
@@ -16,7 +16,7 @@ export class AcademyMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -32,7 +32,7 @@ export class AcademyMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Categories - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/academy/categories')
             .reply(() => {
                 // Clone the categories
@@ -47,7 +47,7 @@ export class AcademyMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Courses - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onGet('api/apps/academy/courses').reply(() => {
+        this._portfolioMockApiService.onGet('api/apps/academy/courses').reply(() => {
             // Clone the courses
             const courses = cloneDeep(this._courses);
 
@@ -57,7 +57,7 @@ export class AcademyMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Course - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/academy/courses/course')
             .reply(({ request }) => {
                 // Get the id from the params

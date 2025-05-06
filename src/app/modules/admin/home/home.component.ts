@@ -96,9 +96,9 @@ export class HomeComponent implements AfterViewInit {
 
       // Reprendre dynamiquement les 3 teintes primaires
       const hexes = [
-        getVar('--fuse-primary'),
-        getVar('--fuse-primary-200'),
-        getVar('--fuse-primary-50')
+        getVar('--portfolio-primary'),
+        getVar('--portfolio-primary-200'),
+        getVar('--portfolio-primary-50')
       ].filter(h => /^#/.test(h));
       // Convertisseur hex → rgb
       const hexToRgb = (h: string) => {

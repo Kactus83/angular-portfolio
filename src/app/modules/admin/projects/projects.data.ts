@@ -227,7 +227,7 @@ export const PROJECTS: Project[] = [
     technicalChoices:
       '– Passport-JWT & AuthGuard/RolesGuard dans NestJS pour sécuriser API & CLI;\n– Prisma pour migrations et typage BD;\n– Angular PWA-ready + Tailwind/SCSS pour le front;\n– Solidity pour smart contracts blockchain;\n– Docker multi-stage et Terraform pour CI/CD reproductible;\n– Tauri/Rust pour UX native multi-plateforme.',
     technicalReflections:
-      'J’envisage de refondre le domaine d’auth du backend pour utiliser uniformément les stratégies Passport (OAuth, JWT, etc.), et de réécrire le frontend en tant qu’“add-on” pour Fuse afin d’assurer une intégration transparente et pérenne.',
+      'J’envisage de refondre le domaine d’auth du backend pour utiliser uniformément les stratégies Passport (OAuth, JWT, etc.), et de réécrire le frontend en tant qu’“add-on” pour Portfolio afin d’assurer une intégration transparente et pérenne.',
     difficulties:
       '– Taille croissante du monorepo et complexité du déploiement en production;\n– Fréquence élevée des mises à jour Angular/CLI/Dépendances;\n– Charge de maintenance documentaire et code, notamment pour la synchronisation des submodules et la compatibilité infra;\n– Orchestration zéro-touch du provisioning cloud via Terraform & scripts.',
     gallery: []

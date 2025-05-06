@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService, FuseMockApiUtils } from '@fuse/lib/mock-api';
+import { PortfolioMockApiService, PortfolioMockApiUtils } from '@portfolio/lib/mock-api';
 import {
     filters as filtersData,
     folders as foldersData,
@@ -20,7 +20,7 @@ export class MailboxMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -36,14 +36,14 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Settings - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/mailbox/settings')
             .reply(() => [200, cloneDeep(this._settings)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Settings - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/mailbox/settings')
             .reply(({ request }) => {
                 // Get the settings
@@ -59,7 +59,7 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Folders - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onGet('api/apps/mailbox/folders').reply(() => {
+        this._portfolioMockApiService.onGet('api/apps/mailbox/folders').reply(() => {
             let count = 0;
 
             // Iterate through the folders
@@ -107,28 +107,28 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Filters - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/mailbox/filters')
             .reply(() => [200, cloneDeep(this._filters)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/mailbox/labels')
             .reply(() => [200, cloneDeep(this._labels)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/mailbox/label')
             .reply(({ request }) => {
                 // Get the label
                 const label = cloneDeep(request.body.label);
 
                 // Generate an id
-                label.id = FuseMockApiUtils.guid();
+                label.id = PortfolioMockApiUtils.guid();
 
                 // Generate a slug
                 label.slug = label.title
@@ -164,7 +164,7 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/mailbox/label')
             .reply(({ request }) => {
                 // Get the id and label
@@ -199,7 +199,7 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/mailbox/label')
             .reply(({ request }) => {
                 // Get the id
@@ -226,7 +226,7 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Mails - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/mailbox/mails', 625)
             .reply(({ request }) => {
                 // First, decide if mails are requested by folder, filter or label
@@ -327,7 +327,7 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Mail - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/mailbox/mail')
             .reply(({ request }) => {
                 // Get the id from the params
@@ -345,7 +345,7 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Mail - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/mailbox/mail')
             .reply(({ request }) => {
                 // Get the id and mail

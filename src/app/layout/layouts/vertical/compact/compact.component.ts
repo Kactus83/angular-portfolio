@@ -2,13 +2,13 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
-import { FuseLoadingBarComponent } from '@fuse/components/loading-bar';
+import { PortfolioFullscreenComponent } from '@portfolio/components/fullscreen';
+import { PortfolioLoadingBarComponent } from '@portfolio/components/loading-bar';
 import {
-    FuseNavigationService,
-    FuseVerticalNavigationComponent,
-} from '@fuse/components/navigation';
-import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
+    PortfolioNavigationService,
+    PortfolioVerticalNavigationComponent,
+} from '@portfolio/components/navigation';
+import { PortfolioMediaWatcherService } from '@portfolio/services/media-watcher';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { Navigation } from 'app/core/navigation/navigation.types';
 import { LanguagesComponent } from 'app/layout/common/languages/languages.component';
@@ -26,11 +26,11 @@ import { Subject, takeUntil } from 'rxjs';
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [
-        FuseLoadingBarComponent,
+        PortfolioLoadingBarComponent,
         MatButtonModule,
         MatIconModule,
         LanguagesComponent,
-        FuseFullscreenComponent,
+        PortfolioFullscreenComponent,
         SearchComponent,
         ShortcutsComponent,
         MessagesComponent,
@@ -38,7 +38,7 @@ import { Subject, takeUntil } from 'rxjs';
         UserComponent,
         RouterOutlet,
         QuickChatComponent,
-        FuseVerticalNavigationComponent,
+        PortfolioVerticalNavigationComponent,
     ],
 })
 export class CompactLayoutComponent implements OnInit, OnDestroy {
@@ -53,8 +53,8 @@ export class CompactLayoutComponent implements OnInit, OnDestroy {
         private _activatedRoute: ActivatedRoute,
         private _router: Router,
         private _navigationService: NavigationService,
-        private _fuseMediaWatcherService: FuseMediaWatcherService,
-        private _fuseNavigationService: FuseNavigationService
+        private _portfolioMediaWatcherService: PortfolioMediaWatcherService,
+        private _portfolioNavigationService: PortfolioNavigationService
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ export class CompactLayoutComponent implements OnInit, OnDestroy {
             });
 
         // Subscribe to media changes
-        this._fuseMediaWatcherService.onMediaChange$
+        this._portfolioMediaWatcherService.onMediaChange$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(({ matchingAliases }) => {
                 // Check if the screen is small
@@ -113,7 +113,7 @@ export class CompactLayoutComponent implements OnInit, OnDestroy {
     toggleNavigation(name: string): void {
         // Get the navigation
         const navigation =
-            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+            this._portfolioNavigationService.getComponent<PortfolioVerticalNavigationComponent>(
                 name
             );
 

@@ -7,7 +7,7 @@ import { VeilleService } from '../../veille.service';
 import { Article } from '../../veille.types';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { FuseCardComponent } from '@fuse/components/card';
+import { PortfolioCardComponent } from '@portfolio/components/card';
 
 @Component({
   selector           : 'app-veille-article',
@@ -17,7 +17,7 @@ import { FuseCardComponent } from '@fuse/components/card';
     RouterModule,
     MatIconModule,
     MatButtonModule,
-    FuseCardComponent
+    PortfolioCardComponent
   ],
   templateUrl        : './veille-article.component.html',
   changeDetection    : ChangeDetectionStrategy.OnPush

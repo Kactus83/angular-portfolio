@@ -1,7 +1,7 @@
 /* eslint-disable */
-import { FuseNavigationItem } from '@fuse/components/navigation';
+import { PortfolioNavigationItem } from '@portfolio/components/navigation';
 
-export const defaultNavigation: FuseNavigationItem[] = [
+export const defaultNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
         title: 'Accueil',
@@ -53,7 +53,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
     }
 ];
 
-export const compactNavigation: FuseNavigationItem[] = [
+export const compactNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
         title: 'Accueil',
@@ -105,7 +105,7 @@ export const compactNavigation: FuseNavigationItem[] = [
     }
 ];
 
-export const futuristicNavigation: FuseNavigationItem[] = [
+export const futuristicNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
         title: 'Accueil',
@@ -157,7 +157,7 @@ export const futuristicNavigation: FuseNavigationItem[] = [
     }
 ];
 
-export const horizontalNavigation: FuseNavigationItem[] = [
+export const horizontalNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
         title: 'Accueil',

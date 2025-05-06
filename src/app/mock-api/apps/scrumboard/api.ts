@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService, FuseMockApiUtils } from '@fuse/lib/mock-api';
+import { PortfolioMockApiService, PortfolioMockApiUtils } from '@portfolio/lib/mock-api';
 import {
     boards as boardsData,
     cards as cardsData,
@@ -21,7 +21,7 @@ export class ScrumboardMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -37,7 +37,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Boards - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/scrumboard/boards')
             .reply(({ request }) => {
                 // Clone the boards
@@ -59,7 +59,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Board - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/scrumboard/board')
             .reply(({ request }) => {
                 // Get the id
@@ -103,14 +103,14 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ List - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/apps/scrumboard/board/list')
             .reply(({ request }) => {
                 // Get the list
                 const newList = cloneDeep(request.body.list);
 
                 // Generate a new GUID
-                newList.id = FuseMockApiUtils.guid();
+                newList.id = PortfolioMockApiUtils.guid();
 
                 // Store the new list
                 this._lists.push(newList);
@@ -121,7 +121,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ List - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/scrumboard/board/list')
             .reply(({ request }) => {
                 // Get the list
@@ -147,7 +147,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Lists - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/scrumboard/board/lists')
             .reply(({ request }) => {
                 // Get the lists
@@ -176,7 +176,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ List - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/scrumboard/board/list')
             .reply(({ request }) => {
                 // Get the id
@@ -195,14 +195,14 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Card - PUT
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPut('api/apps/scrumboard/board/card')
             .reply(({ request }) => {
                 // Get the card
                 const newCard = cloneDeep(request.body.card);
 
                 // Generate a new GUID
-                newCard.id = FuseMockApiUtils.guid();
+                newCard.id = PortfolioMockApiUtils.guid();
 
                 // Unshift the new card
                 this._cards.push(newCard);
@@ -213,7 +213,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Card - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/scrumboard/board/card')
             .reply(({ request }) => {
                 // Get the id and card
@@ -248,7 +248,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Cards - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/scrumboard/board/cards')
             .reply(({ request }) => {
                 // Get the cards
@@ -285,7 +285,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Card - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/scrumboard/board/card')
             .reply(({ request }) => {
                 // Get the id
@@ -301,7 +301,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Card Positions - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/scrumboard/board/card/positions')
             .reply(({ request }) => {
                 // Get the cards
@@ -328,7 +328,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onGet('api/apps/scrumboard/board/labels')
             .reply(({ request }) => {
                 // Get the board id
@@ -345,14 +345,14 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Label - PUT
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPut('api/apps/scrumboard/board/label')
             .reply(({ request }) => {
                 // Get the label
                 const newLabel = cloneDeep(request.body.label);
 
                 // Generate a new GUID
-                newLabel.id = FuseMockApiUtils.guid();
+                newLabel.id = PortfolioMockApiUtils.guid();
 
                 // Unshift the new label
                 this._labels.unshift(newLabel);
@@ -363,7 +363,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Label - PATCH
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPatch('api/apps/scrumboard/board/label')
             .reply(({ request }) => {
                 // Get the id and label
@@ -390,7 +390,7 @@ export class ScrumboardMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Label - DELETE
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onDelete('api/apps/scrumboard/board/label')
             .reply(({ request }) => {
                 // Get the id

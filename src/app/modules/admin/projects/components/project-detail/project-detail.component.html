@@ -13,23 +13,23 @@
     <!-- Contenu -->
     <div class="flex-auto overflow-auto p-6 sm:p-10 space-y-6">
       <!-- Couverture -->
-      <fuse-card class="overflow-hidden">
+      <portfolio-card class="overflow-hidden">
         <img
           *ngIf="project.imageUrl"
           [src]="project.imageUrl"
           [alt]="project.title"
           class="w-full h-56 object-cover"
         />
-      </fuse-card>
+      </portfolio-card>
 
       <!-- Description -->
-      <fuse-card class="p-6">
+      <portfolio-card class="p-6">
         <h2 class="text-2xl font-semibold mb-4">Description</h2>
         <p class="text-base leading-relaxed">{{ project.description }}</p>
-      </fuse-card>
+      </portfolio-card>
 
       <!-- Répartition du code -->
-      <fuse-card *ngIf="project.languageUsage?.length" class="p-6">
+      <portfolio-card *ngIf="project.languageUsage?.length" class="p-6">
         <h2 class="text-2xl font-semibold mb-4">Répartition du code</h2>
         <div class="space-y-4">
           <div
@@ -45,10 +45,10 @@
             <span class="text-secondary">{{ lang.percent }} %</span>
           </div>
         </div>
-      </fuse-card>
+      </portfolio-card>
 
       <!-- Sous-compétences -->
-      <fuse-card *ngIf="project.subSkills?.length" class="p-6">
+      <portfolio-card *ngIf="project.subSkills?.length" class="p-6">
         <h2 class="text-2xl font-semibold mb-4">Sous-compétences</h2>
         <div class="space-y-4">
           <div
@@ -64,10 +64,10 @@
             <span class="text-secondary">{{ ss.mastery }} %</span>
           </div>
         </div>
-      </fuse-card>
+      </portfolio-card>
 
       <!-- Galerie -->
-      <fuse-card *ngIf="project.gallery?.length" class="p-6">
+      <portfolio-card *ngIf="project.gallery?.length" class="p-6">
         <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <img
@@ -77,10 +77,10 @@
             [alt]="project.title"
           />
         </div>
-      </fuse-card>
+      </portfolio-card>
 
       <!-- Détails techniques -->
-      <fuse-card class="p-6">
+      <portfolio-card class="p-6">
         <h2 class="text-2xl font-semibold mb-4">Détails techniques</h2>
         <dl class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ng-container *ngIf="project.history">
@@ -104,7 +104,7 @@
             <dd>{{ project.difficulties }}</dd>
           </ng-container>
         </dl>
-      </fuse-card>
+      </portfolio-card>
 
       <!-- Liens externes -->
       <div class="flex space-x-4">

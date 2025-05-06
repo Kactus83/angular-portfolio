@@ -8,10 +8,10 @@ import {
     ViewEncapsulation,
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { FuseConfig, FuseConfigService } from '@fuse/services/config';
-import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
-import { FusePlatformService } from '@fuse/services/platform';
-import { FUSE_VERSION } from '@fuse/version';
+import { PortfolioConfig, PortfolioConfigService } from '@portfolio/services/config';
+import { PortfolioMediaWatcherService } from '@portfolio/services/media-watcher';
+import { PortfolioPlatformService } from '@portfolio/services/platform';
+import { PORTFOLIO_VERSION } from '@portfolio/version';
 import { Subject, combineLatest, filter, map, takeUntil } from 'rxjs';
 import { SettingsComponent } from './common/settings/settings.component';
 import { EmptyLayoutComponent } from './layouts/empty/empty.component';
@@ -48,7 +48,7 @@ import { ThinLayoutComponent } from './layouts/vertical/thin/thin.component';
     ],
 })
 export class LayoutComponent implements OnInit, OnDestroy {
-    config: FuseConfig;
+    config: PortfolioConfig;
     layout: string;
     scheme: 'dark' | 'light';
     theme: string;
@@ -62,9 +62,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
         @Inject(DOCUMENT) private _document: any,
         private _renderer2: Renderer2,
         private _router: Router,
-        private _fuseConfigService: FuseConfigService,
-        private _fuseMediaWatcherService: FuseMediaWatcherService,
-        private _fusePlatformService: FusePlatformService
+        private _portfolioConfigService: PortfolioConfigService,
+        private _portfolioMediaWatcherService: PortfolioMediaWatcherService,
+        private _portfolioPlatformService: PortfolioPlatformService
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -77,8 +77,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         // Set the theme and scheme based on the configuration
         combineLatest([
-            this._fuseConfigService.config$,
-            this._fuseMediaWatcherService.onMediaQueryChange$([
+            this._portfolioConfigService.config$,
+            this._portfolioMediaWatcherService.onMediaQueryChange$([
                 '(prefers-color-scheme: dark)',
                 '(prefers-color-scheme: light)',
             ]),
@@ -115,9 +115,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
             });
 
         // Subscribe to config changes
-        this._fuseConfigService.config$
+        this._portfolioConfigService.config$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((config: FuseConfig) => {
+            .subscribe((config: PortfolioConfig) => {
                 // Store the config
                 this.config = config;
 
@@ -139,14 +139,14 @@ export class LayoutComponent implements OnInit, OnDestroy {
         // Set the app version
         this._renderer2.setAttribute(
             this._document.querySelector('[ng-version]'),
-            'fuse-version',
-            FUSE_VERSION
+            'portfolio-version',
+            PORTFOLIO_VERSION
         );
 
         // Set the OS name
         this._renderer2.addClass(
             this._document.body,
-            this._fusePlatformService.osName
+            this._portfolioPlatformService.osName
         );
     }
 

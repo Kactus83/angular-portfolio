@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule }       from '@angular/m
 import { MatIconModule }                                        from '@angular/material/icon';
 import { MatProgressBarModule }                                 from '@angular/material/progress-bar';
 import { MatButtonModule }                                      from '@angular/material/button';
-import { FuseCardComponent }                                    from '@fuse/components/card';
+import { PortfolioCardComponent }                                    from '@portfolio/components/card';
 import { RouterModule }                                         from '@angular/router';
 import { Skill, MasteryLevel, SubSkill }                        from '../../skills.types';
 import { Project }                                              from 'app/modules/admin/projects/projects.types';
@@ -23,7 +23,7 @@ interface DialogData {
     MatIconModule,
     MatProgressBarModule,
     MatButtonModule,
-    FuseCardComponent,
+    PortfolioCardComponent,
     RouterModule
   ],
   templateUrl: './skill-detail-dialog.component.html',

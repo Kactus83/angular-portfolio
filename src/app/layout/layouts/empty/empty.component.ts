@@ -1,6 +1,6 @@
 import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FuseLoadingBarComponent } from '@fuse/components/loading-bar';
+import { PortfolioLoadingBarComponent } from '@portfolio/components/loading-bar';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
     templateUrl: './empty.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [FuseLoadingBarComponent, RouterOutlet],
+    imports: [PortfolioLoadingBarComponent, RouterOutlet],
 })
 export class EmptyLayoutComponent implements OnDestroy {
     private _unsubscribeAll: Subject<any> = new Subject<any>();

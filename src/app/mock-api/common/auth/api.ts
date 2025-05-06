@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FuseMockApiService } from '@fuse/lib/mock-api';
+import { PortfolioMockApiService } from '@portfolio/lib/mock-api';
 import { user as userData } from 'app/mock-api/common/user/data';
 import Base64 from 'crypto-js/enc-base64';
 import Utf8 from 'crypto-js/enc-utf8';
@@ -14,7 +14,7 @@ export class AuthMockApi {
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService) {
+    constructor(private _portfolioMockApiService: PortfolioMockApiService) {
         // Set the mock-api
         this._secret =
             'YOUR_VERY_CONFIDENTIAL_SECRET_FOR_SIGNING_JWT_TOKENS!!!';
@@ -34,21 +34,21 @@ export class AuthMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Forgot password - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/auth/forgot-password', 1000)
             .reply(() => [200, true]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Reset password - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/auth/reset-password', 1000)
             .reply(() => [200, true]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Sign in - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/auth/sign-in', 1500)
             .reply(({ request }) => {
                 // Sign in successful
@@ -73,7 +73,7 @@ export class AuthMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Sign in using the access token - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/auth/sign-in-with-token')
             .reply(({ request }) => {
                 // Get the access token
@@ -103,7 +103,7 @@ export class AuthMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Sign up - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onPost('api/auth/sign-up', 1500).reply(() =>
+        this._portfolioMockApiService.onPost('api/auth/sign-up', 1500).reply(() =>
             // Simply return true
             [200, true]
         );
@@ -111,7 +111,7 @@ export class AuthMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Unlock session - POST
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService
+        this._portfolioMockApiService
             .onPost('api/auth/unlock-session', 1500)
             .reply(({ request }) => {
                 // Sign in successful
@@ -182,7 +182,7 @@ export class AuthMockApi {
         // Define token payload
         const payload = {
             iat: iat,
-            iss: 'Fuse',
+            iss: 'Portfolio',
             exp: exp,
         };
 

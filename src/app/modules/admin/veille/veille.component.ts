@@ -3,7 +3,7 @@ import { CommonModule }      from '@angular/common';
 import { RouterModule }      from '@angular/router';
 import { MatIconModule }     from '@angular/material/icon';
 import { MatButtonModule }   from '@angular/material/button';
-import { FuseCardComponent } from '@fuse/components/card';
+import { PortfolioCardComponent } from '@portfolio/components/card';
 
 import { VeilleService } from './veille.service';
 import { Sector, Article } from './veille.types';
@@ -16,7 +16,7 @@ import { Sector, Article } from './veille.types';
     RouterModule,
     MatIconModule,
     MatButtonModule,
-    FuseCardComponent
+    PortfolioCardComponent
   ],
   templateUrl: './veille.component.html',
   styleUrls  : ['./veille.component.scss']

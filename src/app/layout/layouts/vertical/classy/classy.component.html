@@ -1,8 +1,8 @@
 <!-- Loading bar -->
-<fuse-loading-bar></fuse-loading-bar>
+<portfolio-loading-bar></portfolio-loading-bar>
 
 <!-- Navigation -->
-<fuse-vertical-navigation
+<portfolio-vertical-navigation
     class="dark bg-gray-900 print:hidden"
     [mode]="isScreenSmall ? 'over' : 'side'"
     [name]="'mainNavigation'"
@@ -10,7 +10,7 @@
     [opened]="!isScreenSmall"
 >
     <!-- Navigation header hook -->
-    <ng-container fuseVerticalNavigationContentHeader>
+    <ng-container portfolioVerticalNavigationContentHeader>
         <div class="flex w-full items-center p-4 pl-6">
             <!-- Logo -->
             <div class="flex items-center justify-center">
@@ -54,14 +54,14 @@
         </div>
     </ng-container>
     <!-- Navigation footer hook -->
-    <ng-container fuseVerticalNavigationContentFooter>
+    <ng-container portfolioVerticalNavigationContentFooter>
         <div
             class="mb-4 mt-2 flex h-16 flex-0 items-center justify-center pl-2 pr-6 opacity-12"
         >
             <img class="max-w-36" src="images/logo/logo-text-on-dark.svg" />
         </div>
     </ng-container>
-</fuse-vertical-navigation>
+</portfolio-vertical-navigation>
 
 <!-- Wrapper -->
 <div class="flex w-full min-w-0 flex-auto flex-col">
@@ -76,7 +76,7 @@
         <!-- Components -->
         <div class="ml-auto flex items-center space-x-0.5 pl-2 sm:space-x-2">
             <languages></languages>
-            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
+            <portfolio-fullscreen class="hidden md:block"></portfolio-fullscreen>
             <search [appearance]="'bar'"></search>
             <shortcuts></shortcuts>
             <messages></messages>
@@ -103,7 +103,7 @@
 
     <!-- Footer -->
     <!--<div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
-        <span class="font-medium text-secondary">Fuse &copy; {{currentYear}}</span>
+        <span class="font-medium text-secondary">Florian MORENA &copy; {{currentYear}}</span>
     </div>-->
 </div>
 

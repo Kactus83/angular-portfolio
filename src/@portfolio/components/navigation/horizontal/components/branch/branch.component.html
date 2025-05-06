@@ -1,0 +1,135 @@
+@if (!child) {
+    <div
+        [ngClass]="{
+            'portfolio-horizontal-navigation-menu-active': trigger.menuOpen,
+            'portfolio-horizontal-navigation-menu-active-forced': item.active,
+        }"
+        [matMenuTriggerFor]="matMenu"
+        (onMenuOpen)="triggerChangeDetection()"
+        (onMenuClose)="triggerChangeDetection()"
+        #trigger="matMenuTrigger"
+    >
+        <ng-container
+            *ngTemplateOutlet="itemTemplate; context: { $implicit: item }"
+        ></ng-container>
+    </div>
+}
+
+<mat-menu
+    class="portfolio-horizontal-navigation-menu-panel"
+    [overlapTrigger]="false"
+    #matMenu="matMenu"
+>
+    @for (item of item.children; track trackByFn($index, item)) {
+        <!-- Skip the hidden items -->
+        @if ((item.hidden && !item.hidden(item)) || !item.hidden) {
+            <!-- Basic -->
+            @if (item.type === 'basic') {
+                <div
+                    class="portfolio-horizontal-navigation-menu-item"
+                    [disabled]="item.disabled"
+                    mat-menu-item
+                >
+                    <portfolio-horizontal-navigation-basic-item
+                        [item]="item"
+                        [name]="name"
+                    ></portfolio-horizontal-navigation-basic-item>
+                </div>
+            }
+
+            <!-- Branch: aside, collapsable, group -->
+            @if (
+                item.type === 'aside' ||
+                item.type === 'collapsable' ||
+                item.type === 'group'
+            ) {
+                <div
+                    class="portfolio-horizontal-navigation-menu-item"
+                    [disabled]="item.disabled"
+                    [matMenuTriggerFor]="branch.matMenu"
+                    mat-menu-item
+                >
+                    <ng-container
+                        *ngTemplateOutlet="
+                            itemTemplate;
+                            context: { $implicit: item }
+                        "
+                    ></ng-container>
+                    <portfolio-horizontal-navigation-branch-item
+                        [child]="true"
+                        [item]="item"
+                        [name]="name"
+                        #branch
+                    ></portfolio-horizontal-navigation-branch-item>
+                </div>
+            }
+
+            <!-- Divider -->
+            @if (item.type === 'divider') {
+                <div class="portfolio-horizontal-navigation-menu-item" mat-menu-item>
+                    <portfolio-horizontal-navigation-divider-item
+                        [item]="item"
+                        [name]="name"
+                    ></portfolio-horizontal-navigation-divider-item>
+                </div>
+            }
+        }
+    }
+</mat-menu>
+
+<!-- Item template -->
+<ng-template let-item #itemTemplate>
+    <div
+        class="portfolio-horizontal-navigation-item-wrapper"
+        [class.portfolio-horizontal-navigation-item-has-subtitle]="!!item.subtitle"
+        [ngClass]="item.classes?.wrapper"
+    >
+        <div
+            class="portfolio-horizontal-navigation-item"
+            [ngClass]="{
+                'portfolio-horizontal-navigation-item-disabled': item.disabled,
+                'portfolio-horizontal-navigation-item-active-forced': item.active,
+            }"
+            [matTooltip]="item.tooltip || ''"
+        >
+            <!-- Icon -->
+            @if (item.icon) {
+                <mat-icon
+                    class="portfolio-horizontal-navigation-item-icon"
+                    [ngClass]="item.classes?.icon"
+                    [svgIcon]="item.icon"
+                ></mat-icon>
+            }
+
+            <!-- Title & Subtitle -->
+            <div class="portfolio-horizontal-navigation-item-title-wrapper">
+                <div class="portfolio-horizontal-navigation-item-title">
+                    <span [ngClass]="item.classes?.title">
+                        {{ item.title }}
+                    </span>
+                </div>
+                @if (item.subtitle) {
+                    <div
+                        class="portfolio-horizontal-navigation-item-subtitle text-hint"
+                    >
+                        <span [ngClass]="item.classes?.subtitle">
+                            {{ item.subtitle }}
+                        </span>
+                    </div>
+                }
+            </div>
+
+            <!-- Badge -->
+            @if (item.badge) {
+                <div class="portfolio-horizontal-navigation-item-badge">
+                    <div
+                        class="portfolio-horizontal-navigation-item-badge-content"
+                        [ngClass]="item.badge.classes"
+                    >
+                        {{ item.badge.title }}
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</ng-template>

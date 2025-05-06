@@ -9,7 +9,7 @@ import {
     withInMemoryScrolling,
     withPreloading,
 } from '@angular/router';
-import { provideFuse } from '@fuse';
+import { providePortfolio } from '@portfolio';
 import { TranslocoService, provideTransloco } from '@ngneat/transloco';
 import { appRoutes } from 'app/app.routes';
 import { provideAuth } from 'app/core/auth/auth.provider';
@@ -81,15 +81,15 @@ export const appConfig: ApplicationConfig = {
             multi: true,
         },
 
-        // Fuse
+        // Portfolio
         provideAuth(),
         provideIcons(),
-        provideFuse({
+        providePortfolio({
             mockApi: {
                 delay: 0,
                 services: mockApiServices,
             },
-            fuse: {
+            portfolio: {
                 layout: 'modern',
                 scheme: 'light',
                 screens: {

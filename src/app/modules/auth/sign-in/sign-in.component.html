@@ -26,14 +26,14 @@
       </div>
 
       <!-- Alerte d’erreur/succès -->
-      <fuse-alert
+      <portfolio-alert
         *ngIf="showAlert"
         class="mt-8"
         appearance="outline"
         [type]="alert.type"
       >
         {{ alert.message }}
-      </fuse-alert>
+      </portfolio-alert>
 
       <!-- Formulaire de connexion -->
       <form
@@ -71,7 +71,7 @@
         <button
           mat-flat-button
           color="primary"
-          class="fuse-mat-button-large mt-6 w-full"
+          class="portfolio-mat-button-large mt-6 w-full"
           [disabled]="signInForm.invalid"
           (click)="signIn()"
         >
@@ -81,7 +81,7 @@
         <!-- Bouton Invité -->
         <button
           mat-flat-button
-          class="fuse-mat-button-large mt-4 w-full bg-teal-950 text-white hover:bg-gray-800"
+          class="portfolio-mat-button-large mt-4 w-full bg-teal-950 text-white hover:bg-gray-800"
           type="button"
           (click)="continueAsGuest()"
         >

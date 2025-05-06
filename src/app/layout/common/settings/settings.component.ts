@@ -4,14 +4,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
-import { FuseDrawerComponent } from '@fuse/components/drawer';
+import { PortfolioDrawerComponent } from '@portfolio/components/drawer';
 import {
-    FuseConfig,
-    FuseConfigService,
+    PortfolioConfig,
+    PortfolioConfigService,
     Scheme,
     Theme,
     Themes,
-} from '@fuse/services/config';
+} from '@portfolio/services/config';
 
 import { Subject, takeUntil } from 'rxjs';
 
@@ -38,14 +38,14 @@ import { Subject, takeUntil } from 'rxjs';
     standalone: true,
     imports: [
         MatIconModule,
-        FuseDrawerComponent,
+        PortfolioDrawerComponent,
         MatButtonModule,
         NgClass,
         MatTooltipModule,
     ],
 })
 export class SettingsComponent implements OnInit, OnDestroy {
-    config: FuseConfig;
+    config: PortfolioConfig;
     layout: string;
     scheme: 'dark' | 'light';
     theme: string;
@@ -57,7 +57,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _router: Router,
-        private _fuseConfigService: FuseConfigService
+        private _portfolioConfigService: PortfolioConfigService
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -69,9 +69,9 @@ export class SettingsComponent implements OnInit, OnDestroy {
      */
     ngOnInit(): void {
         // Subscribe to config changes
-        this._fuseConfigService.config$
+        this._portfolioConfigService.config$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((config: FuseConfig) => {
+            .subscribe((config: PortfolioConfig) => {
                 // Store the config
                 this.config = config;
             });
@@ -106,7 +106,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
             })
             .then(() => {
                 // Set the config
-                this._fuseConfigService.config = { layout };
+                this._portfolioConfigService.config = { layout };
             });
     }
 
@@ -116,7 +116,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
      * @param scheme
      */
     setScheme(scheme: Scheme): void {
-        this._fuseConfigService.config = { scheme };
+        this._portfolioConfigService.config = { scheme };
     }
 
     /**
@@ -125,6 +125,6 @@ export class SettingsComponent implements OnInit, OnDestroy {
      * @param theme
      */
     setTheme(theme: Theme): void {
-        this._fuseConfigService.config = { theme };
+        this._portfolioConfigService.config = { theme };
     }
 }

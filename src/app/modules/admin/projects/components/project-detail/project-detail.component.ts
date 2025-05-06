@@ -4,7 +4,7 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
 import { MatButtonModule }           from '@angular/material/button';
 import { MatIconModule }             from '@angular/material/icon';
 import { MatProgressBarModule }      from '@angular/material/progress-bar';
-import { FuseCardComponent }         from '@fuse/components/card';
+import { PortfolioCardComponent }         from '@portfolio/components/card';
 import { Observable }                from 'rxjs';
 import { switchMap }                 from 'rxjs/operators';
 import { Project }                   from '../../projects.types';
@@ -19,7 +19,7 @@ import { ProjectsService }           from '../../projects.service';
     MatButtonModule,
     MatIconModule,
     MatProgressBarModule,
-    FuseCardComponent
+    PortfolioCardComponent
   ],
   templateUrl: './project-detail.component.html'
 })

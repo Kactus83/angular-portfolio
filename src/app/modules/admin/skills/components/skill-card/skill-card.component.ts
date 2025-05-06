@@ -2,7 +2,7 @@ import { Component, Input }             from '@angular/core';
 import { CommonModule }                 from '@angular/common';
 import { MatDialog, MatDialogModule }   from '@angular/material/dialog';
 import { MatIconModule }                from '@angular/material/icon';
-import { FuseCardComponent }            from '@fuse/components/card';
+import { PortfolioCardComponent }            from '@portfolio/components/card';
 import { Skill, MasteryLevel }          from '../../skills.types';
 import { Project }                      from 'app/modules/admin/projects/projects.types';
 import { SkillDetailDialogComponent }   from '../skill-detail-dialog/skill-detail-dialog.component';
@@ -12,7 +12,7 @@ import { SkillDetailDialogComponent }   from '../skill-detail-dialog/skill-detai
   standalone: true,
   imports: [
     CommonModule,
-    FuseCardComponent,
+    PortfolioCardComponent,
     MatIconModule,
     MatDialogModule
   ],
