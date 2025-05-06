@@ -46,10 +46,7 @@
       class="mt-4 bg-on-accent/10 p-4 rounded-2xl max-w-prose w-full"
     >
       <p class="text-base sm:text-lg leading-relaxed">
-        Développeur passionné, j’ai conçu ce portfolio dans le cadre de
-        l’examen BTS SIO, inspiré des applications modernes et structuré selon
-        les meilleures pratiques professionnelles pour garantir qualité de
-        code et expérience utilisateur optimale.
+        {{ 'home.description' | transloco }}
       </p>
     </div>
   </div>
@@ -70,10 +67,10 @@
           class="icon-size-8 text-primary"
         ></mat-icon>
         <div class="mt-4 text-lg font-semibold text-primary">
-          {{ s.title }}
+          {{ s.title | transloco }}
         </div>
         <div class="mt-2 text-secondary">
-          {{ s.desc }}
+          {{ s.desc | transloco }}
         </div>
       </a>
     </div>

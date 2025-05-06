@@ -11,8 +11,9 @@ import { RouterLink }     from '@angular/router';
 import { MatIconModule }  from '@angular/material/icon';
 import { UserService }    from 'app/core/user/user.service';
 import { Observable }     from 'rxjs';
-import { map }            from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { TypewriterDirective } from './directives/typewriter.directive';
+import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
 
 interface Section {
   title: string;
@@ -28,7 +29,8 @@ interface Section {
     CommonModule,
     RouterLink,
     MatIconModule,
-    TypewriterDirective
+    TypewriterDirective,
+    TranslocoModule
   ],
   templateUrl    : './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -39,26 +41,58 @@ export class HomeComponent implements AfterViewInit {
   canvas!: ElementRef<HTMLCanvasElement>;
 
   readonly greetLine1$: Observable<string> = this._userService.user$.pipe(
-    map(user => {
+    switchMap(user => {
       const who = user && user.name !== 'Invité'
         ? user.name
-        : 'mystérieux inconnu';
-      return `Bonjour ${who} !`;
+        : ''; // si personne, on laissera vide et Transloco gérera
+      return this._transloco.selectTranslate('home.greetLine1', { who });
     })
   );
-  readonly greetLine2 = 'Bienvenue dans mon portfolio.';
-  readonly line3     = `Je m'appelle Florian Morena, je suis développeur.`;
+  
+  readonly greetLine2: string = this._transloco.translate('home.greetLine2');
+  readonly line3: string      = this._transloco.translate('home.line3');
 
   readonly sections: Section[] = [
-    { title: 'Profil',       icon: 'heroicons_solid:user-circle',      desc: 'Découvrez mon parcours et mes coordonnées.',      link: '/profile'     },
-    { title: 'Compétences',   icon: 'heroicons_solid:academic-cap',    desc: 'Mes compétences techniques et mon expertise.',    link: '/skills'      },
-    { title: 'Expériences',   icon: 'heroicons_solid:briefcase',       desc: 'Mes expériences professionnelles marquantes.',    link: '/experiences' },
-    { title: 'Projets',       icon: 'heroicons_solid:folder',          desc: 'Projets professionnels et personnels détaillés.', link: '/projects'    },
-    { title: 'Veille techno', icon: 'heroicons_solid:magnifying-glass',desc: 'Suivi des dernières tendances du web.',           link: '/veille'      },
-    { title: 'Contact',       icon: 'heroicons_solid:at-symbol',       desc: 'Entrons en contact pour échanger !',              link: '/contact'     }
+    {
+      title: this._transloco.translate('sections.profile.title'),
+      icon : 'heroicons_solid:user-circle',
+      desc : this._transloco.translate('sections.profile.desc'),
+      link : '/profile'
+    },
+    {
+      title: this._transloco.translate('sections.skills.title'),
+      icon : 'heroicons_solid:academic-cap',
+      desc : this._transloco.translate('sections.skills.desc'),
+      link : '/skills'
+    },
+    {
+      title: this._transloco.translate('sections.experiences.title'),
+      icon : 'heroicons_solid:briefcase',
+      desc : this._transloco.translate('sections.experiences.desc'),
+      link : '/experiences'
+    },
+    {
+      title: this._transloco.translate('sections.projects.title'),
+      icon : 'heroicons_solid:folder',
+      desc : this._transloco.translate('sections.projects.desc'),
+      link : '/projects'
+    },
+    {
+      title: this._transloco.translate('sections.veille.title'),
+      icon : 'heroicons_solid:magnifying-glass',
+      desc : this._transloco.translate('sections.veille.desc'),
+      link : '/veille'
+    },
+    {
+      title: this._transloco.translate('sections.contact.title'),
+      icon : 'heroicons_solid:at-symbol',
+      desc : this._transloco.translate('sections.contact.desc'),
+      link : '/contact'
+    }
   ];
 
-  constructor(private _userService: UserService) {}
+
+  constructor(private _userService: UserService, private _transloco: TranslocoService) {}
 
   ngAfterViewInit(): void {
     const canvasEl = this.canvas.nativeElement;
