@@ -1,0 +1,559 @@
+/* Variables */
+:root {
+    --custom-portfolio-vertical-navigation-width: 280px;
+}
+
+custom-portfolio-vertical-navigation {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    top: 0;
+    width: var(--custom-portfolio-vertical-navigation-width);
+    min-width: var(--custom-portfolio-vertical-navigation-width);
+    max-width: var(--custom-portfolio-vertical-navigation-width);
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    z-index: 200;
+
+    /* ----------------------------------------------------------------------------------------------------- */
+    /* @ Navigation Drawer
+    /* ----------------------------------------------------------------------------------------------------- */
+
+    /* Animations */
+    &.custom-portfolio-vertical-navigation-animations-enabled {
+        transition-duration: 400ms;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-property: visibility, margin-left, margin-right, transform,
+            width, max-width, min-width;
+
+        /* Wrapper */
+        .custom-portfolio-vertical-navigation-wrapper {
+            transition-duration: 400ms;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-property: width, max-width, min-width;
+        }
+    }
+
+    /* Over mode */
+    &.custom-portfolio-vertical-navigation-mode-over {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+
+    /* Left position */
+    &.custom-portfolio-vertical-navigation-position-left {
+        /* Side mode */
+        &.custom-portfolio-vertical-navigation-mode-side {
+            margin-left: calc(#{var(--custom-portfolio-vertical-navigation-width)} * -1);
+
+            &.custom-portfolio-vertical-navigation-opened {
+                margin-left: 0;
+            }
+        }
+
+        /* Over mode */
+        &.custom-portfolio-vertical-navigation-mode-over {
+            left: 0;
+            transform: translate3d(-100%, 0, 0);
+
+            &.custom-portfolio-vertical-navigation-opened {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Wrapper */
+        .custom-portfolio-vertical-navigation-wrapper {
+            left: 0;
+        }
+    }
+
+    /* Right position */
+    &.custom-portfolio-vertical-navigation-position-right {
+        /* Side mode */
+        &.custom-portfolio-vertical-navigation-mode-side {
+            margin-right: calc(var(--custom-portfolio-vertical-navigation-width) * -1);
+
+            &.custom-portfolio-vertical-navigation-opened {
+                margin-right: 0;
+            }
+        }
+
+        /* Over mode */
+        &.custom-portfolio-vertical-navigation-mode-over {
+            right: 0;
+            transform: translate3d(100%, 0, 0);
+
+            &.custom-portfolio-vertical-navigation-opened {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Wrapper */
+        .custom-portfolio-vertical-navigation-wrapper {
+            right: 0;
+        }
+    }
+
+    /* Inner mode */
+    &.custom-portfolio-vertical-navigation-inner {
+        position: relative;
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        box-shadow: none;
+
+        .custom-portfolio-vertical-navigation-wrapper {
+            position: relative;
+            overflow: visible;
+            height: auto;
+
+            .custom-portfolio-vertical-navigation-content {
+                overflow: visible !important;
+            }
+        }
+    }
+
+    /* Wrapper */
+    .custom-portfolio-vertical-navigation-wrapper {
+        position: absolute;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 10;
+        background: inherit;
+        box-shadow: inset -1px 0 0 var(--custom-portfolio-border);
+
+        /* Header */
+        .custom-portfolio-vertical-navigation-header {
+        }
+
+        /* Content */
+        .custom-portfolio-vertical-navigation-content {
+            flex: 1 1 auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+
+            /* Divider */
+            > custom-portfolio-vertical-navigation-divider-item {
+                margin: 24px 0;
+            }
+
+            /* Group */
+            > custom-portfolio-vertical-navigation-group-item {
+                margin-top: 24px;
+            }
+        }
+
+        /* Footer */
+        .custom-portfolio-vertical-navigation-footer {
+        }
+    }
+
+    /* Aside wrapper */
+    .custom-portfolio-vertical-navigation-aside-wrapper {
+        position: absolute;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        left: var(--custom-portfolio-vertical-navigation-width);
+        width: var(--custom-portfolio-vertical-navigation-width);
+        height: 100%;
+        z-index: 5;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transition-duration: 400ms;
+        transition-property: left, right;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        background: inherit;
+
+        > custom-portfolio-vertical-navigation-aside-item {
+            padding: 24px 0;
+
+            /* First item of the aside */
+            > .custom-portfolio-vertical-navigation-item-wrapper {
+                display: none !important;
+            }
+        }
+    }
+
+    &.custom-portfolio-vertical-navigation-position-right {
+        .custom-portfolio-vertical-navigation-aside-wrapper {
+            left: auto;
+            right: var(--custom-portfolio-vertical-navigation-width);
+        }
+    }
+
+    /* ----------------------------------------------------------------------------------------------------- */
+    /* @ Navigation Items
+    /* ----------------------------------------------------------------------------------------------------- */
+
+    /* Navigation items common */
+    custom-portfolio-vertical-navigation-aside-item,
+    custom-portfolio-vertical-navigation-basic-item,
+    custom-portfolio-vertical-navigation-collapsable-item,
+    custom-portfolio-vertical-navigation-divider-item,
+    custom-portfolio-vertical-navigation-group-item,
+    custom-portfolio-vertical-navigation-spacer-item {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        user-select: none;
+
+        .custom-portfolio-vertical-navigation-item-wrapper {
+            .custom-portfolio-vertical-navigation-item {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 20px;
+                text-decoration: none;
+                border-radius: 6px;
+
+                /* Disabled state */
+                &.custom-portfolio-vertical-navigation-item-disabled {
+                    cursor: default;
+                    opacity: 0.4;
+                }
+
+                .custom-portfolio-vertical-navigation-item-icon {
+                    margin-right: 16px;
+                }
+
+                .custom-portfolio-vertical-navigation-item-title-wrapper {
+                    .custom-portfolio-vertical-navigation-item-subtitle {
+                        font-size: 11px;
+                        line-height: 1.5;
+                    }
+                }
+
+                .custom-portfolio-vertical-navigation-item-badge {
+                    margin-left: auto;
+
+                    .custom-portfolio-vertical-navigation-item-badge-content {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 10px;
+                        font-weight: 600;
+                        white-space: nowrap;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Aside, Basic, Collapsable, Group */
+    custom-portfolio-vertical-navigation-aside-item,
+    custom-portfolio-vertical-navigation-basic-item,
+    custom-portfolio-vertical-navigation-collapsable-item,
+    custom-portfolio-vertical-navigation-group-item {
+        > .custom-portfolio-vertical-navigation-item-wrapper {
+            margin: 0 12px;
+        }
+    }
+
+    /* Aside, Basic, Collapsable */
+    custom-portfolio-vertical-navigation-aside-item,
+    custom-portfolio-vertical-navigation-basic-item,
+    custom-portfolio-vertical-navigation-collapsable-item {
+        margin-bottom: 4px;
+
+        .custom-portfolio-vertical-navigation-item {
+            cursor: pointer;
+        }
+    }
+
+    /* Aside */
+    custom-portfolio-vertical-navigation-aside-item {
+    }
+
+    /* Basic */
+    custom-portfolio-vertical-navigation-basic-item {
+    }
+
+    /* Collapsable */
+    custom-portfolio-vertical-navigation-collapsable-item {
+        > .custom-portfolio-vertical-navigation-item-wrapper {
+            .custom-portfolio-vertical-navigation-item {
+                .custom-portfolio-vertical-navigation-item-badge {
+                    + .custom-portfolio-vertical-navigation-item-arrow {
+                        margin-left: 8px;
+                    }
+                }
+
+                .custom-portfolio-vertical-navigation-item-arrow {
+                    height: 20px;
+                    line-height: 20px;
+                    margin-left: auto;
+                    transition:
+                        transform 300ms cubic-bezier(0.25, 0.8, 0.25, 1),
+                        color 375ms cubic-bezier(0.25, 0.8, 0.25, 1);
+                }
+            }
+        }
+
+        &.custom-portfolio-vertical-navigation-item-expanded {
+            > .custom-portfolio-vertical-navigation-item-wrapper {
+                .custom-portfolio-vertical-navigation-item {
+                    .custom-portfolio-vertical-navigation-item-arrow {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        > .custom-portfolio-vertical-navigation-item-children {
+            > *:first-child {
+                margin-top: 6px;
+            }
+
+            > *:last-child {
+                padding-bottom: 6px;
+
+                > .custom-portfolio-vertical-navigation-item-children {
+                    > *:last-child {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+
+            .custom-portfolio-vertical-navigation-item {
+                padding: 10px 16px;
+            }
+        }
+
+        /* 1st level */
+        .custom-portfolio-vertical-navigation-item-children {
+            overflow: hidden;
+
+            .custom-portfolio-vertical-navigation-item {
+                padding-left: 56px;
+            }
+
+            /* 2nd level */
+            .custom-portfolio-vertical-navigation-item-children {
+                .custom-portfolio-vertical-navigation-item {
+                    padding-left: 72px;
+                }
+
+                /* 3rd level */
+                .custom-portfolio-vertical-navigation-item-children {
+                    .custom-portfolio-vertical-navigation-item {
+                        padding-left: 88px;
+                    }
+
+                    /* 4th level */
+                    .custom-portfolio-vertical-navigation-item-children {
+                        .custom-portfolio-vertical-navigation-item {
+                            padding-left: 104px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Divider */
+    custom-portfolio-vertical-navigation-divider-item {
+        margin: 12px 0;
+
+        .custom-portfolio-vertical-navigation-item-wrapper {
+            height: 1px;
+            box-shadow: 0 1px 0 0;
+        }
+    }
+
+    /* Group */
+    custom-portfolio-vertical-navigation-group-item {
+        > .custom-portfolio-vertical-navigation-item-wrapper {
+            .custom-portfolio-vertical-navigation-item {
+                .custom-portfolio-vertical-navigation-item-badge,
+                .custom-portfolio-vertical-navigation-item-icon {
+                    display: none !important;
+                }
+
+                .custom-portfolio-vertical-navigation-item-title-wrapper {
+                    .custom-portfolio-vertical-navigation-item-title {
+                        font-size: 12px;
+                        font-weight: 600;
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Spacer */
+    custom-portfolio-vertical-navigation-spacer-item {
+        margin: 6px 0;
+    }
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* @ Overlay
+/* ----------------------------------------------------------------------------------------------------- */
+.custom-portfolio-vertical-navigation-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 170;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    + .custom-portfolio-vertical-navigation-aside-overlay {
+        background-color: transparent;
+    }
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* @ Aside overlay
+/* ----------------------------------------------------------------------------------------------------- */
+.custom-portfolio-vertical-navigation-aside-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 169;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* @ Navigation Items Colors
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* Navigation items common */
+custom-portfolio-vertical-navigation-aside-item,
+custom-portfolio-vertical-navigation-basic-item,
+custom-portfolio-vertical-navigation-collapsable-item,
+custom-portfolio-vertical-navigation-group-item {
+    .custom-portfolio-vertical-navigation-item-wrapper {
+        .custom-portfolio-vertical-navigation-item {
+            color: currentColor;
+
+            .custom-portfolio-vertical-navigation-item-icon {
+                @apply text-current opacity-60;
+            }
+
+            .custom-portfolio-vertical-navigation-item-title-wrapper {
+                .custom-portfolio-vertical-navigation-item-title {
+                    @apply text-current opacity-80;
+                }
+
+                .custom-portfolio-vertical-navigation-item-subtitle {
+                    @apply text-current opacity-50;
+                }
+            }
+        }
+    }
+}
+
+/* Aside, Basic, Collapsable */
+custom-portfolio-vertical-navigation-aside-item,
+custom-portfolio-vertical-navigation-basic-item,
+custom-portfolio-vertical-navigation-collapsable-item {
+    > .custom-portfolio-vertical-navigation-item-wrapper {
+        .custom-portfolio-vertical-navigation-item {
+            /* Active state */
+            &:not(.custom-portfolio-vertical-navigation-item-disabled) {
+                &.custom-portfolio-vertical-navigation-item-active,
+                &.custom-portfolio-vertical-navigation-item-active-forced {
+                    @apply bg-gray-800 bg-opacity-5 dark:bg-white dark:bg-opacity-12;
+
+                    .custom-portfolio-vertical-navigation-item-icon {
+                        @apply opacity-100;
+                    }
+
+                    .custom-portfolio-vertical-navigation-item-title {
+                        @apply opacity-100;
+                    }
+
+                    .custom-portfolio-vertical-navigation-item-subtitle {
+                        @apply opacity-100;
+                    }
+                }
+            }
+
+            /* Hover state */
+            &:not(.custom-portfolio-vertical-navigation-item-active-forced):not(
+                    .custom-portfolio-vertical-navigation-item-active
+                ):not(.custom-portfolio-vertical-navigation-item-disabled) {
+                &:hover {
+                    @apply bg-gray-800 bg-opacity-5 dark:bg-white dark:bg-opacity-12;
+
+                    .custom-portfolio-vertical-navigation-item-icon {
+                        @apply opacity-100;
+                    }
+
+                    .custom-portfolio-vertical-navigation-item-title,
+                    .custom-portfolio-vertical-navigation-item-arrow {
+                        @apply opacity-100;
+                    }
+
+                    .custom-portfolio-vertical-navigation-item-subtitle {
+                        @apply opacity-100;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Collapsable */
+custom-portfolio-vertical-navigation-collapsable-item {
+    /* Expanded state */
+    &.custom-portfolio-vertical-navigation-item-expanded {
+        > .custom-portfolio-vertical-navigation-item-wrapper {
+            .custom-portfolio-vertical-navigation-item {
+                .custom-portfolio-vertical-navigation-item-icon {
+                    @apply opacity-100;
+                }
+
+                .custom-portfolio-vertical-navigation-item-title,
+                .custom-portfolio-vertical-navigation-item-arrow {
+                    @apply opacity-100;
+                }
+
+                .custom-portfolio-vertical-navigation-item-subtitle {
+                    @apply opacity-100;
+                }
+            }
+        }
+    }
+}
+
+/* Group */
+custom-portfolio-vertical-navigation-group-item {
+    > .custom-portfolio-vertical-navigation-item-wrapper {
+        .custom-portfolio-vertical-navigation-item {
+            .custom-portfolio-vertical-navigation-item-title-wrapper {
+                .custom-portfolio-vertical-navigation-item-title {
+                    @apply text-primary-600 opacity-100 dark:text-primary-400;
+                }
+            }
+        }
+    }
+}

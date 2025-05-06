@@ -1,0 +1,196 @@
+/* Variables */
+:root {
+    --custom-portfolio-vertical-navigation-width: 280px;
+    --custom-portfolio-vertical-navigation-dense-width: 80px;
+}
+
+custom-portfolio-vertical-navigation {
+    /* Dense appearance overrides */
+    &.custom-portfolio-vertical-navigation-appearance-dense {
+        &:not(.custom-portfolio-vertical-navigation-mode-over) {
+            width: var(--custom-portfolio-vertical-navigation-dense-width);
+            min-width: var(--custom-portfolio-vertical-navigation-dense-width);
+            max-width: var(--custom-portfolio-vertical-navigation-dense-width);
+
+            /* Left positioned */
+            &.custom-portfolio-vertical-navigation-position-left {
+                /* Side mode */
+                &.custom-portfolio-vertical-navigation-mode-side {
+                    margin-left: calc(
+                        var(--custom-portfolio-vertical-navigation-dense-width) * -1
+                    );
+                }
+
+                /* Opened */
+                &.custom-portfolio-vertical-navigation-opened {
+                    margin-left: 0;
+                }
+            }
+
+            /* Right positioned */
+            &.custom-portfolio-vertical-navigation-position-right {
+                /* Side mode */
+                &.custom-portfolio-vertical-navigation-mode-side {
+                    margin-right: calc(
+                        var(--custom-portfolio-vertical-navigation-dense-width) * -1
+                    );
+                }
+
+                /* Opened */
+                &.custom-portfolio-vertical-navigation-opened {
+                    margin-right: 0;
+                }
+
+                /* Aside wrapper */
+                .custom-portfolio-vertical-navigation-aside-wrapper {
+                    left: auto;
+                    right: var(--custom-portfolio-vertical-navigation-dense-width);
+                }
+
+                &.custom-portfolio-vertical-navigation-hover {
+                    .custom-portfolio-vertical-navigation-aside-wrapper {
+                        left: auto;
+                        right: var(--custom-portfolio-vertical-navigation-width);
+                    }
+                }
+            }
+        }
+
+        /* Wrapper */
+        .custom-portfolio-vertical-navigation-wrapper {
+            /* Content */
+            .custom-portfolio-vertical-navigation-content {
+                custom-portfolio-vertical-navigation-aside-item,
+                custom-portfolio-vertical-navigation-basic-item,
+                custom-portfolio-vertical-navigation-collapsable-item,
+                custom-portfolio-vertical-navigation-group-item {
+                    .custom-portfolio-vertical-navigation-item-wrapper {
+                        .custom-portfolio-vertical-navigation-item {
+                            width: calc(
+                                var(--custom-portfolio-vertical-navigation-dense-width) -
+                                    24px
+                            );
+                            min-width: calc(
+                                var(--custom-portfolio-vertical-navigation-dense-width) -
+                                    24px
+                            );
+                            max-width: calc(
+                                var(--custom-portfolio-vertical-navigation-dense-width) -
+                                    24px
+                            );
+
+                            .custom-portfolio-vertical-navigation-item-arrow,
+                            .custom-portfolio-vertical-navigation-item-badge,
+                            .custom-portfolio-vertical-navigation-item-title-wrapper {
+                                transition: opacity 400ms
+                                    cubic-bezier(0.25, 0.8, 0.25, 1);
+                            }
+                        }
+                    }
+                }
+
+                custom-portfolio-vertical-navigation-group-item {
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        &:not(.custom-portfolio-vertical-navigation-hover):not(
+                .custom-portfolio-vertical-navigation-mode-over
+            ) {
+            /* Wrapper */
+            .custom-portfolio-vertical-navigation-wrapper {
+                /* Content */
+                .custom-portfolio-vertical-navigation-content {
+                    .custom-portfolio-vertical-navigation-item-wrapper {
+                        .custom-portfolio-vertical-navigation-item {
+                            padding: 10px 16px;
+
+                            .custom-portfolio-vertical-navigation-item-arrow,
+                            .custom-portfolio-vertical-navigation-item-badge,
+                            .custom-portfolio-vertical-navigation-item-title-wrapper {
+                                white-space: nowrap;
+                                opacity: 0;
+                            }
+                        }
+                    }
+
+                    custom-portfolio-vertical-navigation-collapsable-item {
+                        .custom-portfolio-vertical-navigation-item-children {
+                            display: none;
+                        }
+                    }
+
+                    custom-portfolio-vertical-navigation-group-item {
+                        > .custom-portfolio-vertical-navigation-item-wrapper {
+                            .custom-portfolio-vertical-navigation-item {
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 20px;
+                                    width: 23px;
+                                    border-top-width: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .custom-portfolio-vertical-navigation-aside-wrapper {
+            left: var(--custom-portfolio-vertical-navigation-dense-width);
+        }
+
+        /* Hover */
+        &.custom-portfolio-vertical-navigation-hover {
+            .custom-portfolio-vertical-navigation-wrapper {
+                width: var(--custom-portfolio-vertical-navigation-width);
+
+                .custom-portfolio-vertical-navigation-content {
+                    .custom-portfolio-vertical-navigation-item-wrapper {
+                        .custom-portfolio-vertical-navigation-item {
+                            width: calc(
+                                var(--custom-portfolio-vertical-navigation-width) - 24px
+                            );
+                            min-width: calc(
+                                var(--custom-portfolio-vertical-navigation-width) - 24px
+                            );
+                            max-width: calc(
+                                var(--custom-portfolio-vertical-navigation-width) - 24px
+                            );
+
+                            .custom-portfolio-vertical-navigation-item-arrow,
+                            .custom-portfolio-vertical-navigation-item-badge,
+                            .custom-portfolio-vertical-navigation-item-title-wrapper {
+                                white-space: nowrap;
+                                animation: removeWhiteSpaceNoWrap 1ms linear
+                                    350ms;
+                                animation-fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .custom-portfolio-vertical-navigation-aside-wrapper {
+                left: var(--custom-portfolio-vertical-navigation-width);
+            }
+        }
+    }
+}
+
+@keyframes removeWhiteSpaceNoWrap {
+    0% {
+        white-space: nowrap;
+    }
+    99% {
+        white-space: nowrap;
+    }
+    100% {
+        white-space: normal;
+    }
+}

@@ -1,0 +1,109 @@
+/* Variables */
+:root {
+    --custom-portfolio-vertical-navigation-compact-width: 112px;
+}
+
+custom-portfolio-vertical-navigation {
+    /* Compact appearance overrides */
+    &.custom-portfolio-vertical-navigation-appearance-compact {
+        width: var(--custom-portfolio-vertical-navigation-compact-width);
+        min-width: var(--custom-portfolio-vertical-navigation-compact-width);
+        max-width: var(--custom-portfolio-vertical-navigation-compact-width);
+
+        /* Left positioned */
+        &.custom-portfolio-vertical-navigation-position-left {
+            /* Side mode */
+            &.custom-portfolio-vertical-navigation-mode-side {
+                margin-left: calc(
+                    var(--custom-portfolio-vertical-navigation-compact-width) * -1
+                );
+            }
+
+            /* Opened */
+            &.custom-portfolio-vertical-navigation-opened {
+                margin-left: 0;
+            }
+        }
+
+        /* Right positioned */
+        &.custom-portfolio-vertical-navigation-position-right {
+            /* Side mode */
+            &.custom-portfolio-vertical-navigation-mode-side {
+                margin-right: calc(
+                    var(--custom-portfolio-vertical-navigation-compact-width) * -1
+                );
+            }
+
+            /* Opened */
+            &.custom-portfolio-vertical-navigation-opened {
+                margin-right: 0;
+            }
+
+            /* Aside wrapper */
+            .custom-portfolio-vertical-navigation-aside-wrapper {
+                left: auto;
+                right: var(--custom-portfolio-vertical-navigation-compact-width);
+            }
+        }
+
+        /* Wrapper */
+        .custom-portfolio-vertical-navigation-wrapper {
+            /* Content */
+            .custom-portfolio-vertical-navigation-content {
+                > custom-portfolio-vertical-navigation-aside-item,
+                > custom-portfolio-vertical-navigation-basic-item {
+                    .custom-portfolio-vertical-navigation-item-wrapper {
+                        margin: 4px 8px 0 8px;
+
+                        .custom-portfolio-vertical-navigation-item {
+                            flex-direction: column;
+                            justify-content: center;
+                            padding: 12px;
+                            border-radius: 6px;
+
+                            .custom-portfolio-vertical-navigation-item-icon {
+                                margin-right: 0;
+                            }
+
+                            .custom-portfolio-vertical-navigation-item-title-wrapper {
+                                margin-top: 8px;
+
+                                .custom-portfolio-vertical-navigation-item-title {
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    text-align: center;
+                                    line-height: 16px;
+                                }
+
+                                .custom-portfolio-vertical-navigation-item-subtitle {
+                                    display: none !important;
+                                }
+                            }
+
+                            .custom-portfolio-vertical-navigation-item-badge {
+                                position: absolute;
+                                top: 12px;
+                                left: 64px;
+                            }
+                        }
+                    }
+
+                    > custom-portfolio-vertical-navigation-collapsable-item {
+                        display: none;
+                    }
+
+                    > custom-portfolio-vertical-navigation-group-item {
+                        > .custom-portfolio-vertical-navigation-item-wrapper {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .custom-portfolio-vertical-navigation-aside-wrapper {
+            left: var(--custom-portfolio-vertical-navigation-compact-width);
+        }
+    }
+}
