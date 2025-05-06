@@ -1,0 +1,17 @@
+{
+    "signIn": {
+      "title": "欢迎来到我的作品集",
+      "subtitle": "登录以定制您的体验，或以游客身份继续。",
+      "firstNameLabel": "名字",
+      "firstNameRequired": "名字为必填项",
+      "lastNameLabel": "姓氏",
+      "lastNameRequired": "姓氏为必填项",
+      "loginButton": "登录",
+      "guestButton": "以游客身份继续",
+      "rightTitleLine1": "技能",
+      "rightTitleLine2": "& 简介",
+      "description": "作为 BTS SIO 考试的一部分，本作品集展示了我的个人资料、技能和项目，呈现为一个功能性 Web 应用程序。",
+      "visitors": "已有超过 17 000 人浏览此作品集，现在轮到你了！"
+    }
+  }
+  

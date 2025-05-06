@@ -1,0 +1,17 @@
+{
+    "signIn": {
+      "title": "Bienvenue sur mon portfolio",
+      "subtitle": "Connectez-vous pour personnaliser votre expérience, ou continuez en tant qu’invité.",
+      "firstNameLabel": "Prénom",
+      "firstNameRequired": "Le prénom est requis",
+      "lastNameLabel": "Nom",
+      "lastNameRequired": "Le nom est requis",
+      "loginButton": "Se connecter",
+      "guestButton": "Continuer en tant qu’invité",
+      "rightTitleLine1": "Compétences",
+      "rightTitleLine2": "& Profil",
+      "description": "Réalisé dans le cadre de l'examen BTS SIO, ce portfolio présente mon profil, mes compétences et mes projets sous forme d'une application web fonctionnelle.",
+      "visitors": "Plus de 17 000 personnes ont déjà exploré ce portfolio, à vous de jouer !"
+    }
+  }
+  
