@@ -23,6 +23,7 @@ import {
   } from '@portfolio/components/alert';
   import { AuthService } from 'app/core/auth/auth.service';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule } from '@ngneat/transloco';
   
   @Component({
     selector: 'auth-sign-in',
@@ -35,6 +36,7 @@ import { CommonModule } from '@angular/common';
       FormsModule,
       ReactiveFormsModule,
       RouterLink,
+      TranslocoModule,
       MatFormFieldModule,
       MatInputModule,
       MatButtonModule,

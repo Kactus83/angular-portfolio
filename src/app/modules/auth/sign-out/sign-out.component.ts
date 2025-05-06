@@ -1,6 +1,7 @@
 import { I18nPluralPipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { TranslocoModule } from '@ngneat/transloco';
 import { AuthService } from 'app/core/auth/auth.service';
 import { Subject, finalize, takeUntil, takeWhile, tap, timer } from 'rxjs';
 
@@ -9,7 +10,7 @@ import { Subject, finalize, takeUntil, takeWhile, tap, timer } from 'rxjs';
     templateUrl: './sign-out.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [RouterLink, I18nPluralPipe],
+    imports: [RouterLink, I18nPluralPipe, TranslocoModule],
 })
 export class AuthSignOutComponent implements OnInit, OnDestroy {
     countdown: number = 5;
