@@ -244,7 +244,7 @@ export const PROJECTS: Project[] = [
       "HTML5"
     ],
     repoUrl: "https://github.com/Kactus83/memory-game",
-    demoUrl: "",
+    demoUrl: "https://kactus83.github.io/memory-game/",
     imageUrl: "project-ressources/memory/memory-cover.png",
     languageUsage: [
       { name: "JavaScript", percent: 53 },
