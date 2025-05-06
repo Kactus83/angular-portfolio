@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { TranslocoService } from '@ngneat/transloco';
 
 export interface PersonalInfo {
   name      : string;
@@ -32,11 +33,13 @@ export interface Education {
 @Injectable({ providedIn: 'root' })
 export class ProfileService
 {
+  constructor(private _transloco: TranslocoService) {}
+
   getPersonal(): Observable<PersonalInfo> {
     return of({
       name      : 'Florian Morena',
-      title     : 'Apprenti BTS SIO',
-      summary   : 'Autodidacte passionné par l’informatique, fondateur d’une SASU de services numériques, j’aspire à renforcer mes compétences au sein d’équipes expérimentées.',
+      title     : this._transloco.translate('pages.profile.personal.title'),
+      summary   : this._transloco.translate('pages.profile.personal.summary'),
       avatarUrl : 'images/avatars/perso.jpg',
       coverUrl  : 'images/pages/profile/cover.jpg'
     });
@@ -44,25 +47,31 @@ export class ProfileService
 
   getContact(): Observable<ContactInfo> {
     return of({
-      phone   : '06 20 93 33 90',
-      email   : 'florian.morena@gmail.com',
-      address : '12 rue Pierre Renaudel, 83210 Solliès Pont'
+      phone   : this._transloco.translate('pages.profile.contactInfo.phone'),
+      email   : this._transloco.translate('pages.profile.contactInfo.email'),
+      address : this._transloco.translate('pages.profile.contactInfo.address')
     });
   }
 
   getSkills(): Observable<SkillGroup[]> {
     return of([
       {
-        category: 'Programmation',
-        items   : ['WordPress','Algorithmique','Git & Docker','TypeScript & Angular','C / C++ (débutant)','Web3 (Solidity)']
+        category: this._transloco.translate('pages.profile.skills.programming'),
+        items   : [
+          ...JSON.parse(this._transloco.translate('pages.profile.skills.programmingItems'))
+        ]
       },
       {
-        category: 'Réseau & Sécurité',
-        items   : ['Modèle OSI','Composants hardware','Communication sans fil']
+        category: this._transloco.translate('pages.profile.skills.network'),
+        items   : [
+          ...JSON.parse(this._transloco.translate('pages.profile.skills.networkItems'))
+        ]
       },
       {
-        category: 'Divers',
-        items   : ['Adobe CC','AutoDesk (en cours)']
+        category: this._transloco.translate('pages.profile.skills.misc'),
+        items   : [
+          ...JSON.parse(this._transloco.translate('pages.profile.skills.miscItems'))
+        ]
       }
     ]);
   }
@@ -70,46 +79,43 @@ export class ProfileService
   getExperiences(): Observable<Experience[]> {
     return of([
       {
-        pole      : 'DÉVELOPPEMENT FRONTEND/BACKEND',
-        companies : ['CHESS MARITIME'],
-        period    : '2023 – 2024',
+        pole      : this._transloco.translate('pages.profile.experiences.dev.pole'),
+        companies : [
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.dev.companies'))
+        ],
+        period    : this._transloco.translate('pages.profile.experiences.dev.period'),
         details   : [
-          'Gestion CMS WordPress interne',
-          'Outils informatiques divers',
-          'Développement d’un CMS maritime'
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.dev.details'))
         ]
       },
       {
-        pole      : 'SERVICES NUMÉRIQUES (S.A.S.U.)',
-        companies : ['Ma propre SASU'],
-        period    : '2020 – 2022',
+        pole      : this._transloco.translate('pages.profile.experiences.sasu.pole'),
+        companies : [
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.sasu.companies'))
+        ],
+        period    : this._transloco.translate('pages.profile.experiences.sasu.period'),
         details   : [
-          'Sites WordPress & E-commerce',
-          'Scripts (mailing, scrapping…) ',
-          'Référencement/SEO & Google Tools',
-          'Graphisme & Packaging',
-          'Vie réseau & dépannage'
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.sasu.details'))
         ]
       },
       {
-        pole      : 'ÉDUCATION SPÉCIALISÉE',
-        companies : ['M.E.C.S. La Valbourdine','M.E.C.S. La Déferlante','S.A.M.S.A.H. - S.A.M.V.A. A.D.A.P.E.I.'],
-        period    : '2015 – 2019',
+        pole      : this._transloco.translate('pages.profile.experiences.educ.pole'),
+        companies : [
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.educ.companies'))
+        ],
+        period    : this._transloco.translate('pages.profile.experiences.educ.period'),
         details   : [
-          'Accompagnement de personnes en difficulté',
-          'Ateliers techniques & animation',
-          'Rédaction de rapports & comptes rendus',
-          'Animation de réunions'
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.educ.details'))
         ]
       },
       {
-        pole      : 'ÉLECTRICITÉ INDUSTRIELLE & DOMESTIQUE',
-        companies : ['Sud Elec Industrie','Centre Var Électricité',"Entreprise générale d'électricité MORENA"],
-        period    : '2011 – 2015',
+        pole      : this._transloco.translate('pages.profile.experiences.elec.pole'),
+        companies : [
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.elec.companies'))
+        ],
+        period    : this._transloco.translate('pages.profile.experiences.elec.period'),
         details   : [
-          'Création/Rénovation d’installations électriques',
-          'Domotique & Automatismes',
-          'Réseaux informatiques & Courant faible'
+          ...JSON.parse(this._transloco.translate('pages.profile.experiences.elec.details'))
         ]
       }
     ]);
@@ -118,24 +124,24 @@ export class ProfileService
   getEducation(): Observable<Education[]> {
     return of([
       {
-        period       : '2023 – en cours',
-        institution  : 'Maestris BTS',
-        qualification: 'BTS SIO'
+        period       : this._transloco.translate('pages.profile.education.current.period'),
+        institution  : this._transloco.translate('pages.profile.education.current.institution'),
+        qualification: this._transloco.translate('pages.profile.education.current.qualification')
       },
       {
-        period       : '2015 – 2019',
-        institution  : 'IRFSS Croix Rouge',
-        qualification: 'Éducateur spécialisé'
+        period       : this._transloco.translate('pages.profile.education.past1.period'),
+        institution  : this._transloco.translate('pages.profile.education.past1.institution'),
+        qualification: this._transloco.translate('pages.profile.education.past1.qualification')
       },
       {
-        period       : '2011 – 2013',
-        institution  : 'CFA du Bâtiment',
-        qualification: 'CAP & BP Électricité'
+        period       : this._transloco.translate('pages.profile.education.past2.period'),
+        institution  : this._transloco.translate('pages.profile.education.past2.institution'),
+        qualification: this._transloco.translate('pages.profile.education.past2.qualification')
       },
       {
-        period       : '2007 – 2010',
-        institution  : 'Lycée du Coudon',
-        qualification: 'Baccalauréat Général'
+        period       : this._transloco.translate('pages.profile.education.past3.period'),
+        institution  : this._transloco.translate('pages.profile.education.past3.institution'),
+        qualification: this._transloco.translate('pages.profile.education.past3.qualification')
       }
     ]);
   }
