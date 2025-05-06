@@ -1,12 +1,19 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 import { PortfolioCardComponent } from '@portfolio/components/card';
 import { Experience } from '../../experiences.types';
 
 @Component({
   selector: 'app-experience-card',
   standalone: true,
-  imports: [CommonModule, PortfolioCardComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatIconModule,
+    PortfolioCardComponent
+  ],
   templateUrl: './experience-card.component.html'
 })
 export class ExperienceCardComponent {
