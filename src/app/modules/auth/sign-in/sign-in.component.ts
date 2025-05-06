@@ -22,6 +22,7 @@ import {
     FuseAlertType
   } from '@fuse/components/alert';
   import { AuthService } from 'app/core/auth/auth.service';
+import { CommonModule } from '@angular/common';
   
   @Component({
     selector: 'auth-sign-in',
@@ -30,6 +31,7 @@ import {
     animations: fuseAnimations,
     standalone: true,
     imports: [
+      CommonModule,
       FormsModule,
       ReactiveFormsModule,
       RouterLink,
