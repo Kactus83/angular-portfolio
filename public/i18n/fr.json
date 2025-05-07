@@ -176,6 +176,98 @@
       },
       "success": "Merci ! Votre message a bien été envoyé.",
       "error": "Oups ! Une erreur est survenue."
+    },
+    "skills": {
+      "title": "Mes Compétences",
+      "subtitle": "Découvrez ici mes domaines d’expertise, mon niveau de maîtrise et les projets réalisés pour chacun.",
+      "categories": {
+        "programming": "Programmation Informatique",
+        "security": "Réseau / Sécurité",
+        "misc": "Divers"
+      },
+      "categoriesDescription": "{{ category }} : aperçu des compétences et niveaux.",
+      "masteryLevels": {
+        "expert": "Expert",
+        "advanced": "Avancé",
+        "intermediate": "Intermédiaire",
+        "beginner": "Débutant"
+      },
+      "skills": {
+        "wordpressCms": {
+          "name": "Gestion de CMS (WordPress)",
+          "subSkills": {
+            "installation": "Installation",
+            "configuration": "Configuration",
+            "securisation": "Sécurisation",
+            "optimisation": "Optimisation"
+          },
+          "description": "Installation, configuration, sécurisation et optimisation de sites WordPress.",
+          "personalNotes": "J’ai monté et sécurisé plus de 10 sites pour des clients, en gérant hébergement et mises à jour."
+        },
+        "typescriptAngular": {
+          "name": "TypeScript / Angular",
+          "subSkills": {
+            "rxjs": "RxJS",
+            "ngrx": "NgRx",
+            "routing": "Routing",
+            "forms": "Forms"
+          },
+          "description": "Développement d’applications Single-Page avec Angular.",
+          "personalNotes": "J’ai conçu plusieurs modules réutilisables et optimisé les performances via lazy-loading."
+        },
+        "algorithmique": {
+          "name": "Algorithmique",
+          "subSkills": {
+            "complexite": "Complexité",
+            "structures": "Structures de données"
+          },
+          "description": "Conception et optimisation d’algorithmes.",
+          "personalNotes": "J’ai participé à des challenges de code sur Hackerrank et LeetCode."
+        },
+        "web3Solidity": {
+          "name": "Notions Web3 (Solidity)",
+          "subSkills": {
+            "smartContracts": "Smart Contracts"
+          },
+          "description": "Expérimentations basiques sur Remix et Truffle.",
+          "personalNotes": ""
+        },
+        "osiModel": {
+          "name": "Modèle OSI",
+          "subSkills": {
+            "physique": "Couche Physique",
+            "reseau": "Couche Réseau"
+          },
+          "description": "Compréhension des 7 couches et de leur rôle.",
+          "personalNotes": "Mise en place de firewalls et VLANs en environnement pro."
+        },
+        "wirelessComm": {
+          "name": "Communication sans fil",
+          "subSkills": {
+            "wifi": "Wi-Fi",
+            "bluetooth": "Bluetooth"
+          },
+          "description": "",
+          "personalNotes": "Déploiement de réseaux Wi-Fi d’entreprise, optimisation de couverture."
+        },
+        "adobeCc": {
+          "name": "Adobe Creative Cloud",
+          "subSkills": {
+            "illustrator": "Illustrator",
+            "photoshop": "Photoshop",
+            "indesign": "InDesign"
+          },
+          "description": "Illustrator, Photoshop et InDesign pour supports print & web.",
+          "personalNotes": "Conception de chartes graphiques et logos pour startups."
+        }
+      },
+      "labels": {
+        "description": "Description",
+        "personalNotes": "Notes personnelles",
+        "subSkills": "Sous-compétences",
+        "relatedProjects": "Projets liés",
+        "close": "Fermer"
+      }
     }
   }
 }
