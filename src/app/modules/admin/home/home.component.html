@@ -1,78 +1,81 @@
-<div
-  class="relative flex flex-col min-h-[calc(100vh-64px)] bg-gray-950 text-on-primary overflow-hidden"
-  style="min-width: 100%;"
->
-  <!-- canvas de particules -->
-  <canvas
-    #particleCanvas
-    class="absolute inset-0 w-full h-full pointer-events-none"
-  ></canvas>
-
-  <!-- zone texte -->
+<ng-container *translocoScope="'home'">
   <div
-    class="relative z-10 flex flex-col items-center text-center text-on-accent
-           px-4 sm:px-6 lg:px-8 pt-20 max-w-xl mx-auto space-y-2"
+    class="relative flex flex-col min-h-[calc(100vh-64px)] bg-gray-950 text-on-primary overflow-hidden"
+    style="min-width: 100%;"
   >
-    <!-- ligne 1 animée -->
-    <h1
-      *ngIf="greetLine1$ | async as g1"
-      [appTypewriter]="g1"
-      [speed]="50"
-      [startDelay]="0"
-      class="text-3xl sm:text-4xl md:text-5xl font-extrabold
-             whitespace-pre-wrap break-words"
-    ></h1>
-
-    <!-- ligne 2 animée (hauteur réservée pour éviter décalage) -->
-    <h1
-      [appTypewriter]="greetLine2"
-      [speed]="45"
-      [startDelay]="1200"
-      class="text-2xl sm:text-3xl md:text-4xl font-semibold
-             whitespace-pre-wrap break-words
-             h-8 sm:h-9 md:h-10 overflow-hidden"
-    ></h1>
-
-    <!-- ligne 3 fixe -->
-    <h2
-      class="text-lg sm:text-xl md:text-2xl font-medium
-             whitespace-pre-wrap break-words"
-    >
-      {{ line3 }}
-    </h2>
-
-    <!-- bandeau pour paragraphe fixe -->
+    <!-- canvas de particules -->
+    <canvas
+      #particleCanvas
+      class="absolute inset-0 w-full h-full pointer-events-none"
+    ></canvas>
+  
+    <!-- zone texte -->
     <div
-      class="mt-4 bg-on-accent/10 p-4 rounded-2xl max-w-prose w-full"
+      class="relative z-10 flex flex-col items-center text-center text-on-accent
+             px-4 sm:px-6 lg:px-8 pt-20 max-w-xl mx-auto space-y-2"
     >
-      <p class="text-base sm:text-lg leading-relaxed">
-        {{ 'home.description' | transloco }}
-      </p>
-    </div>
-  </div>
-
-  <!-- grille de sections -->
-  <div class="relative z-10 flex-grow p-6 md:p-10">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <a
-        *ngFor="let s of sections"
-        [routerLink]="s.link"
-        class="bg-card text-default p-6 rounded-2xl shadow-lg
-               transition-transform duration-300 ease-out hover:scale-105
-               hover:bg-on-primary hover:text-on-primary
-               flex flex-col items-center text-center"
+      <!-- ligne 1 animée -->
+      <h1
+        *ngIf="greetLine1$ | async as g1"
+        [appTypewriter]="g1"
+        [speed]="50"
+        [startDelay]="0"
+        class="text-3xl sm:text-4xl md:text-5xl font-extrabold
+               whitespace-pre-wrap break-words"
+      ></h1>
+  
+      <!-- ligne 2 animée -->
+      <h1
+        [appTypewriter]="greetLine2"
+        [speed]="45"
+        [startDelay]="1200"
+        class="text-2xl sm:text-3xl md:text-4xl font-semibold
+               whitespace-pre-wrap break-words
+               h-8 sm:h-9 md:h-10 overflow-hidden"
+      ></h1>
+  
+      <!-- ligne 3 fixe -->
+      <h2
+        class="text-lg sm:text-xl md:text-2xl font-medium
+               whitespace-pre-wrap break-words"
       >
-        <mat-icon
-          [svgIcon]="s.icon"
-          class="icon-size-8 text-primary"
-        ></mat-icon>
-        <div class="mt-4 text-lg font-semibold text-primary">
-          {{ s.title | transloco }}
-        </div>
-        <div class="mt-2 text-secondary">
-          {{ s.desc | transloco }}
-        </div>
-      </a>
+        {{ line3 }}
+      </h2>
+  
+      <!-- bandeau pour paragraphe fixe -->
+      <div
+        class="mt-4 bg-on-accent/10 p-4 rounded-2xl max-w-prose w-full"
+      >
+        <p class="text-base sm:text-lg leading-relaxed">
+          {{ 'description' | transloco }}
+        </p>
+      </div>
+    </div>
+  
+    <!-- grille de sections -->
+    <div class="relative z-10 flex-grow p-6 md:p-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <a
+          *ngFor="let s of sections"
+          [routerLink]="s.link"
+          class="bg-card text-default p-6 rounded-2xl shadow-lg
+                 transition-transform duration-300 ease-out hover:scale-105
+                 hover:bg-on-primary hover:text-on-primary
+                 flex flex-col items-center text-center"
+        >
+          <mat-icon
+            [svgIcon]="s.icon"
+            class="icon-size-8 text-primary"
+          ></mat-icon>
+          <div class="mt-4 text-lg font-semibold text-primary">
+            {{ s.title }}
+          </div>
+          <div class="mt-2 text-secondary">
+            {{ s.desc }}
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+  </ng-container>
+  

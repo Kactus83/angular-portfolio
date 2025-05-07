@@ -4,49 +4,49 @@ import { PortfolioNavigationItem } from '@portfolio/components/navigation';
 export const defaultNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
-        title: 'Accueil',
+        title: 'sections.profile.title',  
         type : 'basic',
         icon : 'heroicons_outline:home',
         link : '/home'
     },
     {
         id   : 'profile',
-        title: 'Profil',
+        title: 'sections.profile.title',
         type : 'basic',
         icon : 'heroicons_outline:user',
         link : '/profile'
     },
     {
         id   : 'skills',
-        title: 'Compétences',
+        title: 'sections.skills.title',
         type : 'basic',
         icon : 'heroicons_outline:light-bulb',
         link : '/skills'
     },
     {
         id   : 'experiences',
-        title: 'Expériences',
+        title: 'sections.experiences.title',
         type : 'basic',
         icon : 'heroicons_outline:briefcase',
         link : '/experiences'
     },
     {
         id   : 'projects',
-        title: 'Projets',
+        title: 'sections.projects.title',
         type : 'basic',
         icon : 'heroicons_outline:folder',
         link : '/projects'
     },
     {
         id   : 'veille',
-        title: 'Veille',
+        title: 'sections.veille.title',
         type : 'basic',
         icon : 'heroicons_outline:eye',
         link : '/veille'
     },
     {
         id   : 'contact',
-        title: 'Contact',
+        title: 'sections.contact.title',
         type : 'basic',
         icon : 'heroicons_solid:at-symbol',
         link : '/contact'
@@ -56,49 +56,49 @@ export const defaultNavigation: PortfolioNavigationItem[] = [
 export const compactNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
-        title: 'Accueil',
+        title: 'sections.profile.title',
         type : 'basic',
         icon : 'heroicons_outline:home',
         link : '/home'
     },
     {
         id   : 'profile',
-        title: 'Profil',
+        title: 'sections.profile.title',
         type : 'basic',
         icon : 'heroicons_outline:user',
         link : '/profile'
     },
     {
         id   : 'skills',
-        title: 'Compétences',
+        title: 'sections.skills.title',
         type : 'basic',
         icon : 'heroicons_outline:light-bulb',
         link : '/skills'
     },
     {
         id   : 'experiences',
-        title: 'Expériences',
+        title: 'sections.experiences.title',
         type : 'basic',
         icon : 'heroicons_outline:briefcase',
         link : '/experiences'
     },
     {
         id   : 'projects',
-        title: 'Projets',
+        title: 'sections.projects.title',
         type : 'basic',
         icon : 'heroicons_outline:folder',
         link : '/projects'
     },
     {
         id   : 'veille',
-        title: 'Veille',
+        title: 'sections.veille.title',
         type : 'basic',
         icon : 'heroicons_outline:eye',
         link : '/veille'
     },
     {
         id   : 'contact',
-        title: 'Contact',
+        title: 'sections.contact.title',
         type : 'basic',
         icon : 'heroicons_solid:at-symbol',
         link : '/contact'
@@ -108,49 +108,49 @@ export const compactNavigation: PortfolioNavigationItem[] = [
 export const futuristicNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
-        title: 'Accueil',
+        title: 'sections.profile.title',
         type : 'basic',
         icon : 'heroicons_outline:home',
         link : '/home'
     },
     {
         id   : 'profile',
-        title: 'Profil',
+        title: 'sections.profile.title',
         type : 'basic',
         icon : 'heroicons_outline:user',
         link : '/profile'
     },
     {
         id   : 'skills',
-        title: 'Compétences',
+        title: 'sections.skills.title',
         type : 'basic',
         icon : 'heroicons_outline:light-bulb',
         link : '/skills'
     },
     {
         id   : 'experiences',
-        title: 'Expériences',
+        title: 'sections.experiences.title',
         type : 'basic',
         icon : 'heroicons_outline:briefcase',
         link : '/experiences'
     },
     {
         id   : 'projects',
-        title: 'Projets',
+        title: 'sections.projects.title',
         type : 'basic',
         icon : 'heroicons_outline:folder',
         link : '/projects'
     },
     {
         id   : 'veille',
-        title: 'Veille',
+        title: 'sections.veille.title',
         type : 'basic',
         icon : 'heroicons_outline:eye',
         link : '/veille'
     },
     {
         id   : 'contact',
-        title: 'Contact',
+        title: 'sections.contact.title',
         type : 'basic',
         icon : 'heroicons_solid:at-symbol',
         link : '/contact'
@@ -160,49 +160,49 @@ export const futuristicNavigation: PortfolioNavigationItem[] = [
 export const horizontalNavigation: PortfolioNavigationItem[] = [
     {
         id   : 'home',
-        title: 'Accueil',
+        title: 'sections.profile.title',
         type : 'basic',
         icon : 'heroicons_outline:home',
         link : '/home'
     },
     {
         id   : 'profile',
-        title: 'Profil',
+        title: 'sections.profile.title',
         type : 'basic',
         icon : 'heroicons_outline:user',
         link : '/profile'
     },
     {
         id   : 'skills',
-        title: 'Compétences',
+        title: 'sections.skills.title',
         type : 'basic',
         icon : 'heroicons_outline:light-bulb',
         link : '/skills'
     },
     {
         id   : 'experiences',
-        title: 'Expériences',
+        title: 'sections.experiences.title',
         type : 'basic',
         icon : 'heroicons_outline:briefcase',
         link : '/experiences'
     },
     {
         id   : 'projects',
-        title: 'Projets',
+        title: 'sections.projects.title',
         type : 'basic',
         icon : 'heroicons_outline:folder',
         link : '/projects'
     },
     {
         id   : 'veille',
-        title: 'Veille',
+        title: 'sections.veille.title',
         type : 'basic',
         icon : 'heroicons_outline:eye',
         link : '/veille'
     },
     {
         id   : 'contact',
-        title: 'Contact',
+        title: 'sections.contact.title',
         type : 'basic',
         icon : 'heroicons_solid:at-symbol',
         link : '/contact'

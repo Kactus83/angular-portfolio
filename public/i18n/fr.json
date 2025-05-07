@@ -1,126 +1,181 @@
 {
-    "signIn": {
-      "title": "Bienvenue sur mon portfolio",
-      "subtitle": "Connectez-vous pour personnaliser votre expérience, ou continuez en tant qu’invité.",
-      "firstNameLabel": "Prénom",
-      "firstNameRequired": "Le prénom est requis",
-      "lastNameLabel": "Nom",
-      "lastNameRequired": "Le nom est requis",
-      "loginButton": "Se connecter",
-      "guestButton": "Continuer en tant qu’invité",
-      "rightTitleLine1": "Compétences",
-      "rightTitleLine2": "& Profil",
-      "description": "Réalisé dans le cadre de l'examen BTS SIO, ce portfolio présente mon profil, mes compétences et mes projets sous forme d'une application web fonctionnelle.",
-      "visitors": "Plus de 17 000 personnes ont déjà exploré ce portfolio, à vous de jouer !"
-    },
-    "signOut": {
-      "title": "Ho… On se quitte déjà ?",
-      "redirectingPrefix": "Retour à l'accueil dans",
-      "goodbye": "Au revoir !",
-      "returnTo": "Retour à",
-      "homeLink": "l'accueil"
-    },
+  "signIn": {
+    "title": "Bienvenue sur mon portfolio",
+    "subtitle": "Connectez-vous pour personnaliser votre expérience, ou continuez en tant qu’invité.",
+    "firstNameLabel": "Prénom",
+    "firstNameRequired": "Le prénom est requis",
+    "lastNameLabel": "Nom",
+    "lastNameRequired": "Le nom est requis",
+    "loginButton": "Se connecter",
+    "guestButton": "Continuer en tant qu’invité",
+    "rightTitleLine1": "Compétences",
+    "rightTitleLine2": "& Profil",
+    "description": "Réalisé dans le cadre de l'examen BTS SIO, ce portfolio présente mon profil, mes compétences et mes projets sous forme d'une application web fonctionnelle.",
+    "visitors": "Plus de 17 000 personnes ont déjà exploré ce portfolio, à vous de jouer !"
+  },
+  "signOut": {
+    "title": "Ho… On se quitte déjà ?",
+    "redirectingPrefix": "Retour à l'accueil dans",
+    "goodbye": "Au revoir !",
+    "returnTo": "Retour à",
+    "homeLink": "l'accueil"
+  },
+  "home": {
+    "greetLine1": "Bonjour {{ who }} !",
+    "greetLine2": "Bienvenue dans mon portfolio.",
+    "line3": "Je m'appelle Florian Morena, je suis développeur.",
+    "description": "Développeur passionné, j’ai conçu ce portfolio dans le cadre de l’examen BTS SIO, inspiré des applications modernes et structuré selon les meilleures pratiques professionnelles pour garantir qualité de code et expérience utilisateur optimale."
+  },
+  "navigation": {
     "home": {
-      "greetLine1": "Bonjour {{ who }} !",
-      "greetLine2": "Bienvenue dans mon portfolio.",
-      "line3"     : "Je m'appelle Florian Morena, je suis développeur.",
-      "description": "Développeur passionné, j’ai conçu ce portfolio dans le cadre de l’examen BTS SIO, inspiré des applications modernes et structuré selon les meilleures pratiques professionnelles pour garantir qualité de code et expérience utilisateur optimale."
+      "title": "Accueil",
+      "desc": "Page d'accueil"
     },
-    "sections": {
-      "profile": {
-        "title": "Profil",
-        "desc" : "Découvrez mon parcours et mes coordonnées."
+    "profile": {
+      "title": "Profil",
+      "desc": "Découvrez mon parcours et mes coordonnées."
+    },
+    "skills": {
+      "title": "Compétences",
+      "desc": "Mes compétences techniques et mon expertise."
+    },
+    "experiences": {
+      "title": "Expériences",
+      "desc": "Mes expériences professionnelles marquantes."
+    },
+    "projects": {
+      "title": "Projets",
+      "desc": "Projets professionnels et personnels détaillés."
+    },
+    "veille": {
+      "title": "Veille techno",
+      "desc": "Suivi des dernières tendances du web."
+    },
+    "contact": {
+      "title": "Contact",
+      "desc": "Entrons en contact pour échanger !"
+    }
+  },
+  "pages": {
+    "profile": {
+      "personal": {
+        "title": "Apprenti BTS SIO",
+        "summary": "Autodidacte passionné par l’informatique, fondateur d’une SASU de services numériques, j’aspire à renforcer mes compétences au sein d’équipes expérimentées."
+      },
+      "contactInfo": {
+        "phone": "06 20 93 33 90",
+        "email": "florian.morena@gmail.com",
+        "address": "12 rue Pierre Renaudel, 83210 Solliès Pont"
       },
       "skills": {
-        "title": "Compétences",
-        "desc" : "Mes compétences techniques et mon expertise."
+        "programming": "Programmation",
+        "programmingItems": [
+          "WordPress",
+          "Algorithmique",
+          "Git & Docker",
+          "TypeScript & Angular",
+          "C / C++ (débutant)",
+          "Web3 (Solidity)"
+        ],
+        "network": "Réseau & Sécurité",
+        "networkItems": [
+          "Modèle OSI",
+          "Composants hardware",
+          "Communication sans fil"
+        ],
+        "misc": "Divers",
+        "miscItems": [
+          "Adobe CC",
+          "AutoDesk (en cours)"
+        ]
       },
       "experiences": {
-        "title": "Expériences",
-        "desc" : "Mes expériences professionnelles marquantes."
+        "dev": {
+          "pole": "DÉVELOPPEMENT FRONTEND/BACKEND",
+          "companies": ["CHESS MARITIME"],
+          "period": "2023 – 2024",
+          "details": [
+            "Gestion CMS WordPress interne",
+            "Outils informatiques divers",
+            "Développement d’un CMS maritime"
+          ]
+        },
+        "sasu": {
+          "pole": "SERVICES NUMÉRIQUES (S.A.S.U.)",
+          "companies": ["Ma propre SASU"],
+          "period": "2020 – 2022",
+          "details": [
+            "Sites WordPress & E-commerce",
+            "Scripts (mailing, scrapping…)",
+            "Référencement/SEO & Google Tools",
+            "Graphisme & Packaging",
+            "Vie réseau & dépannage"
+          ]
+        },
+        "educ": {
+          "pole": "ÉDUCATION SPÉCIALISÉE",
+          "companies": ["M.E.C.S. La Valbourdine", "M.E.C.S. La Déferlante", "S.A.M.S.A.H. – S.A.M.V.A. A.D.A.P.E.I."],
+          "period": "2015 – 2019",
+          "details": [
+            "Accompagnement de personnes en difficulté",
+            "Ateliers techniques & animation",
+            "Rédaction de rapports & comptes rendus",
+            "Animation de réunions"
+          ]
+        },
+        "elec": {
+          "pole": "ÉLECTRICITÉ INDUSTRIELLE & DOMESTIQUE",
+          "companies": ["Sud Elec Industrie", "Centre Var Électricité", "Entreprise générale d'électricité MORENA"],
+          "period": "2011 – 2015",
+          "details": [
+            "Création/Rénovation d’installations électriques",
+            "Domotique & Automatismes",
+            "Réseaux informatiques & Courant faible"
+          ]
+        }
       },
-      "projects": {
-        "title": "Projets",
-        "desc" : "Projets professionnels et personnels détaillés."
-      },
-      "veille": {
-        "title": "Veille techno",
-        "desc" : "Suivi des dernières tendances du web."
-      },
-      "contact": {
-        "title": "Contact",
-        "desc" : "Entrons en contact pour échanger !"
-      },
-      "pages": {
-        "profile": {
-          "personal": {
-            "title": "Apprenti BTS SIO",
-            "summary": "Autodidacte passionné par l’informatique, fondateur d’une SASU de services numériques, j’aspire à renforcer mes compétences au sein d’équipes expérimentées."
-          },
-          "contactInfo": {
-            "phone": "06 20 93 33 90",
-            "email": "florian.morena@gmail.com",
-            "address": "12 rue Pierre Renaudel, 83210 Solliès Pont"
-          },
-          "skills": {
-            "programming": "Programmation",
-            "programmingItems": ["WordPress","Algorithmique","Git & Docker","TypeScript & Angular","C / C++ (débutant)","Web3 (Solidity)"],
-            "network": "Réseau & Sécurité",
-            "networkItems": ["Modèle OSI","Composants hardware","Communication sans fil"],
-            "misc": "Divers",
-            "miscItems": ["Adobe CC","AutoDesk (en cours)"]
-          },
-          "experiences": {
-            "dev": {
-              "pole": "DÉVELOPPEMENT FRONTEND/BACKEND",
-              "companies": ["CHESS MARITIME"],
-              "period": "2023 – 2024",
-              "details": ["Gestion CMS WordPress interne","Outils informatiques divers","Développement d’un CMS maritime"]
-            },
-            "sasu": {
-              "pole": "SERVICES NUMÉRIQUES (S.A.S.U.)",
-              "companies": ["Ma propre SASU"],
-              "period": "2020 – 2022",
-              "details": ["Sites WordPress & E-commerce","Scripts (mailing, scrapping…)","Référencement/SEO & Google Tools","Graphisme & Packaging","Vie réseau & dépannage"]
-            },
-            "educ": {
-              "pole": "ÉDUCATION SPÉCIALISÉE",
-              "companies": ["M.E.C.S. La Valbourdine","M.E.C.S. La Déferlante","S.A.M.S.A.H. - S.A.M.V.A. A.D.A.P.E.I."],
-              "period": "2015 – 2019",
-              "details": ["Accompagnement de personnes en difficulté","Ateliers techniques & animation","Rédaction de rapports & comptes rendus","Animation de réunions"]
-            },
-            "elec": {
-              "pole": "ÉLECTRICITÉ INDUSTRIELLE & DOMESTIQUE",
-              "companies": ["Sud Elec Industrie","Centre Var Électricité","Entreprise générale d'électricité MORENA"],
-              "period": "2011 – 2015",
-              "details": ["Création/Rénovation d’installations électriques","Domotique & Automatismes","Réseaux informatiques & Courant faible"]
-            }
-          },
-          "education": {
-            "current": {
-              "period": "2023 – en cours",
-              "institution": "Maestris BTS",
-              "qualification": "BTS SIO"
-            },
-            "past1": {
-              "period": "2015 – 2019",
-              "institution": "IRFSS Croix Rouge",
-              "qualification": "Éducateur spécialisé"
-            },
-            "past2": {
-              "period": "2011 – 2013",
-              "institution": "CFA du Bâtiment",
-              "qualification": "CAP & BP Électricité"
-            },
-            "past3": {
-              "period": "2007 – 2010",
-              "institution": "Lycée du Coudon",
-              "qualification": "Baccalauréat Général"
-            }
-          }
+      "education": {
+        "current": {
+          "period": "2023 – en cours",
+          "institution": "Maestris BTS",
+          "qualification": "BTS SIO"
+        },
+        "past1": {
+          "period": "2015 – 2019",
+          "institution": "IRFSS Croix Rouge",
+          "qualification": "Éducateur spécialisé"
+        },
+        "past2": {
+          "period": "2011 – 2013",
+          "institution": "CFA du Bâtiment",
+          "qualification": "CAP & BP Électricité"
+        },
+        "past3": {
+          "period": "2007 – 2010",
+          "institution": "Lycée du Coudon",
+          "qualification": "Baccalauréat Général"
         }
       }
-    
+    },
+    "contact": {
+      "title": "Contactez-moi",
+      "form": {
+        "nameLabel": "Nom",
+        "namePlaceholder": "Votre nom",
+        "nameRequired": "Le nom est requis",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Votre email",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Email invalide",
+        "subjectLabel": "Sujet",
+        "subjectPlaceholder": "Sujet",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Votre message",
+        "messageRequired": "Le message est requis",
+        "submitButton": "Envoyer"
+      },
+      "success": "Merci ! Votre message a bien été envoyé.",
+      "error": "Oups ! Une erreur est survenue."
     }
   }
-  
+}

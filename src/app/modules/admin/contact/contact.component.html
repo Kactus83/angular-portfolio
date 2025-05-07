@@ -1,52 +1,65 @@
 <div class="flex flex-col p-6 sm:p-10 max-w-xl mx-auto space-y-6">
-    <h1 class="text-3xl font-extrabold">Contactez-moi</h1>
-  
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
-      <mat-form-field appearance="fill" class="w-full">
-        <mat-label>Nom</mat-label>
-        <input matInput formControlName="name" placeholder="Votre nom" />
-        <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
-          Le nom est requis
-        </mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="w-full">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" placeholder="Votre email" />
-        <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
-          L'email est requis
-        </mat-error>
-        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
-          Email invalide
-        </mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="w-full">
-        <mat-label>Sujet</mat-label>
-        <input matInput formControlName="subject" placeholder="Sujet" />
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="w-full">
-        <mat-label>Message</mat-label>
-        <textarea
-          matInput
-          formControlName="message"
-          rows="6"
-          placeholder="Votre message"
-        ></textarea>
-        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
-          Le message est requis
-        </mat-error>
-      </mat-form-field>
-  
-      <button
-        mat-flat-button
-        color="primary"
-        type="submit"
-        [disabled]="contactForm.invalid"
-      >
-        Envoyer
-      </button>
-    </form>
-  </div>
-  
+  <h1 class="text-3xl font-extrabold">
+    {{ 'pages.contact.title' | transloco }}
+  </h1>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>{{ 'pages.contact.form.nameLabel' | transloco }}</mat-label>
+      <input
+        matInput
+        formControlName="name"
+        [placeholder]="'pages.contact.form.namePlaceholder' | transloco"
+      />
+      <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+        {{ 'pages.contact.form.nameRequired' | transloco }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>{{ 'pages.contact.form.emailLabel' | transloco }}</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        [placeholder]="'pages.contact.form.emailPlaceholder' | transloco"
+      />
+      <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+        {{ 'pages.contact.form.emailRequired' | transloco }}
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+        {{ 'pages.contact.form.emailInvalid' | transloco }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>{{ 'pages.contact.form.subjectLabel' | transloco }}</mat-label>
+      <input
+        matInput
+        formControlName="subject"
+        [placeholder]="'pages.contact.form.subjectPlaceholder' | transloco"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>{{ 'pages.contact.form.messageLabel' | transloco }}</mat-label>
+      <textarea
+        matInput
+        formControlName="message"
+        rows="6"
+        [placeholder]="'pages.contact.form.messagePlaceholder' | transloco"
+      ></textarea>
+      <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+        {{ 'pages.contact.form.messageRequired' | transloco }}
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="contactForm.invalid"
+    >
+      {{ 'pages.contact.form.submitButton' | transloco }}
+    </button>
+  </form>
+</div>

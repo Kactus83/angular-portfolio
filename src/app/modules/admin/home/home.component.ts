@@ -44,55 +44,57 @@ export class HomeComponent implements AfterViewInit {
     switchMap(user => {
       const who = user && user.name !== 'Invité'
         ? user.name
-        : ''; // si personne, on laissera vide et Transloco gérera
+        : '';
       return this._transloco.selectTranslate('home.greetLine1', { who });
     })
   );
-  
+
   readonly greetLine2: string = this._transloco.translate('home.greetLine2');
   readonly line3: string      = this._transloco.translate('home.line3');
 
   readonly sections: Section[] = [
     {
-      title: this._transloco.translate('sections.profile.title'),
+      title: this._transloco.translate('navigation.profile.title'),
       icon : 'heroicons_solid:user-circle',
-      desc : this._transloco.translate('sections.profile.desc'),
+      desc : this._transloco.translate('navigation.profile.desc'),
       link : '/profile'
     },
     {
-      title: this._transloco.translate('sections.skills.title'),
+      title: this._transloco.translate('navigation.skills.title'),
       icon : 'heroicons_solid:academic-cap',
-      desc : this._transloco.translate('sections.skills.desc'),
+      desc : this._transloco.translate('navigation.skills.desc'),
       link : '/skills'
     },
     {
-      title: this._transloco.translate('sections.experiences.title'),
+      title: this._transloco.translate('navigation.experiences.title'),
       icon : 'heroicons_solid:briefcase',
-      desc : this._transloco.translate('sections.experiences.desc'),
+      desc : this._transloco.translate('navigation.experiences.desc'),
       link : '/experiences'
     },
     {
-      title: this._transloco.translate('sections.projects.title'),
+      title: this._transloco.translate('navigation.projects.title'),
       icon : 'heroicons_solid:folder',
-      desc : this._transloco.translate('sections.projects.desc'),
+      desc : this._transloco.translate('navigation.projects.desc'),
       link : '/projects'
     },
     {
-      title: this._transloco.translate('sections.veille.title'),
+      title: this._transloco.translate('navigation.veille.title'),
       icon : 'heroicons_solid:magnifying-glass',
-      desc : this._transloco.translate('sections.veille.desc'),
+      desc : this._transloco.translate('navigation.veille.desc'),
       link : '/veille'
     },
     {
-      title: this._transloco.translate('sections.contact.title'),
+      title: this._transloco.translate('navigation.contact.title'),
       icon : 'heroicons_solid:at-symbol',
-      desc : this._transloco.translate('sections.contact.desc'),
+      desc : this._transloco.translate('navigation.contact.desc'),
       link : '/contact'
     }
   ];
 
-
-  constructor(private _userService: UserService, private _transloco: TranslocoService) {}
+  constructor(
+    private _userService: UserService,
+    private _transloco: TranslocoService
+  ) {}
 
   ngAfterViewInit(): void {
     const canvasEl = this.canvas.nativeElement;
