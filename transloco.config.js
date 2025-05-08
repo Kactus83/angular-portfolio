@@ -1,3 +1,4 @@
 module.exports = {
-    rootTranslationsPath: 'src/assets/i18n/',
+    rootTranslationsPath: 'i18n/',
+    scopeStrategy: 'file',
 };

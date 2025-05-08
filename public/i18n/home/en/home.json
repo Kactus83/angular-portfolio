@@ -1,0 +1,8 @@
+{ 
+    "home": {
+        "greetLine1": "Hello {{ who }}!",
+        "greetLine2": "Welcome to my portfolio.",
+        "line3": "My name is Florian Morena, I am a developer.",
+        "description": "A passionate developer, I built this portfolio as part of the BTS SIO exam, inspired by modern applications and structured according to professional best practices to ensure code quality and optimal user experience."
+      }
+}

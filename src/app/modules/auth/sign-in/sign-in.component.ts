@@ -23,8 +23,9 @@ import {
   } from '@portfolio/components/alert';
   import { AuthService } from 'app/core/auth/auth.service';
 import { CommonModule } from '@angular/common';
-import { TranslocoModule } from '@ngneat/transloco';
-  
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
+
+
   @Component({
     selector: 'auth-sign-in',
     templateUrl: './sign-in.component.html',
@@ -41,6 +42,9 @@ import { TranslocoModule } from '@ngneat/transloco';
       MatInputModule,
       MatButtonModule,
       PortfolioAlertComponent
+    ],
+    providers: [
+      provideTranslocoScope('common')
     ]
   })
   export class AuthSignInComponent implements OnInit {

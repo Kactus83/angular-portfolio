@@ -5,18 +5,18 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
-    private _httpClient = inject(HttpClient);
+  private http = inject(HttpClient);
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Get translation
-     *
-     * @param lang
-     */
-    getTranslation(lang: string): Observable<Translation> {
-        return this._httpClient.get<Translation>(`./i18n/${lang}.json`);
-    }
+  /**
+   * Ignore le scope comme dossier, on l'utilise seulement
+   * comme nom de fichier sous /i18n/{lang}/{scope}.json
+   */
+  getTranslation(
+    lang: string,
+    data?: { scope: string }
+  ): Observable<Translation> | Promise<Translation> {
+    const file = data?.scope ?? 'common';
+    // **Ne plus** inclure data.scope dans le chemin d'accès
+    return this.http.get<Translation>(`/i18n/${lang}/${file}.json`);
+  }
 }

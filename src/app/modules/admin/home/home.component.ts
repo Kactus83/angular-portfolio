@@ -13,7 +13,7 @@ import { UserService }    from 'app/core/user/user.service';
 import { Observable }     from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { TypewriterDirective } from './directives/typewriter.directive';
-import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
+import { TranslocoModule, TranslocoService, provideTranslocoScope } from '@ngneat/transloco';
 
 interface Section {
   title: string;
@@ -31,6 +31,9 @@ interface Section {
     MatIconModule,
     TypewriterDirective,
     TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope('home')
   ],
   templateUrl    : './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

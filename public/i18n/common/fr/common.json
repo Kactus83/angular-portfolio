@@ -1,0 +1,39 @@
+{
+    "signIn": {
+      "title": "Bienvenue sur mon portfolio",
+      "subtitle": "Connectez-vous pour personnaliser votre expérience, ou continuez en tant qu’invité.",
+      "firstNameLabel": "Prénom",
+      "firstNameRequired": "Le prénom est requis",
+      "lastNameLabel": "Nom",
+      "lastNameRequired": "Le nom est requis",
+      "loginButton": "Se connecter",
+      "guestButton": "Continuer en tant qu’invité",
+      "rightTitleLine1": "Compétences",
+      "rightTitleLine2": "& Profil",
+      "description": "Réalisé dans le cadre de l'examen BTS SIO, ce portfolio présente mon profil, mes compétences et mes projets sous forme d'une application web fonctionnelle.",
+      "visitors": "Plus de 17 000 personnes ont déjà exploré ce portfolio, à vous de jouer !"
+    },
+    "signOut": {
+      "title": "Ho… On se quitte déjà ?",
+      "redirectingPrefix": "Retour à l'accueil dans",
+      "goodbye": "Au revoir !",
+      "returnTo": "Retour à",
+      "homeLink": "l'accueil"
+    },
+    "home": {
+      "greetLine1": "Bonjour {{ who }} !",
+      "greetLine2": "Bienvenue dans mon portfolio.",
+      "line3": "Je m'appelle Florian Morena, je suis développeur.",
+      "description": "Développeur passionné, j’ai conçu ce portfolio dans le cadre de l’examen BTS SIO, inspiré des applications modernes et structuré selon les meilleures pratiques professionnelles pour garantir qualité de code et expérience utilisateur optimale."
+    },
+    "navigation": {
+      "home": { "title": "Accueil", "desc": "Page d'accueil" },
+      "profile": { "title": "Profil", "desc": "Découvrez mon parcours et mes coordonnées." },
+      "skills": { "title": "Compétences", "desc": "Mes compétences techniques et mon expertise." },
+      "experiences": { "title": "Expériences", "desc": "Mes expériences professionnelles marquantes." },
+      "projects": { "title": "Projets", "desc": "Projets professionnels et personnels détaillés." },
+      "veille": { "title": "Veille techno", "desc": "Suivi des dernières tendances du web." },
+      "contact": { "title": "Contact", "desc": "Entrons en contact pour échanger !" }
+    }
+  }
+  

@@ -68,7 +68,7 @@ export const appConfig: ApplicationConfig = {
                 defaultLang: 'fr',
                 fallbackLang: 'fr',
                 reRenderOnLangChange: true,
-                prodMode: true,
+                prodMode: true
             },
             loader: TranslocoHttpLoader,
         }),

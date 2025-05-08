@@ -4,6 +4,8 @@ import { Router, RouterLink } from '@angular/router';
 import { TranslocoModule } from '@ngneat/transloco';
 import { AuthService } from 'app/core/auth/auth.service';
 import { Subject, finalize, takeUntil, takeWhile, tap, timer } from 'rxjs';
+import { provideTranslocoScope } from '@ngneat/transloco';
+
 
 @Component({
     selector: 'auth-sign-out',
@@ -11,6 +13,9 @@ import { Subject, finalize, takeUntil, takeWhile, tap, timer } from 'rxjs';
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [RouterLink, I18nPluralPipe, TranslocoModule],
+        providers: [
+          provideTranslocoScope('common')
+        ]
 })
 export class AuthSignOutComponent implements OnInit, OnDestroy {
     countdown: number = 5;

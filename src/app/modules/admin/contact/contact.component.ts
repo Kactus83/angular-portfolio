@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule }      from '@angular/material/input';
 import { MatButtonModule }     from '@angular/material/button';
-import { TranslocoModule } from '@ngneat/transloco';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-contact',
@@ -17,6 +17,9 @@ import { TranslocoModule } from '@ngneat/transloco';
     MatButtonModule,
     TranslocoModule
   ],
+      providers: [
+        provideTranslocoScope('common')
+      ],
   templateUrl: './contact.component.html'
 })
 export class ContactComponent {

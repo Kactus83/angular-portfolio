@@ -1,0 +1,158 @@
+{
+    "header": {
+      "title": "Projets",
+      "personalProjects": "Mes Projets Personnels",
+      "discoverOnGitHub": "Découvrez mes réalisations personnelles, disponibles sur mon profil GitHub."
+    },
+    "cards": {
+      "repos": "{{count}} dépôts publics",
+      "followers": "{{count}} followers",
+      "stars": "{{count}} stars",
+      "details": "Détails",
+      "github": "Dépôt GitHub",
+      "demo": "Voir la démo"
+    },
+    "projects": {
+      "space-invaders": {
+        "title": "Space Invaders",
+        "summary": "Recréation du jeu classique Space Invaders.",
+        "description": "Une version moderne du jeu Space Invaders avec des graphismes améliorés, animations fluides et scores en ligne.",
+        "technologies": ["TypeScript", "HTML5 Canvas", "CSS"],
+        "history": "Développé en 2023 dans le cadre d’un hackathon interne, puis maintenu en tant que projet perso.",
+        "architecture": "Monolithic en Vanilla TS, loop principal séparé des gestionnaires d’input et de rendu.",
+        "technicalChoices": "Utilisation de HTML5 Canvas pour la compatibilité et la performance, sans framework tiers.",
+        "technicalReflections": "Le découpage en modules TS facilite l’ajout de nouvelles entités (ennemis, power-ups).",
+        "difficulties": "Gestion de la physique basique et des collisions optimisées pour ne pas bloquer le framerate."
+      },
+      "custom-logger": {
+        "title": "Custom Logger",
+        "summary": "Package NPM modulaire de logging pour Node.js, configurable et extensible.",
+        "description": "Custom Logger est un module TypeScript pour Node.js fournissant un service de journalisation centralisé : gestion de niveaux (TRACE à ERROR), hiérarchie main/sub-process, styles colorés ou classiques, et configuration fine via une API fluent. Il s’intègre facilement dans toute application Node.js et se prête à l’enrichissement par de nouveaux transports.",
+        "technologies": [
+          "Node.js",
+          "TypeScript",
+          "ANSI-Escapes (styles console)",
+          "Commander / prompts (packaging CLI)",
+          "JSON (config)"
+        ],
+        "history": "Créé le 28 février 2024 et publié peu après sur NPM (v0.1.11) pour expérimenter la création d’un package modulable de logging en TypeScript.",
+        "architecture": "Module mono-package avec un singleton `LoggingService` orchestrant plusieurs services internes (ProcessDatabase, RegistrationService, StyleManager, TreeVisualizer). Deux clients héritent d’une base abstraite pour produire des logs hiérarchisés.",
+        "technicalChoices": "– Pattern Singleton ;  – Composition de services pour séparer responsabilités ;  – Enums et interfaces TypeScript pour la cohérence ;  – Sortie console via `console.log` avec styles ANSI.",
+        "technicalReflections": "Le singleton simplifie l’usage mais limite les instances multiples. La séparation en services est vertueuse, mais l’héritage pour les clients pourrait être remplacé par la composition.",
+        "difficulties": "– Publication NPM et packaging (ESM vs CommonJS) ;  – Choix héritage vs composition ;  – API de configuration riche ;  – Absence de tests initiaux nécessitant un mock manuel."
+      },
+      "color-generator": {
+        "title": "Theme Color Generator",
+        "summary": "Un outil web pour générer dynamiquement des thèmes CSS avec aperçu en temps réel.",
+        "description": "Le Theme Color Generator permet de créer des palettes de couleurs personnalisées (HEX, RGB…), d’avoir un aperçu en temps réel et de générer automatiquement le code CSS associé.",
+        "technologies": ["TypeScript", "Webpack", "CSS Variables", "HTML", "CSS"],
+        "history": "Créé le 23 octobre 2023 pour centraliser la génération de thèmes colorés CSS, puis mis à jour le 5 mai 2025 pour améliorer l’ergonomie et le design.",
+        "architecture": "Entrypoint `main.ts` initialise les services : ColorsService, ColorsPaletteService, ThemeColorsService, ThemeDisplayService. Structure DDD packagée via Webpack.",
+        "technicalChoices": "TypeScript pour le typage strict, HTML/CSS pour l’interface, Webpack pour bundler, architecture en services et value-objects.",
+        "technicalReflections": "Proposer export pour Tailwind, configurer templates SCSS/JSON, offrir une CLI pour intégration CI/CD.",
+        "difficulties": "Tests unitaires manquants, workflow CI, gestion avancée des formats de sortie."
+      },
+      "portfolio": {
+        "title": "Book 2023",
+        "summary": "Portfolio web multi-pages responsive, avec animations et thème personnalisable.",
+        "description": "Site statique multi-pages (landing, home, CV, compétences, projets GitHub) servi par un mini-serveur Node.js, avec curseur personnalisé et thème via CSS variables.",
+        "technologies": ["HTML5", "CSS3", "JavaScript ES6", "Node.js"],
+        "history": "Créé le mardi 24 octobre 2023 comme template de portfolio anonyme, développé en quasi-one-shot.",
+        "architecture": "Architecture multi-page autonome, `server.js` pour le routage, `main.js` pour le curseur, theming et redirection initiale.",
+        "technicalChoices": "Vanilla JS/CSS pour légèreté, CSS variables pour le theming, mini-serveur Node.js maison.",
+        "technicalReflections": "Un bundler ou SPA fluidifierait la navigation et le workflow.",
+        "difficulties": "Curseur cross-browser, gestion fine des CSS variables et animations, redirection sans FOUC."
+      },
+      "idlesaur": {
+        "title": "The idlesaur",
+        "summary": "Idle game web où l’on suit un dinosaure virtuel — besoins, niveaux, karma et boutique intégrée.",
+        "description": "Full-stack React 18 + Express/TypeScript + MariaDB, gestion de faim, expérience et karma via cycles, ressources et boutique interne.",
+        "technologies": [
+          "React 18",
+          "Express.js",
+          "TypeScript / JavaScript ES6",
+          "MariaDb",
+          "Docker & Docker Compose",
+          "Terraform (HCL)",
+          "PowerShell",
+          "YAML",
+          "AWS App Runner"
+        ],
+        "history": "Développé 2024–2025 pour le BTS SLAM. Forké pour finaliser gameplay et infrastructure.",
+        "architecture": "3-tiers conteneurisée : frontend React, backend Express/TS, base MariaDB, orchestrés via Docker Compose et Terraform vers AWS App Runner.",
+        "technicalChoices": "React 18 + Express pour découpage clair, TS pour typage, Docker multi-stage, Terraform pour infra-as-code.",
+        "technicalReflections": "Script SQL brut pour transparence, futur ORM (Prisma), bus d’événements (Kafka/RabbitMQ).",
+        "difficulties": "Auth interne, HTTPS AWS, backups RDS, pipeline CI/CD sans outil dédié."
+      },
+      "app-template": {
+        "title": "App Template",
+        "summary": "Template full-stack CLI + wizard desktop + infra-as-code pour accélérer le développement.",
+        "description": "Backend NestJS, frontend Angular 16, CLI “appwizard”, wizard Tauri/Rust, services conteneurisés Docker Compose, provisioning Terraform AWS/GCP.",
+        "technologies": [
+          "NestJS",
+          "TypeScript",
+          "Angular 20",
+          "Tauri + Rust",
+          "Solidity",
+          "HTML5",
+          "CSS3 / SCSS",
+          "Docker & Docker Compose",
+          "PostgreSQL",
+          "Vault (HashiCorp)",
+          "Ganache/Hardhat",
+          "Prisma ORM",
+          "Terraform (AWS & GCP)",
+          "YAML / HCL",
+          "PowerShell & Bash",
+          "Commander / prompts"
+        ],
+        "history": "Fruit de cinq années d’itérations, monorepo Git submodules, développé en 2024–2025 pour répondre aux standards SLAM et déploiement automatisé.",
+        "architecture": "Monorepo avec trois submodules (template, tooling, wizard), 3-tiers conteneurisée, CLI pour build/deploy, wizard Tauri pour prérequis.",
+        "technicalChoices": "Passport-JWT & Guards NestJS, Prisma, Angular PWA-ready + Tailwind/SCSS, Solidity, Docker & Terraform, Tauri/Rust.",
+        "technicalReflections": "Unifier auth Passport, transformer le front en add-on Portfolio pour intégration pérenne.",
+        "difficulties": "Complexité monorepo, mises à jour fréquentes, maintenance doc/submodules, provisioning zero-touch cloud."
+      },
+      "memory-game": {
+        "title": "Memory Game",
+        "summary": "Jeu de mémoire en React (Create React App) : trouvez des paires d’émojis dans une grille.",
+        "description": "Génération de paires d’emoji, message de victoire ou défaite, sans démo publique (clone + `npm start`).",
+        "technologies": ["React", "JavaScript", "CSS3", "HTML5"],
+        "history": "Lancé le 22 octobre 2024 comme exercice pédagogique sur React et hooks.",
+        "architecture": "Tout-en-vrac dans `src/`, composants MemoryGame, Card, Controls, GameOver au même niveau.",
+        "technicalChoices": "Fonctionnels React avec hooks, animation CSS3 pour le flip, séparation en quatre composants.",
+        "technicalReflections": "Re-organiser en dossiers par feature, ajouter profils, niveaux, stockage local.",
+        "difficulties": "Synchroniser flip et timer, désactiver clics durant animation, gérer GameOver via états combinés."
+      },
+      "vf-robber": {
+        "title": "VF Robber (Very Fast Robber)",
+        "summary": "Desktop multiplateforme Angular+Rust/Tauri pour renommage massif de fichiers et dossiers.",
+        "description": "Refonte Angular 16 + Rust/Tauri d’un script Python : copier dossiers, scan/replacing, renaming, barre de progression en temps réel.",
+        "technologies": ["Angular 20", "Rust 1.71 + Tauri", "HTML5", "CSS3", "Node.js / npm"],
+        "history": "Reprise le 3 mai 2025, de proof-of-concept à outil structuré évolutif.",
+        "architecture": "Monorepo Tauri + Angular, IPC Rust→Angular pour mises à jour progressives et logs.",
+        "technicalChoices": "Tauri/Rust pour natif, Angular pour UI, IPC événements temps réel, npm & Cargo pour builds.",
+        "technicalReflections": "Rapports CSV/JSON, CLI Rust pur, presets frameworks (WordPress, Laravel…).",
+        "difficulties": "Config Tauri multi-OS, synchronisation IPC rapide, gestion permissions et packaging multiplateforme."
+      }
+    },
+    "detail": {
+      "sections": {
+        "description": "Description",
+        "codeDistribution": "Répartition du code",
+        "gallery": "Galerie",
+        "technicalDetails": "Détails techniques",
+        "externalLinks": "Liens externes",
+        "history": "Historique",
+        "architecture": "Architecture",
+        "technicalChoices": "Choix techniques",
+        "technicalReflections": "Réflexions techniques",
+        "difficulties": "Difficultés"
+      },
+      "buttons": {
+        "close": "Fermer",
+        "repo": "Dépôt",
+        "demo": "Démo"
+      }
+    }
+  }
+  

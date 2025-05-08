@@ -1,3 +1,4 @@
+// src/app/layout/common/languages/languages.component.ts
 import { NgTemplateOutlet } from '@angular/common';
 import {
     ChangeDetectionStrategy,
@@ -47,13 +48,25 @@ export class LanguagesComponent implements OnInit, OnDestroy {
      * On init
      */
     ngOnInit(): void {
+
+        console.log('LanguagesComponent ngOnInit');
+
         // Get the available languages from transloco
         this.availableLangs = this._translocoService.getAvailableLangs();
+
+        console.log('availableLangs', this.availableLangs);
+
+        // Apply current active language immediately
+        this.activeLang = this._translocoService.getActiveLang();
+        this._updateNavigation(this.activeLang);
+        console.log('activeLang', this.activeLang);
 
         // Subscribe to language changes
         this._translocoService.langChanges$.subscribe((activeLang) => {
             // Get the active lang
             this.activeLang = activeLang;
+
+            console.log('activeLang changed', this.activeLang);
 
             // Update the navigation
             this._updateNavigation(activeLang);
@@ -107,12 +120,9 @@ export class LanguagesComponent implements OnInit, OnDestroy {
      * @private
      */
     private _updateNavigation(lang: string): void {
-        // For the demonstration purposes, we will only update the Dashboard names
-        // from the navigation but you can do a full swap and change the entire
-        // navigation data.
-        //
-        // You can import the data from a file or request it from your backend,
-        // it's up to you.
+        // For demonstration purposes, we will only update the Dashboard names
+        // from the navigation but you can swap out the entire navigation data,
+        // import from a file or request it from your backend.
 
         // Get the component -> navigation data -> item
         const navComponent =
@@ -122,11 +132,37 @@ export class LanguagesComponent implements OnInit, OnDestroy {
 
         // Return if the navigation component does not exist
         if (!navComponent) {
-            return null;
+            return;
         }
 
         // Get the flat navigation data
         const navigation = navComponent.navigation;
+        console.log('navigation', navigation);
+
+        // Dynamic translation for all navigation items
+        navigation.forEach(item => {
+            // Translate the title using key: navigation.<id>.title
+            const titleKey = `navigation.${item.id}.title`;
+            console.log('titleKey', titleKey);
+            this._translocoService
+                .selectTranslate(titleKey)
+                .pipe(take(1))
+                .subscribe(trans => {
+                    item.title = trans;
+                });
+            // If there is a desc field, translate it too
+            if ((item as any).desc !== undefined) {
+                const descKey = `navigation.${item.id}.desc`;
+                this._translocoService
+                    .selectTranslate(descKey)
+                    .pipe(take(1))
+                    .subscribe(trans => {
+                        (item as any).desc = trans;
+                    });
+            }
+        });
+        // Refresh the navigation component to apply translations
+        navComponent.refresh();
 
         // Get the Project dashboard item and update its title
         const projectDashboardItem = this._portfolioNavigationService.getItem(
@@ -138,10 +174,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
                 .selectTranslate('Project')
                 .pipe(take(1))
                 .subscribe((translation) => {
-                    // Set the title
                     projectDashboardItem.title = translation;
-
-                    // Refresh the navigation component
                     navComponent.refresh();
                 });
         }
@@ -156,10 +189,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
                 .selectTranslate('Analytics')
                 .pipe(take(1))
                 .subscribe((translation) => {
-                    // Set the title
                     analyticsDashboardItem.title = translation;
-
-                    // Refresh the navigation component
                     navComponent.refresh();
                 });
         }
