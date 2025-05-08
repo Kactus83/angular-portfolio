@@ -1,11 +1,12 @@
-// src/app/layout/common/languages/languages.component.ts
 import { NgTemplateOutlet } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
+    AfterViewInit,
     OnDestroy,
     OnInit,
+    ViewChild,
     ViewEncapsulation,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,8 +16,12 @@ import {
     PortfolioVerticalNavigationComponent,
 } from '@portfolio/components/navigation';
 import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
-import { take } from 'rxjs';
+import { NavigationService } from 'app/core/navigation/navigation.service';
+import { Subject, take, skip } from 'rxjs';
 
+/**
+ * Composant de sélection de la langue et traduction de la navigation
+ */
 @Component({
     selector: 'languages',
     templateUrl: './languages.component.html',
@@ -26,10 +31,22 @@ import { take } from 'rxjs';
     standalone: true,
     imports: [MatButtonModule, MatMenuModule, NgTemplateOutlet],
 })
-export class LanguagesComponent implements OnInit, OnDestroy {
+export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
+    /** Liste des langues disponibles */
     availableLangs: AvailableLangs;
+
+    /** Langue active */
     activeLang: string;
-    flagCodes: any;
+
+    /** Codes ISO des drapeaux pour chaque langue */
+    flagCodes: Record<string, string>;
+
+    /** Référence au composant de navigation (mainNavigation) */
+    @ViewChild(PortfolioVerticalNavigationComponent, { static: false })
+    private _navComponent: PortfolioVerticalNavigationComponent;
+
+    /** Subject pour nettoyer les abonnements */
+    private _unsubscribeAll = new Subject<void>();
 
     /**
      * Constructor
@@ -37,6 +54,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
         private _portfolioNavigationService: PortfolioNavigationService,
+        private _navigationService: NavigationService,
         private _translocoService: TranslocoService
     ) {}
 
@@ -44,66 +62,59 @@ export class LanguagesComponent implements OnInit, OnDestroy {
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
     ngOnInit(): void {
+        console.log('[Languages] ngOnInit');
 
-        console.log('LanguagesComponent ngOnInit');
-
-        // Get the available languages from transloco
+        // 1) Récupère les langues disponibles et initialise les drapeaux
         this.availableLangs = this._translocoService.getAvailableLangs();
+        this.flagCodes = { en: 'us', fr: 'fr', zh: 'zh' };
 
-        console.log('availableLangs', this.availableLangs);
-
-        // Apply current active language immediately
+        // 2) Langue active actuelle
         this.activeLang = this._translocoService.getActiveLang();
-        this._updateNavigation(this.activeLang);
-        console.log('activeLang', this.activeLang);
+        console.log('[Languages] Langue initiale:', this.activeLang);
 
-        // Subscribe to language changes
-        this._translocoService.langChanges$.subscribe((activeLang) => {
-            // Get the active lang
-            this.activeLang = activeLang;
+        // 3) Écoute le premier événement de changement de langue pour init
+        this._translocoService.langChanges$
+            .pipe(take(1))
+            .subscribe((lang) => {
+                console.log('[Languages] Initial langChange:', lang);
+                this._doTranslate(lang);
+            });
 
-            console.log('activeLang changed', this.activeLang);
-
-            // Update the navigation
-            this._updateNavigation(activeLang);
-        });
-
-        // Set the country iso codes for languages for flags
-        this.flagCodes = {
-            en: 'us',
-            fr: 'fr',
-            zh: 'zh',
-        };
+        // 4) Écoute les changements suivants de langue
+        this._translocoService.langChanges$
+            .pipe(skip(1))
+            .subscribe((lang) => {
+                console.log('[Languages] langChange ultérieur:', lang);
+                this._doTranslate(lang);
+            });
     }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {}
+    ngAfterViewInit(): void {
+        // Dès que la view est ready, répète la traduction pour être sûr
+        console.log('[Languages] ngAfterViewInit');
+        this._doTranslate(this.activeLang);
+    }
+
+    ngOnDestroy(): void {
+        this._unsubscribeAll.next();
+        this._unsubscribeAll.complete();
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Set the active lang
-     *
-     * @param lang
+     * Change la langue active de Transloco
      */
     setActiveLang(lang: string): void {
-        // Set the active lang
+        console.log('[Languages] setActiveLang ->', lang);
         this._translocoService.setActiveLang(lang);
     }
 
     /**
-     * Track by function for ngFor loops
-     *
-     * @param index
-     * @param item
+     * trackBy pour ngFor
      */
     trackByFn(index: number, item: any): any {
         return item.id || index;
@@ -114,84 +125,50 @@ export class LanguagesComponent implements OnInit, OnDestroy {
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Update the navigation
-     *
-     * @param lang
-     * @private
+     * Traduit tous les items de navigation pour la langue donnée
      */
-    private _updateNavigation(lang: string): void {
-        // For demonstration purposes, we will only update the Dashboard names
-        // from the navigation but you can swap out the entire navigation data,
-        // import from a file or request it from your backend.
-
-        // Get the component -> navigation data -> item
+    private _doTranslate(lang: string): void {
         const navComponent =
-            this._portfolioNavigationService.getComponent<PortfolioVerticalNavigationComponent>(
-                'mainNavigation'
-            );
+            this._navComponent ||
+            this._portfolioNavigationService.getComponent<PortfolioVerticalNavigationComponent>('mainNavigation');
 
-        // Return if the navigation component does not exist
         if (!navComponent) {
+            console.warn('[Languages] navComponent non trouvé');
             return;
         }
 
-        // Get the flat navigation data
         const navigation = navComponent.navigation;
-        console.log('navigation', navigation);
+        console.log('[Languages] Translation nav for', lang, navigation);
 
-        // Dynamic translation for all navigation items
-        navigation.forEach(item => {
-            // Translate the title using key: navigation.<id>.title
+        // Traduction synchrone des titres et descriptions
+        navigation.forEach((item) => {
             const titleKey = `navigation.${item.id}.title`;
-            console.log('titleKey', titleKey);
-            this._translocoService
-                .selectTranslate(titleKey)
-                .pipe(take(1))
-                .subscribe(trans => {
-                    item.title = trans;
-                });
-            // If there is a desc field, translate it too
+            item.title = this._translocoService.translate(titleKey);
+            console.debug(`[Languages] ${titleKey} ->`, item.title);
+
             if ((item as any).desc !== undefined) {
                 const descKey = `navigation.${item.id}.desc`;
-                this._translocoService
-                    .selectTranslate(descKey)
-                    .pipe(take(1))
-                    .subscribe(trans => {
-                        (item as any).desc = trans;
-                    });
+                (item as any).desc = this._translocoService.translate(descKey);
+                console.debug(`[Languages] ${descKey} ->`, (item as any).desc);
             }
         });
-        // Refresh the navigation component to apply translations
+
+        // Traduction des tableaux de bord spécifiques
+        const dashboards = [
+            { id: 'dashboards.project', key: 'Project' },
+            { id: 'dashboards.analytics', key: 'Analytics' },
+        ];
+        dashboards.forEach(({ id, key }) => {
+            const dashItem = this._portfolioNavigationService.getItem(id, navigation);
+            if (dashItem) {
+                dashItem.title = this._translocoService.translate(key);
+                console.debug(`[Languages] ${key} ->`, dashItem.title);
+            }
+        });
+
+        // Refresh et markForCheck pour afficher les changements
         navComponent.refresh();
-
-        // Get the Project dashboard item and update its title
-        const projectDashboardItem = this._portfolioNavigationService.getItem(
-            'dashboards.project',
-            navigation
-        );
-        if (projectDashboardItem) {
-            this._translocoService
-                .selectTranslate('Project')
-                .pipe(take(1))
-                .subscribe((translation) => {
-                    projectDashboardItem.title = translation;
-                    navComponent.refresh();
-                });
-        }
-
-        // Get the Analytics dashboard item and update its title
-        const analyticsDashboardItem = this._portfolioNavigationService.getItem(
-            'dashboards.analytics',
-            navigation
-        );
-        if (analyticsDashboardItem) {
-            this._translocoService
-                .selectTranslate('Analytics')
-                .pipe(take(1))
-                .subscribe((translation) => {
-                    analyticsDashboardItem.title = translation;
-                    navComponent.refresh();
-                });
-        }
+        this._changeDetectorRef.markForCheck();
+        console.log('[Languages] Navigation traduite et rafraîchie');
     }
 }
