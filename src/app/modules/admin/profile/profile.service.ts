@@ -38,8 +38,8 @@ export class ProfileService
   getPersonal(): Observable<PersonalInfo> {
     return of({
       name      : 'Florian Morena',
-      title     : this._transloco.translate('pages.profile.personal.title'),
-      summary   : this._transloco.translate('pages.profile.personal.summary'),
+      title     : this._transloco.translate('profile.personal.title'),
+      summary   : this._transloco.translate('profile.personal.summary'),
       avatarUrl : 'images/avatars/perso.jpg',
       coverUrl  : 'images/pages/profile/cover.jpg'
     });
@@ -47,30 +47,30 @@ export class ProfileService
 
   getContact(): Observable<ContactInfo> {
     return of({
-      phone   : this._transloco.translate('pages.profile.contactInfo.phone'),
-      email   : this._transloco.translate('pages.profile.contactInfo.email'),
-      address : this._transloco.translate('pages.profile.contactInfo.address')
+      phone   : this._transloco.translate('profile.contactInfo.phone'),
+      email   : this._transloco.translate('profile.contactInfo.email'),
+      address : this._transloco.translate('profile.contactInfo.address')
     });
   }
 
   getSkills(): Observable<SkillGroup[]> {
     return of([
       {
-        category: this._transloco.translate('pages.profile.skills.programming'),
+        category: this._transloco.translate('profile.skills.programming'),
         items   : [
-          ...JSON.parse(this._transloco.translate('pages.profile.skills.programmingItems'))
+          ...JSON.parse(this._transloco.translate('profile.skills.programmingItems'))
         ]
       },
       {
-        category: this._transloco.translate('pages.profile.skills.network'),
+        category: this._transloco.translate('profile.skills.network'),
         items   : [
-          ...JSON.parse(this._transloco.translate('pages.profile.skills.networkItems'))
+          ...JSON.parse(this._transloco.translate('profile.skills.networkItems'))
         ]
       },
       {
-        category: this._transloco.translate('pages.profile.skills.misc'),
+        category: this._transloco.translate('profile.skills.misc'),
         items   : [
-          ...JSON.parse(this._transloco.translate('pages.profile.skills.miscItems'))
+          ...JSON.parse(this._transloco.translate('profile.skills.miscItems'))
         ]
       }
     ]);
@@ -79,43 +79,43 @@ export class ProfileService
   getExperiences(): Observable<Experience[]> {
     return of([
       {
-        pole      : this._transloco.translate('pages.profile.experiences.dev.pole'),
+        pole      : this._transloco.translate('profile.experiences.dev.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.dev.companies'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.dev.companies'))
         ],
-        period    : this._transloco.translate('pages.profile.experiences.dev.period'),
+        period    : this._transloco.translate('profile.experiences.dev.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.dev.details'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.dev.details'))
         ]
       },
       {
-        pole      : this._transloco.translate('pages.profile.experiences.sasu.pole'),
+        pole      : this._transloco.translate('profile.experiences.sasu.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.sasu.companies'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.sasu.companies'))
         ],
-        period    : this._transloco.translate('pages.profile.experiences.sasu.period'),
+        period    : this._transloco.translate('profile.experiences.sasu.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.sasu.details'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.sasu.details'))
         ]
       },
       {
-        pole      : this._transloco.translate('pages.profile.experiences.educ.pole'),
+        pole      : this._transloco.translate('profile.experiences.educ.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.educ.companies'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.educ.companies'))
         ],
-        period    : this._transloco.translate('pages.profile.experiences.educ.period'),
+        period    : this._transloco.translate('profile.experiences.educ.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.educ.details'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.educ.details'))
         ]
       },
       {
-        pole      : this._transloco.translate('pages.profile.experiences.elec.pole'),
+        pole      : this._transloco.translate('profile.experiences.elec.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.elec.companies'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.elec.companies'))
         ],
-        period    : this._transloco.translate('pages.profile.experiences.elec.period'),
+        period    : this._transloco.translate('profile.experiences.elec.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('pages.profile.experiences.elec.details'))
+          ...JSON.parse(this._transloco.translate('profile.experiences.elec.details'))
         ]
       }
     ]);
@@ -124,24 +124,24 @@ export class ProfileService
   getEducation(): Observable<Education[]> {
     return of([
       {
-        period       : this._transloco.translate('pages.profile.education.current.period'),
-        institution  : this._transloco.translate('pages.profile.education.current.institution'),
-        qualification: this._transloco.translate('pages.profile.education.current.qualification')
+        period       : this._transloco.translate('profile.education.current.period'),
+        institution  : this._transloco.translate('profile.education.current.institution'),
+        qualification: this._transloco.translate('profile.education.current.qualification')
       },
       {
-        period       : this._transloco.translate('pages.profile.education.past1.period'),
-        institution  : this._transloco.translate('pages.profile.education.past1.institution'),
-        qualification: this._transloco.translate('pages.profile.education.past1.qualification')
+        period       : this._transloco.translate('profile.education.past1.period'),
+        institution  : this._transloco.translate('profile.education.past1.institution'),
+        qualification: this._transloco.translate('profile.education.past1.qualification')
       },
       {
-        period       : this._transloco.translate('pages.profile.education.past2.period'),
-        institution  : this._transloco.translate('pages.profile.education.past2.institution'),
-        qualification: this._transloco.translate('pages.profile.education.past2.qualification')
+        period       : this._transloco.translate('profile.education.past2.period'),
+        institution  : this._transloco.translate('profile.education.past2.institution'),
+        qualification: this._transloco.translate('profile.education.past2.qualification')
       },
       {
-        period       : this._transloco.translate('pages.profile.education.past3.period'),
-        institution  : this._transloco.translate('pages.profile.education.past3.institution'),
-        qualification: this._transloco.translate('pages.profile.education.past3.qualification')
+        period       : this._transloco.translate('profile.education.past3.period'),
+        institution  : this._transloco.translate('profile.education.past3.institution'),
+        qualification: this._transloco.translate('profile.education.past3.qualification')
       }
     ]);
   }

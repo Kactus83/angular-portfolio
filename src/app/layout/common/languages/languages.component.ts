@@ -19,6 +19,9 @@ import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { Subject, take, skip } from 'rxjs';
 
+// Clé pour stocker le la langue préférée dans le local storage
+const STORAGE_KEY = 'preferredLang';
+
 /**
  * Composant de sélection de la langue et traduction de la navigation
  */
@@ -64,6 +67,12 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ngOnInit(): void {
         console.log('[Languages] ngOnInit');
+
+        // 0) Vérifie si une langue préférée est déjà enregistrée dans le local storage
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved && this._translocoService.getAvailableLangs().some(l => l.id === saved)) {
+          this._translocoService.setActiveLang(saved);
+        }
 
         // 1) Récupère les langues disponibles et initialise les drapeaux
         this.availableLangs = this._translocoService.getAvailableLangs();
@@ -114,6 +123,7 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
         console.log('[Languages] setActiveLang requested:', lang);
         console.log('[Languages] current activeLang before set:', this.activeLang, 'current flag:', this.flagCodes[this.activeLang]);
         this._translocoService.setActiveLang(lang);
+        localStorage.setItem(STORAGE_KEY, lang);
     }
 
     /**

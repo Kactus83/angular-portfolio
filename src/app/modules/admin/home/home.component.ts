@@ -57,45 +57,45 @@ export class HomeComponent implements AfterViewInit {
 
   readonly sections: Section[] = [
     {
-      title: this._transloco.translate('navigation.profile.title'),
+      title: 'navigation.profile.title',
       icon : 'heroicons_solid:user-circle',
-      desc : this._transloco.translate('navigation.profile.desc'),
+      desc : 'navigation.profile.desc',
       link : '/profile'
     },
     {
-      title: this._transloco.translate('navigation.skills.title'),
+      title: 'navigation.skills.title',
       icon : 'heroicons_solid:academic-cap',
-      desc : this._transloco.translate('navigation.skills.desc'),
+      desc : 'navigation.skills.desc',
       link : '/skills'
     },
     {
-      title: this._transloco.translate('navigation.experiences.title'),
+      title: 'navigation.experiences.title',
       icon : 'heroicons_solid:briefcase',
-      desc : this._transloco.translate('navigation.experiences.desc'),
+      desc : 'navigation.experiences.desc',
       link : '/experiences'
     },
     {
-      title: this._transloco.translate('navigation.projects.title'),
+      title: 'navigation.projects.title',
       icon : 'heroicons_solid:folder',
-      desc : this._transloco.translate('navigation.projects.desc'),
+      desc : 'navigation.projects.desc',
       link : '/projects'
     },
     {
-      title: this._transloco.translate('navigation.veille.title'),
+      title: 'navigation.veille.title',
       icon : 'heroicons_solid:magnifying-glass',
-      desc : this._transloco.translate('navigation.veille.desc'),
+      desc : 'navigation.veille.desc',
       link : '/veille'
     },
     {
-      title: this._transloco.translate('navigation.contact.title'),
+      title: 'navigation.contact.title',
       icon : 'heroicons_solid:at-symbol',
-      desc : this._transloco.translate('navigation.contact.desc'),
+      desc : 'navigation.contact.desc',
       link : '/contact'
     }
   ];
 
   constructor(
-    private _userService: UserService,
+    public _userService: UserService,
     private _transloco: TranslocoService
   ) {}
 
@@ -133,13 +133,12 @@ export class HomeComponent implements AfterViewInit {
       lastY = e.clientY;
       lastT = now;
 
-      // Reprendre dynamiquement les 3 teintes primaires
       const hexes = [
         getVar('--portfolio-primary'),
         getVar('--portfolio-primary-200'),
         getVar('--portfolio-primary-50')
       ].filter(h => /^#/.test(h));
-      // Convertisseur hex → rgb
+
       const hexToRgb = (h: string) => {
         h = h.replace('#','');
         if (h.length === 3) h = h.split('').map(c => c+c).join('');
@@ -150,18 +149,17 @@ export class HomeComponent implements AfterViewInit {
         ? hexes.map(hexToRgb)
         : [{r:79,g:70,b:229},{r:199,g:210,b:254},{r:238,g:242,b:255}];
 
-      // Nombre de particules proportionnel à la vélocité
       const count = Math.min(Math.floor(velocity * 0.45), 6);
       for (let i = 0; i < count; i++) {
         particles.push({
           baseX: Math.random() * canvasEl.width,
           y: canvasEl.height + 5,
-          speed: 0.5 + Math.random() * 1,           // vitesse réduite
+          speed: 0.5 + Math.random() * 1,
           life: 80 + Math.random() * 80,
           age: 0,
-          oscAmp: 5 + Math.random() * 10,           // oscillation plus faible
+          oscAmp: 5 + Math.random() * 10,
           oscSpeed: 0.02 + Math.random() * 0.05,
-          force: (Math.random() - 0.5) * 0.2,        // force qui fera varier oscAmp
+          force: (Math.random() - 0.5) * 0.2,
           color: colors[Math.floor(Math.random()*colors.length)]
         });
       }
@@ -174,9 +172,7 @@ export class HomeComponent implements AfterViewInit {
         const p = particles[i];
         p.age++;
         p.y -= p.speed;
-        // faire évoluer l’amplitude
         p.oscAmp += p.force;
-        // oscillation
         const x = p.baseX + Math.sin(p.age * p.oscSpeed) * p.oscAmp;
         const alpha = 1 - p.age / p.life;
         ctx.fillStyle = `rgba(${p.color.r},${p.color.g},${p.color.b},${alpha})`;

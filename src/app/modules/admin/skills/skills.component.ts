@@ -26,6 +26,7 @@ interface SkillsByCategory {
   ],
   templateUrl: './skills.component.html'
 })
+
 export class SkillsComponent implements OnInit {
   vm$!: Observable<{ groups: SkillsByCategory[]; projects: Project[] }>;
 
