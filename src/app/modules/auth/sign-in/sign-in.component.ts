@@ -44,7 +44,7 @@ import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
       PortfolioAlertComponent
     ],
     providers: [
-      provideTranslocoScope('common')
+      provideTranslocoScope('auth')
     ]
   })
   export class AuthSignInComponent implements OnInit {

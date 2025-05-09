@@ -1,0 +1,11 @@
+{
+    "navigation": {
+      "home": { "title": "Home", "desc": "Homepage" },
+      "profile": { "title": "Profile", "desc": "Learn more about my background and contact info." },
+      "skills": { "title": "Skills", "desc": "My technical skills and expertise." },
+      "experiences": { "title": "Experiences", "desc": "My notable professional experiences." },
+      "projects": { "title": "Projects", "desc": "Detailed professional and personal projects." },
+      "veille": { "title": "Tech Watch", "desc": "Keeping up with the latest web trends." },
+      "contact": { "title": "Contact", "desc": "Get in touch to collaborate!" }
+    }
+  }

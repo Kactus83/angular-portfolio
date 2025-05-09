@@ -1,0 +1,22 @@
+{
+      "title": "联系我",
+      "form": {
+        "nameLabel": "姓名",
+        "namePlaceholder": "您的姓名",
+        "nameRequired": "姓名为必填项",
+        "emailLabel": "邮箱",
+        "emailPlaceholder": "您的邮箱",
+        "emailRequired": "邮箱为必填项",
+        "emailInvalid": "邮箱格式无效",
+        "subjectLabel": "主题",
+        "subjectPlaceholder": "主题",
+        "messageLabel": "留言",
+        "messagePlaceholder": "您的留言",
+        "messageRequired": "留言为必填项",
+        "submitButton": "发送"
+      },
+      "success": "谢谢！您的消息已发送。",
+      "error": "哎呀！出错了。"
+  
+  }
+  

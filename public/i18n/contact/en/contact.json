@@ -1,0 +1,22 @@
+{
+      "title": "Contact Me",
+      "form": {
+        "nameLabel": "Name",
+        "namePlaceholder": "Your name",
+        "nameRequired": "Name is required",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Your email",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "Subject",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Your message",
+        "messageRequired": "Message is required",
+        "submitButton": "Send"
+      },
+      "success": "Thanks! Your message has been sent.",
+      "error": "Oops! Something went wrong."
+    
+  }
+  

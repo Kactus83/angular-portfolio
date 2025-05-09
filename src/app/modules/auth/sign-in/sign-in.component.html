@@ -18,11 +18,11 @@
 
       <!-- Titre principal -->
       <div class="mt-8 text-4xl font-extrabold leading-tight tracking-tight">
-        {{ 'signIn.title' | transloco }}
+        {{ 'auth.signIn.title' | transloco }}
       </div>
       <!-- Sous-titre explicatif -->
       <div class="mt-2 text-md text-gray-500">
-        {{ 'signIn.subtitle' | transloco }}
+        {{ 'auth.signIn.subtitle' | transloco }}
       </div>
 
       <!-- Alerte d’erreur/succès -->
@@ -43,27 +43,27 @@
       >
         <!-- Prénom -->
         <mat-form-field class="w-full">
-          <mat-label>{{ 'signIn.firstNameLabel' | transloco }}</mat-label>
+          <mat-label>{{ 'auth.signIn.firstNameLabel' | transloco }}</mat-label>
           <input
             matInput
             id="firstName"
             formControlName="firstName"
           />
           <mat-error *ngIf="signInForm.get('firstName')?.hasError('required')">
-            {{ 'signIn.firstNameRequired' | transloco }}
+            {{ 'auth.signIn.firstNameRequired' | transloco }}
           </mat-error>
         </mat-form-field>
 
         <!-- Nom -->
         <mat-form-field class="w-full">
-          <mat-label>{{ 'signIn.lastNameLabel' | transloco }}</mat-label>
+          <mat-label>{{ 'auth.signIn.lastNameLabel' | transloco }}</mat-label>
           <input
             matInput
             id="lastName"
             formControlName="lastName"
           />
           <mat-error *ngIf="signInForm.get('lastName')?.hasError('required')">
-            {{ 'signIn.lastNameRequired' | transloco }}
+            {{ 'auth.signIn.lastNameRequired' | transloco }}
           </mat-error>
         </mat-form-field>
 
@@ -75,7 +75,7 @@
           [disabled]="signInForm.invalid"
           (click)="signIn()"
         >
-          {{ 'signIn.loginButton' | transloco }}
+          {{ 'auth.signIn.loginButton' | transloco }}
         </button>
 
         <!-- Bouton Invité -->
@@ -85,7 +85,7 @@
           type="button"
           (click)="continueAsGuest()"
         >
-          {{ 'signIn.guestButton' | transloco }}
+          {{ 'auth.signIn.guestButton' | transloco }}
         </button>
       </form>
     </div>
@@ -147,11 +147,11 @@
     <!-- Contenu textuel -->
     <div class="relative z-10 w-full max-w-2xl">
       <div class="text-7xl font-bold leading-none text-gray-100">
-        <div>{{ 'signIn.rightTitleLine1' | transloco }}</div>
-        <div>{{ 'signIn.rightTitleLine2' | transloco }}</div>
+        <div>{{ 'auth.signIn.rightTitleLine1' | transloco }}</div>
+        <div>{{ 'auth.signIn.rightTitleLine2' | transloco }}</div>
       </div>
       <div class="mt-6 text-lg leading-6 tracking-tight text-gray-400">
-        {{ 'signIn.description' | transloco }}
+        {{ 'auth.signIn.description' | transloco }}
       </div>
       <div class="mt-8 flex items-center">
         <div class="flex flex-0 items-center -space-x-1.5">
@@ -177,7 +177,7 @@
           />
         </div>
         <div class="ml-4 font-medium tracking-tight text-gray-400">
-          {{ 'signIn.visitors' | transloco }}
+          {{ 'auth.signIn.visitors' | transloco }}
         </div>
       </div>
     </div>

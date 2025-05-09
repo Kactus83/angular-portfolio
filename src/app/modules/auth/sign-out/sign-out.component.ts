@@ -14,7 +14,7 @@ import { provideTranslocoScope } from '@ngneat/transloco';
     standalone: true,
     imports: [RouterLink, I18nPluralPipe, TranslocoModule],
         providers: [
-          provideTranslocoScope('common')
+          provideTranslocoScope('auth')
         ]
 })
 export class AuthSignOutComponent implements OnInit, OnDestroy {

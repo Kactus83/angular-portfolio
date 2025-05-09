@@ -1,8 +1,16 @@
 {
-    "home": {
         "greetLine1": "你好，{{ who }}！",
         "greetLine2": "欢迎来到我的作品集。",
         "line3": "我叫Florian Morena，我是一名开发者。",
-        "description": "作为一名充满激情的开发者，我在BTS SIO考试中构建了此作品集，灵感来自现代应用，并按照专业最佳实践进行结构设计，以确保代码质量和最佳用户体验。"
-    }
+        "description": "作为一名充满激情的开发者，我在BTS SIO考试中构建了此作品集，灵感来自现代应用，并按照专业最佳实践进行结构设计，以确保代码质量和最佳用户体验。",
+        "navigation": {
+          "home": { "title": "首页", "desc": "主页" },
+          "profile": { "title": "简介", "desc": "了解我的背景和联系信息。" },
+          "skills": { "title": "技能", "desc": "我的技术技能和专业知识。" },
+          "experiences": { "title": "经历", "desc": "我值得关注的工作经历。" },
+          "projects": { "title": "项目", "desc": "详细的专业和个人项目。" },
+          "veille": { "title": "技术关注", "desc": "跟踪最新的Web趋势。" },
+          "contact": { "title": "联系", "desc": "联系我们进行合作！" }
+        }
+
 }

@@ -18,6 +18,7 @@ import {
 import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { Subject, take, skip } from 'rxjs';
+import { provideTranslocoScope } from '@ngneat/transloco';
 
 // Clé pour stocker le la langue préférée dans le local storage
 const STORAGE_KEY = 'preferredLang';
@@ -33,6 +34,9 @@ const STORAGE_KEY = 'preferredLang';
     exportAs: 'languages',
     standalone: true,
     imports: [MatButtonModule, MatMenuModule, NgTemplateOutlet],
+    providers: [
+      provideTranslocoScope('navigation'), 
+    ]
 })
 export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
     /** Liste des langues disponibles */
@@ -160,7 +164,7 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
         // Traduction **asynchrone** des titres et descriptions
         navigation.forEach((item) => {
             const titleKey = `navigation.${item.id}.title`;
-            this._translocoService.selectTranslate(titleKey)
+            this._translocoService.selectTranslate(titleKey, {}, 'navigation')
                 .pipe(take(1))
                 .subscribe(translatedTitle => {
                     console.debug(`[Languages] translating ${titleKey} =>`, translatedTitle);
@@ -170,7 +174,7 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
 
             if ((item as any).desc !== undefined) {
                 const descKey = `navigation.${item.id}.desc`;
-                this._translocoService.selectTranslate(descKey)
+                this._translocoService.selectTranslate(descKey, {}, 'navigation')
                     .pipe(take(1))
                     .subscribe(translatedDesc => {
                         console.debug(`[Languages] translating ${descKey} =>`, translatedDesc);
@@ -181,6 +185,8 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
         });
 
         // Traduction asynchrone des tableaux de bord spécifiques
+        // Pensern a adapter si beosin, mais pas sûr car normalement, 
+        // j'ai réussi a gérer cela dans els composants eux memes
         const dashboards = [
             { id: 'dashboards.project', key: 'Project' },
             { id: 'dashboards.analytics', key: 'Analytics' },

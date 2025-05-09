@@ -1,108 +1,110 @@
 {
-  "personal": {
-    "title": "Apprenti BTS SIO",
-    "summary": "Autodidacte passionné par l’informatique, fondateur d’une SASU de services numériques, j’aspire à renforcer mes compétences au sein d’équipes expérimentées."
-  },
-  "contactInfo": {
-    "phone": "06 20 93 33 90",
-    "email": "florian.morena@gmail.com",
-    "address": "12 rue Pierre Renaudel, 83210 Solliès Pont"
-  },
-  "skills": {
-    "programming": "Programmation",
-    "programmingItems": [
-      "WordPress",
-      "Algorithmique",
-      "Git & Docker",
-      "TypeScript & Angular",
-      "C / C++ (débutant)",
-      "Web3 (Solidity)"
-    ],
-    "network": "Réseau & Sécurité",
-    "networkItems": [
-      "Modèle OSI",
-      "Composants hardware",
-      "Communication sans fil"
-    ],
-    "misc": "Divers",
-    "miscItems": [
-      "Adobe CC",
-      "AutoDesk (en cours)"
-    ]
-  },
-  "experiences": {
-    "dev": {
-      "pole": "DÉVELOPPEMENT FRONTEND/BACKEND",
-      "companies": ["CHESS MARITIME"],
-      "period": "2023 – 2024",
-      "details": [
-        "Gestion CMS WordPress interne",
-        "Outils informatiques divers",
-        "Développement d’un CMS maritime"
-      ]
+  "profile": {
+    "personal": {
+      "title": "Apprenti BTS SIO",
+      "summary": "Autodidacte passionné par l’informatique, fondateur d’une SASU de services numériques, j’aspire à renforcer mes compétences au sein d’équipes expérimentées."
     },
-    "sasu": {
-      "pole": "SERVICES NUMÉRIQUES (S.A.S.U.)",
-      "companies": ["Ma propre SASU"],
-      "period": "2020 – 2022",
-      "details": [
-        "Sites WordPress & E-commerce",
-        "Scripts (mailing, scrapping…)",
-        "Référencement/SEO & Google Tools",
-        "Graphisme & Packaging",
-        "Vie réseau & dépannage"
-      ]
+    "contactInfo": {
+      "phone": "06 20 93 33 90",
+      "email": "florian.morena@gmail.com",
+      "address": "12 rue Pierre Renaudel, 83210 Solliès Pont"
     },
-    "educ": {
-      "pole": "ÉDUCATION SPÉCIALISÉE",
-      "companies": [
-        "M.E.C.S. La Valbourdine",
-        "M.E.C.S. La Déferlante",
-        "S.A.M.S.A.H. – S.A.M.V.A. A.D.A.P.E.I."
+    "skills": {
+      "programming": "Programmation",
+      "programmingItems": [
+        "WordPress",
+        "Algorithmique",
+        "Git & Docker",
+        "TypeScript & Angular",
+        "C / C++ (débutant)",
+        "Web3 (Solidity)"
       ],
-      "period": "2015 – 2019",
-      "details": [
-        "Accompagnement de personnes en difficulté",
-        "Ateliers techniques & animation",
-        "Rédaction de rapports & comptes rendus",
-        "Animation de réunions"
-      ]
-    },
-    "elec": {
-      "pole": "ÉLECTRICITÉ INDUSTRIELLE & DOMESTIQUE",
-      "companies": [
-        "Sud Elec Industrie",
-        "Centre Var Électricité",
-        "Entreprise générale d'électricité MORENA"
+      "network": "Réseau & Sécurité",
+      "networkItems": [
+        "Modèle OSI",
+        "Composants hardware",
+        "Communication sans fil"
       ],
-      "period": "2011 – 2015",
-      "details": [
-        "Création/Rénovation d’installations électriques",
-        "Domotique & Automatismes",
-        "Réseaux informatiques & Courant faible"
+      "misc": "Divers",
+      "miscItems": [
+        "Adobe CC",
+        "AutoDesk (en cours)"
       ]
-    }
-  },
-  "education": {
-    "current": {
-      "period": "2023 – en cours",
-      "institution": "Maestris BTS",
-      "qualification": "BTS SIO"
     },
-    "past1": {
-      "period": "2015 – 2019",
-      "institution": "IRFSS Croix Rouge",
-      "qualification": "Éducateur spécialisé"
+    "experiences": {
+      "dev": {
+        "pole": "DÉVELOPPEMENT FRONTEND/BACKEND",
+        "companies": ["CHESS MARITIME"],
+        "period": "2023 – 2024",
+        "details": [
+          "Gestion CMS WordPress interne",
+          "Outils informatiques divers",
+          "Développement d’un CMS maritime"
+        ]
+      },
+      "sasu": {
+        "pole": "SERVICES NUMÉRIQUES (S.A.S.U.)",
+        "companies": ["Ma propre SASU"],
+        "period": "2020 – 2022",
+        "details": [
+          "Sites WordPress & E-commerce",
+          "Scripts (mailing, scrapping…)",
+          "Référencement/SEO & Google Tools",
+          "Graphisme & Packaging",
+          "Vie réseau & dépannage"
+        ]
+      },
+      "educ": {
+        "pole": "ÉDUCATION SPÉCIALISÉE",
+        "companies": [
+          "M.E.C.S. La Valbourdine",
+          "M.E.C.S. La Déferlante",
+          "S.A.M.S.A.H. – S.A.M.V.A. A.D.A.P.E.I."
+        ],
+        "period": "2015 – 2019",
+        "details": [
+          "Accompagnement de personnes en difficulté",
+          "Ateliers techniques & animation",
+          "Rédaction de rapports & comptes rendus",
+          "Animation de réunions"
+        ]
+      },
+      "elec": {
+        "pole": "ÉLECTRICITÉ INDUSTRIELLE & DOMESTIQUE",
+        "companies": [
+          "Sud Elec Industrie",
+          "Centre Var Électricité",
+          "Entreprise générale d'électricité MORENA"
+        ],
+        "period": "2011 – 2015",
+        "details": [
+          "Création/Rénovation d’installations électriques",
+          "Domotique & Automatismes",
+          "Réseaux informatiques & Courant faible"
+        ]
+      }
     },
-    "past2": {
-      "period": "2011 – 2013",
-      "institution": "CFA du Bâtiment",
-      "qualification": "CAP & BP Électricité"
-    },
-    "past3": {
-      "period": "2007 – 2010",
-      "institution": "Lycée du Coudon",
-      "qualification": "Baccalauréat Général"
+    "education": {
+      "current": {
+        "period": "2023 – en cours",
+        "institution": "Maestris BTS",
+        "qualification": "BTS SIO"
+      },
+      "past1": {
+        "period": "2015 – 2019",
+        "institution": "IRFSS Croix Rouge",
+        "qualification": "Éducateur spécialisé"
+      },
+      "past2": {
+        "period": "2011 – 2013",
+        "institution": "CFA du Bâtiment",
+        "qualification": "CAP & BP Électricité"
+      },
+      "past3": {
+        "period": "2007 – 2010",
+        "institution": "Lycée du Coudon",
+        "qualification": "Baccalauréat Général"
+      }
     }
   }
-  }
+}

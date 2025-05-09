@@ -1,0 +1,11 @@
+{
+    "navigation": {
+      "home": { "title": "首页", "desc": "主页" },
+      "profile": { "title": "简介", "desc": "了解我的背景和联系信息。" },
+      "skills": { "title": "技能", "desc": "我的技术技能和专业知识。" },
+      "experiences": { "title": "经历", "desc": "我值得关注的工作经历。" },
+      "projects": { "title": "项目", "desc": "详细的专业和个人项目。" },
+      "veille": { "title": "技术关注", "desc": "跟踪最新的Web趋势。" },
+      "contact": { "title": "联系", "desc": "联系我们进行合作！" }
+    }
+  }

@@ -1,8 +1,16 @@
 { 
-    "home": {
         "greetLine1": "Hello {{ who }}!",
         "greetLine2": "Welcome to my portfolio.",
         "line3": "My name is Florian Morena, I am a developer.",
-        "description": "A passionate developer, I built this portfolio as part of the BTS SIO exam, inspired by modern applications and structured according to professional best practices to ensure code quality and optimal user experience."
-      }
+        "description": "A passionate developer, I built this portfolio as part of the BTS SIO exam, inspired by modern applications and structured according to professional best practices to ensure code quality and optimal user experience.",
+        "navigation": {
+          "home": { "title": "Home", "desc": "Homepage" },
+          "profile": { "title": "Profile", "desc": "Learn more about my background and contact info." },
+          "skills": { "title": "Skills", "desc": "My technical skills and expertise." },
+          "experiences": { "title": "Experiences", "desc": "My notable professional experiences." },
+          "projects": { "title": "Projects", "desc": "Detailed professional and personal projects." },
+          "veille": { "title": "Tech Watch", "desc": "Keeping up with the latest web trends." },
+          "contact": { "title": "Contact", "desc": "Get in touch to collaborate!" }
+        }
+
 }

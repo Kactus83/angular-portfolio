@@ -17,6 +17,7 @@ import { ContactCardComponent }     from './components/contact-card/contact-card
 import { SkillsCardComponent }      from './components/skills-card/skills-card.component';
 import { ExperiencesListComponent } from './components/experiences-list/experiences-list.component';
 import { EducationListComponent }   from './components/education-list/education-list.component';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector       : 'admin-profile',
@@ -31,6 +32,9 @@ import { EducationListComponent }   from './components/education-list/education-
     EducationListComponent
   ],
   templateUrl    : './profile.component.html',
+  providers: [
+    provideTranslocoScope('profile')
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfileComponent

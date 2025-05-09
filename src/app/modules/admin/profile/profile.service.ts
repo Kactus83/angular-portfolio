@@ -58,19 +58,19 @@ export class ProfileService
       {
         category: this._transloco.translate('profile.skills.programming'),
         items   : [
-          ...JSON.parse(this._transloco.translate('profile.skills.programmingItems'))
+          ...this._transloco.translate('profile.skills.programmingItems')
         ]
       },
       {
         category: this._transloco.translate('profile.skills.network'),
         items   : [
-          ...JSON.parse(this._transloco.translate('profile.skills.networkItems'))
+          ...this._transloco.translate('profile.skills.networkItems')
         ]
       },
       {
         category: this._transloco.translate('profile.skills.misc'),
         items   : [
-          ...JSON.parse(this._transloco.translate('profile.skills.miscItems'))
+          ...this._transloco.translate('profile.skills.miscItems')
         ]
       }
     ]);
@@ -81,41 +81,41 @@ export class ProfileService
       {
         pole      : this._transloco.translate('profile.experiences.dev.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.dev.companies'))
+          ...this._transloco.translate('profile.experiences.dev.companies')
         ],
         period    : this._transloco.translate('profile.experiences.dev.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.dev.details'))
+          ...this._transloco.translate('profile.experiences.dev.details')
         ]
       },
       {
         pole      : this._transloco.translate('profile.experiences.sasu.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.sasu.companies'))
+          ...this._transloco.translate('profile.experiences.sasu.companies')
         ],
         period    : this._transloco.translate('profile.experiences.sasu.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.sasu.details'))
+          ...this._transloco.translate('profile.experiences.sasu.details')
         ]
       },
       {
         pole      : this._transloco.translate('profile.experiences.educ.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.educ.companies'))
+          ...this._transloco.translate('profile.experiences.educ.companies')
         ],
         period    : this._transloco.translate('profile.experiences.educ.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.educ.details'))
+          ...this._transloco.translate('profile.experiences.educ.details')
         ]
       },
       {
         pole      : this._transloco.translate('profile.experiences.elec.pole'),
         companies : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.elec.companies'))
+          ...this._transloco.translate('profile.experiences.elec.companies')
         ],
         period    : this._transloco.translate('profile.experiences.elec.period'),
         details   : [
-          ...JSON.parse(this._transloco.translate('profile.experiences.elec.details'))
+          ...this._transloco.translate('profile.experiences.elec.details')
         ]
       }
     ]);

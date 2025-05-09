@@ -18,7 +18,7 @@ import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
     TranslocoModule
   ],
       providers: [
-        provideTranslocoScope('common')
+        provideTranslocoScope('contact')
       ],
   templateUrl: './contact.component.html'
 })

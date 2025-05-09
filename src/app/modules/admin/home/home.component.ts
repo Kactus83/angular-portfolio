@@ -57,39 +57,39 @@ export class HomeComponent implements AfterViewInit {
 
   readonly sections: Section[] = [
     {
-      title: 'navigation.profile.title',
+      title: 'home.navigation.profile.title',
       icon : 'heroicons_solid:user-circle',
-      desc : 'navigation.profile.desc',
+      desc : 'home.navigation.profile.desc',
       link : '/profile'
     },
     {
-      title: 'navigation.skills.title',
+      title: 'home.navigation.skills.title',
       icon : 'heroicons_solid:academic-cap',
-      desc : 'navigation.skills.desc',
+      desc : 'home.navigation.skills.desc',
       link : '/skills'
     },
     {
-      title: 'navigation.experiences.title',
+      title: 'home.navigation.experiences.title',
       icon : 'heroicons_solid:briefcase',
-      desc : 'navigation.experiences.desc',
+      desc : 'home.navigation.experiences.desc',
       link : '/experiences'
     },
     {
-      title: 'navigation.projects.title',
+      title: 'home.navigation.projects.title',
       icon : 'heroicons_solid:folder',
-      desc : 'navigation.projects.desc',
+      desc : 'home.navigation.projects.desc',
       link : '/projects'
     },
     {
-      title: 'navigation.veille.title',
+      title: 'home.navigation.veille.title',
       icon : 'heroicons_solid:magnifying-glass',
-      desc : 'navigation.veille.desc',
+      desc : 'home.navigation.veille.desc',
       link : '/veille'
     },
     {
-      title: 'navigation.contact.title',
+      title: 'home.navigation.contact.title',
       icon : 'heroicons_solid:at-symbol',
-      desc : 'navigation.contact.desc',
+      desc : 'home.navigation.contact.desc',
       link : '/contact'
     }
   ];
