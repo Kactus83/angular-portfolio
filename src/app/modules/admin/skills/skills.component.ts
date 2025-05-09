@@ -9,6 +9,7 @@ import { Observable, combineLatest }  from 'rxjs';
 import { map }                        from 'rxjs/operators';
 import { SkillCardComponent }         from './components/skill-card/skill-card.component';
 import { SkillDetailDialogComponent } from './components/skill-detail-dialog/skill-detail-dialog.component';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 interface SkillsByCategory {
   category: string;
@@ -22,7 +23,11 @@ interface SkillsByCategory {
     CommonModule,
     MatDialogModule,
     SkillCardComponent,
-    SkillDetailDialogComponent
+    SkillDetailDialogComponent,
+    TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope('skills')
   ],
   templateUrl: './skills.component.html'
 })

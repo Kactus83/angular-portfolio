@@ -1,110 +1,120 @@
 {
-  "profile": {
-    "personal": {
-      "title": "BTS SIO Apprentice",
-      "summary": "A self-taught computer enthusiast and founder of a digital services SASU, eager to strengthen my skills within experienced teams."
-    },
-    "contactInfo": {
-      "phone": "06 20 93 33 90",
-      "email": "florian.morena@gmail.com",
-      "address": "12 Pierre Renaudel Street, 83210 Solliès Pont, France"
-    },
-    "skills": {
-      "programming": "Programming",
-      "programmingItems": [
-        "WordPress",
-        "Algorithms",
-        "Git & Docker",
-        "TypeScript & Angular",
-        "C / C++ (beginner)",
-        "Web3 (Solidity)"
-      ],
-      "network": "Network & Security",
-      "networkItems": [
-        "OSI Model",
-        "Hardware Components",
-        "Wireless Communication"
-      ],
-      "misc": "Miscellaneous",
-      "miscItems": [
-        "Adobe CC",
-        "AutoDesk (in progress)"
+  "contactCard": {
+    "title": "Contact Info"
+  },
+  "educationCard": {
+    "title": "Education"
+  },
+  "experiencesCard": {
+    "title": "Experiences"
+  },
+  "skillsCard": {
+    "title": "Skills"
+  },
+  "personal": {
+    "title": "BTS SIO Apprentice",
+    "summary": "A self-taught computer enthusiast and founder of a digital services SASU, eager to strengthen my skills within experienced teams."
+  },
+  "contactInfo": {
+    "phone": "06 20 93 33 90",
+    "email": "florian.morena@gmail.com",
+    "address": "12 Pierre Renaudel Street, 83210 Solliès Pont, France"
+  },
+  "skills": {
+    "programming": "Programming",
+    "programmingItems": [
+      "WordPress",
+      "Algorithms",
+      "Git & Docker",
+      "TypeScript & Angular",
+      "C / C++ (beginner)",
+      "Web3 (Solidity)"
+    ],
+    "network": "Network & Security",
+    "networkItems": [
+      "OSI Model",
+      "Hardware Components",
+      "Wireless Communication"
+    ],
+    "misc": "Miscellaneous",
+    "miscItems": [
+      "Adobe CC",
+      "AutoDesk (in progress)"
+    ]
+  },
+  "experiences": {
+    "dev": {
+      "pole": "FRONTEND/BACKEND DEVELOPMENT",
+      "companies": ["CHESS MARITIME"],
+      "period": "2023 – 2024",
+      "details": [
+        "Internal WordPress CMS maintenance",
+        "Various IT tools",
+        "Maritime CMS development"
       ]
     },
-    "experiences": {
-      "dev": {
-        "pole": "FRONTEND/BACKEND DEVELOPMENT",
-        "companies": ["CHESS MARITIME"],
-        "period": "2023 – 2024",
-        "details": [
-          "Internal WordPress CMS maintenance",
-          "Various IT tools",
-          "Maritime CMS development"
-        ]
-      },
-      "sasu": {
-        "pole": "DIGITAL SERVICES (SASU)",
-        "companies": ["My own SASU"],
-        "period": "2020 – 2022",
-        "details": [
-          "WordPress & e-commerce sites",
-          "Mailing & scraping scripts",
-          "SEO & Google Tools",
-          "Graphics & Packaging",
-          "Network maintenance & troubleshooting"
-        ]
-      },
-      "educ": {
-        "pole": "SPECIALIZED EDUCATION",
-        "companies": [
-          "M.E.C.S. La Valbourdine",
-          "M.E.C.S. La Déferlante",
-          "S.A.M.S.A.H. – S.A.M.V.A. A.D.A.P.E.I."
-        ],
-        "period": "2015 – 2019",
-        "details": [
-          "Supporting people in difficulty",
-          "Technical workshops & facilitation",
-          "Report writing",
-          "Meeting facilitation"
-        ]
-      },
-      "elec": {
-        "pole": "INDUSTRIAL & DOMESTIC ELECTRICITY",
-        "companies": [
-          "Sud Elec Industrie",
-          "Centre Var Électricité",
-          "Entreprise générale d'électricité MORENA"
-        ],
-        "period": "2011 – 2015",
-        "details": [
-          "Electrical installations creation/renovation",
-          "Home automation & controls",
-          "IT & low-voltage networks"
-        ]
-      }
+    "sasu": {
+      "pole": "DIGITAL SERVICES (SASU)",
+      "companies": ["My own SASU"],
+      "period": "2020 – 2022",
+      "details": [
+        "WordPress & e-commerce sites",
+        "Mailing & scraping scripts",
+        "SEO & Google Tools",
+        "Graphics & Packaging",
+        "Network maintenance & troubleshooting"
+      ]
     },
-    "education": {
-      "current": {
-        "period": "2023 – present",
-        "institution": "Maestris BTS",
-        "qualification": "BTS SIO"
-      },
-      "past1": {
-        "period": "2015 – 2019",
-        "institution": "IRFSS Croix Rouge",
-        "qualification": "Specialized Educator"
-      },
-      "past2": {
-        "period": "2011 – 2013",
-        "institution": "CFA du Bâtiment",
-        "qualification": "CAP & BP Electricity"
-      },
-      "past3": {
-        "period": "2007 – 2010",
-        "institution": "Lycée du Coudon",
-        "qualification": "General Baccalaureate"
-      }
+    "educ": {
+      "pole": "SPECIALIZED EDUCATION",
+      "companies": [
+        "M.E.C.S. La Valbourdine",
+        "M.E.C.S. La Déferlante",
+        "S.A.M.S.A.H. – S.A.M.V.A. A.D.A.P.E.I."
+      ],
+      "period": "2015 – 2019",
+      "details": [
+        "Supporting people in difficulty",
+        "Technical workshops & facilitation",
+        "Report writing",
+        "Meeting facilitation"
+      ]
+    },
+    "elec": {
+      "pole": "INDUSTRIAL & DOMESTIC ELECTRICITY",
+      "companies": [
+        "Sud Elec Industrie",
+        "Centre Var Électricité",
+        "Entreprise générale d'électricité MORENA"
+      ],
+      "period": "2011 – 2015",
+      "details": [
+        "Electrical installations creation/renovation",
+        "Home automation & controls",
+        "IT & low-voltage networks"
+      ]
+    }
+  },
+  "education": {
+    "current": {
+      "period": "2023 – present",
+      "institution": "Maestris BTS",
+      "qualification": "BTS SIO"
+    },
+    "past1": {
+      "period": "2015 – 2019",
+      "institution": "IRFSS Croix Rouge",
+      "qualification": "Specialized Educator"
+    },
+    "past2": {
+      "period": "2011 – 2013",
+      "institution": "CFA du Bâtiment",
+      "qualification": "CAP & BP Electricity"
+    },
+    "past3": {
+      "period": "2007 – 2010",
+      "institution": "Lycée du Coudon",
+      "qualification": "General Baccalaureate"
     }
   }
 }

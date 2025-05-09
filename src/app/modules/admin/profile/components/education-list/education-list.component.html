@@ -1,13 +1,14 @@
 <portfolio-card class="flex flex-col p-6 shadow-lg border border-hover">
-    <h3 class="text-xl font-semibold text-accent mb-4">Formation</h3>
-    <div class="space-y-4">
-      <div *ngFor="let ed of education" class="space-y-1">
-        <div class="flex justify-between items-center">
-          <span class="font-medium">{{ ed.period }}</span>
-          <span class="font-medium">{{ ed.institution }}</span>
-        </div>
-        <div class="text-secondary">{{ ed.qualification }}</div>
+  <h3 class="text-xl font-semibold text-accent mb-4">
+    {{ 'profile.educationCard.title' | transloco }}
+  </h3>
+  <div class="space-y-4">
+    <div *ngFor="let ed of education" class="space-y-1">
+      <div class="flex justify-between items-center">
+        <span class="font-medium">{{ ed.period }}</span>
+        <span class="font-medium">{{ ed.institution }}</span>
       </div>
+      <div class="text-secondary">{{ ed.qualification }}</div>
     </div>
-  </portfolio-card>
-  
+  </div>
+</portfolio-card>

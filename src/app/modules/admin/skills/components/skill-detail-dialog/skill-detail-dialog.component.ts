@@ -8,7 +8,7 @@ import { PortfolioCardComponent }                                    from '@port
 import { RouterModule }                                         from '@angular/router';
 import { Skill, MasteryLevel, SubSkill }                        from '../../skills.types';
 import { Project }                                              from 'app/modules/admin/projects/projects.types';
-import { TranslocoModule } from '@ngneat/transloco';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 interface DialogData {
   skill: Skill;
@@ -27,6 +27,9 @@ interface DialogData {
     PortfolioCardComponent,
     RouterModule,
     TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope('skills')
   ],
   templateUrl: './skill-detail-dialog.component.html',
   styleUrls: ['./skill-detail-dialog.component.scss']

@@ -1,92 +1,92 @@
 {
-    "title": "我的技能",
-    "subtitle": "在此了解我的专业领域、掌握水平和相关项目。",
-    "categories": {
-      "programming": "编程",
-      "security": "网络与安全",
-      "misc": "其他"
+  "title": "我的技能",
+  "subtitle": "在此了解我的专业领域、掌握水平和相关项目。",
+  "categories": {
+    "programming": "编程",
+    "security": "网络与安全",
+    "misc": "其他"
+  },
+  "categoriesDescription": "{{ category }}：技能与水平概览。",
+  "masteryLevels": {
+    "expert": "专家",
+    "advanced": "高级",
+    "intermediate": "中级",
+    "beginner": "初级"
+  },
+  "skills": {
+    "wordpressCms": {
+      "name": "WordPress CMS 管理",
+      "subSkills": {
+        "installation": "安装",
+        "configuration": "配置",
+        "securisation": "安全",
+        "optimisation": "优化"
+      },
+      "description": "WordPress 站点的安装、配置、安全和优化。",
+      "personalNotes": "我为超过10位客户搭建并维护了安全站点，管理托管和更新。"
     },
-    "categoriesDescription": "{{ category }}：技能与水平概览。",
-    "masteryLevels": {
-      "expert": "专家",
-      "advanced": "高级",
-      "intermediate": "中级",
-      "beginner": "初级"
+    "typescriptAngular": {
+      "name": "TypeScript / Angular",
+      "subSkills": {
+        "rxjs": "RxJS",
+        "ngrx": "NgRx",
+        "routing": "路由",
+        "forms": "表单"
+      },
+      "description": "使用 Angular 开发单页面应用程序。",
+      "personalNotes": "我设计了多个可复用模块，并通过懒加载优化性能。"
     },
-    "skills": {
-      "wordpressCms": {
-        "name": "WordPress CMS 管理",
-        "subSkills": {
-          "installation": "安装",
-          "configuration": "配置",
-          "securisation": "安全",
-          "optimisation": "优化"
-        },
-        "description": "WordPress 站点的安装、配置、安全和优化。",
-        "personalNotes": "我为超过10位客户搭建并维护了安全站点，管理托管和更新。"
+    "algorithmique": {
+      "name": "算法",
+      "subSkills": {
+        "complexite": "复杂度",
+        "structures": "数据结构"
       },
-      "typescriptAngular": {
-        "name": "TypeScript / Angular",
-        "subSkills": {
-          "rxjs": "RxJS",
-          "ngrx": "NgRx",
-          "routing": "路由",
-          "forms": "表单"
-        },
-        "description": "使用 Angular 开发单页面应用程序。",
-        "personalNotes": "我设计了多个可复用模块，并通过懒加载优化性能。"
-      },
-      "algorithmique": {
-        "name": "算法",
-        "subSkills": {
-          "complexite": "复杂度",
-          "structures": "数据结构"
-        },
-        "description": "算法的设计和优化。",
-        "personalNotes": "我参加了 HackerRank 和 LeetCode 的编码挑战。"
-      },
-      "web3Solidity": {
-        "name": "Web3 基础（Solidity）",
-        "subSkills": {
-          "smartContracts": "智能合约"
-        },
-        "description": "在 Remix 和 Truffle 上进行基础实验。",
-        "personalNotes": ""
-      },
-      "osiModel": {
-        "name": "OSI 模型",
-        "subSkills": {
-          "physique": "物理层",
-          "reseau": "网络层"
-        },
-        "description": "理解七层及其作用。",
-        "personalNotes": "在专业环境中部署防火墙和 VLAN。"
-      },
-      "wirelessComm": {
-        "name": "无线通信",
-        "subSkills": {
-          "wifi": "Wi-Fi",
-          "bluetooth": "蓝牙"
-        },
-        "description": "",
-        "personalNotes": "部署企业级 Wi-Fi 网络并优化覆盖。"
-      },
-      "adobeCc": {
-        "name": "Adobe Creative Cloud",
-        "subSkills": {
-          "illustrator": "Illustrator",
-          "photoshop": "Photoshop",
-          "indesign": "InDesign"
-        },
-        "description": "Illustrator、Photoshop 和 InDesign，用于印刷和 Web。",
-        "personalNotes": "为初创公司设计图形规范和徽标。"
-      }
+      "description": "算法的设计和优化。",
+      "personalNotes": "我参加了 HackerRank 和 LeetCode 的编码挑战。"
     },
-    "labels": {
-      "description": "描述",
-      "personalNotes": "个人备注",
-      "subSkills": "子技能",
-      "relatedProjects": "相关项目",
-      "close": "关闭"
+    "web3Solidity": {
+      "name": "Web3 基础（Solidity）",
+      "subSkills": {
+        "smartContracts": "智能合约"
+      },
+      "description": "在 Remix 和 Truffle 上进行基础实验。",
+      "personalNotes": ""
+    },
+    "osiModel": {
+      "name": "OSI 模型",
+      "subSkills": {
+        "physique": "物理层",
+        "reseau": "网络层"
+      },
+      "description": "理解七层及其作用。",
+      "personalNotes": "在专业环境中部署防火墙和 VLAN。"
+    },
+    "wirelessComm": {
+      "name": "无线通信",
+      "subSkills": {
+        "wifi": "Wi-Fi",
+        "bluetooth": "蓝牙"
+      },
+      "description": "",
+      "personalNotes": "部署企业级 Wi-Fi 网络并优化覆盖。"
+    },
+    "adobeCc": {
+      "name": "Adobe Creative Cloud",
+      "subSkills": {
+        "illustrator": "Illustrator",
+        "photoshop": "Photoshop",
+        "indesign": "InDesign"
+      },
+      "description": "Illustrator、Photoshop 和 InDesign，用于印刷和 Web。",
+      "personalNotes": "为初创公司设计图形规范和徽标。"
     }
+  },
+  "labels": {
+    "description": "描述",
+    "personalNotes": "个人备注",
+    "subSkills": "子技能",
+    "relatedProjects": "相关项目",
+    "close": "关闭"
   }
+}

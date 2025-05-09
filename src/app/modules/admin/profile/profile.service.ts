@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, combineLatest, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { TranslocoService } from '@ngneat/transloco';
 
 export interface PersonalInfo {
@@ -33,116 +34,135 @@ export interface Education {
 @Injectable({ providedIn: 'root' })
 export class ProfileService
 {
+  private readonly _scope = 'profile';
+
   constructor(private _transloco: TranslocoService) {}
 
   getPersonal(): Observable<PersonalInfo> {
-    return of({
-      name      : 'Florian Morena',
-      title     : this._transloco.translate('profile.personal.title'),
-      summary   : this._transloco.translate('profile.personal.summary'),
-      avatarUrl : 'images/avatars/perso.jpg',
-      coverUrl  : 'images/pages/profile/cover.jpg'
-    });
+    const title$   = this._transloco.selectTranslate('personal.title',   {}, this._scope);
+    const summary$ = this._transloco.selectTranslate('personal.summary', {}, this._scope);
+
+    return combineLatest([ title$, summary$ ]).pipe(
+      map(([ title, summary ]) => ({
+        name      : 'Florian Morena',
+        title,
+        summary,
+        avatarUrl : 'images/avatars/perso.jpg',
+        coverUrl  : 'images/pages/profile/cover.jpg'
+      }))
+    );
   }
 
   getContact(): Observable<ContactInfo> {
-    return of({
-      phone   : this._transloco.translate('profile.contactInfo.phone'),
-      email   : this._transloco.translate('profile.contactInfo.email'),
-      address : this._transloco.translate('profile.contactInfo.address')
-    });
+    const phone$   = this._transloco.selectTranslate('contactInfo.phone',   {}, this._scope);
+    const email$   = this._transloco.selectTranslate('contactInfo.email',   {}, this._scope);
+    const address$ = this._transloco.selectTranslate('contactInfo.address', {}, this._scope);
+
+    return combineLatest([ phone$, email$, address$ ]).pipe(
+      map(([ phone, email, address ]) => ({ phone, email, address }))
+    );
   }
 
   getSkills(): Observable<SkillGroup[]> {
-    return of([
-      {
-        category: this._transloco.translate('profile.skills.programming'),
-        items   : [
-          ...this._transloco.translate('profile.skills.programmingItems')
-        ]
-      },
-      {
-        category: this._transloco.translate('profile.skills.network'),
-        items   : [
-          ...this._transloco.translate('profile.skills.networkItems')
-        ]
-      },
-      {
-        category: this._transloco.translate('profile.skills.misc'),
-        items   : [
-          ...this._transloco.translate('profile.skills.miscItems')
-        ]
-      }
-    ]);
+    const catProg$  = this._transloco.selectTranslate('skills.programming',      {}, this._scope);
+    const itemsProg$= this._transloco.selectTranslate('skills.programmingItems', {}, this._scope);
+    const catNet$   = this._transloco.selectTranslate('skills.network',          {}, this._scope);
+    const itemsNet$ = this._transloco.selectTranslate('skills.networkItems',    {}, this._scope);
+    const catMisc$  = this._transloco.selectTranslate('skills.misc',             {}, this._scope);
+    const itemsMisc$= this._transloco.selectTranslate('skills.miscItems',       {}, this._scope);
+
+    return combineLatest([
+      catProg$, itemsProg$,
+      catNet$,  itemsNet$,
+      catMisc$, itemsMisc$
+    ]).pipe(
+      map(([ category1, items1, category2, items2, category3, items3 ]) => [
+        { category: category1, items: [...items1] },
+        { category: category2, items: [...items2] },
+        { category: category3, items: [...items3] }
+      ])
+    );
   }
 
   getExperiences(): Observable<Experience[]> {
-    return of([
-      {
-        pole      : this._transloco.translate('profile.experiences.dev.pole'),
-        companies : [
-          ...this._transloco.translate('profile.experiences.dev.companies')
-        ],
-        period    : this._transloco.translate('profile.experiences.dev.period'),
-        details   : [
-          ...this._transloco.translate('profile.experiences.dev.details')
-        ]
-      },
-      {
-        pole      : this._transloco.translate('profile.experiences.sasu.pole'),
-        companies : [
-          ...this._transloco.translate('profile.experiences.sasu.companies')
-        ],
-        period    : this._transloco.translate('profile.experiences.sasu.period'),
-        details   : [
-          ...this._transloco.translate('profile.experiences.sasu.details')
-        ]
-      },
-      {
-        pole      : this._transloco.translate('profile.experiences.educ.pole'),
-        companies : [
-          ...this._transloco.translate('profile.experiences.educ.companies')
-        ],
-        period    : this._transloco.translate('profile.experiences.educ.period'),
-        details   : [
-          ...this._transloco.translate('profile.experiences.educ.details')
-        ]
-      },
-      {
-        pole      : this._transloco.translate('profile.experiences.elec.pole'),
-        companies : [
-          ...this._transloco.translate('profile.experiences.elec.companies')
-        ],
-        period    : this._transloco.translate('profile.experiences.elec.period'),
-        details   : [
-          ...this._transloco.translate('profile.experiences.elec.details')
-        ]
-      }
-    ]);
+    const devPole$     = this._transloco.selectTranslate('experiences.dev.pole',      {}, this._scope);
+    const devCo$       = this._transloco.selectTranslate('experiences.dev.companies', {}, this._scope);
+    const devPeriod$   = this._transloco.selectTranslate('experiences.dev.period',    {}, this._scope);
+    const devDetails$  = this._transloco.selectTranslate('experiences.dev.details',   {}, this._scope);
+  
+    const sasuPole$    = this._transloco.selectTranslate('experiences.sasu.pole',      {}, this._scope);
+    const sasuCo$      = this._transloco.selectTranslate('experiences.sasu.companies', {}, this._scope);
+    const sasuPeriod$  = this._transloco.selectTranslate('experiences.sasu.period',    {}, this._scope);
+    const sasuDetails$ = this._transloco.selectTranslate('experiences.sasu.details',   {}, this._scope);
+  
+    const educPole$    = this._transloco.selectTranslate('experiences.educ.pole',      {}, this._scope);
+    const educCo$      = this._transloco.selectTranslate('experiences.educ.companies', {}, this._scope);
+    const educPeriod$  = this._transloco.selectTranslate('experiences.educ.period',    {}, this._scope);
+    const educDetails$ = this._transloco.selectTranslate('experiences.educ.details',   {}, this._scope);
+  
+    const elecPole$    = this._transloco.selectTranslate('experiences.elec.pole',      {}, this._scope);
+    const elecCo$      = this._transloco.selectTranslate('experiences.elec.companies', {}, this._scope);
+    const elecPeriod$  = this._transloco.selectTranslate('experiences.elec.period',    {}, this._scope);
+    const elecDetails$ = this._transloco.selectTranslate('experiences.elec.details',   {}, this._scope);
+  
+    return combineLatest([
+      devPole$,   devCo$,   devPeriod$,   devDetails$,
+      sasuPole$,  sasuCo$,  sasuPeriod$,  sasuDetails$,
+      educPole$,  educCo$,  educPeriod$,  educDetails$,
+      elecPole$,  elecCo$,  elecPeriod$,  elecDetails$
+    ]).pipe(
+      map(vals => {
+        // on sait que vals est [string, string[], string, string[], ...] en séquence
+        const [
+          pole1, co1, per1, det1,
+          pole2, co2, per2, det2,
+          pole3, co3, per3, det3,
+          pole4, co4, per4, det4
+        ] = vals as [string, string[], string, string[],
+                     string, string[], string, string[],
+                     string, string[], string, string[],
+                     string, string[], string, string[]];
+  
+        return [
+          { pole: pole1, companies: co1, period: per1, details: det1 },
+          { pole: pole2, companies: co2, period: per2, details: det2 },
+          { pole: pole3, companies: co3, period: per3, details: det3 },
+          { pole: pole4, companies: co4, period: per4, details: det4 }
+        ];
+      })
+    );
   }
+  
 
   getEducation(): Observable<Education[]> {
-    return of([
-      {
-        period       : this._transloco.translate('profile.education.current.period'),
-        institution  : this._transloco.translate('profile.education.current.institution'),
-        qualification: this._transloco.translate('profile.education.current.qualification')
-      },
-      {
-        period       : this._transloco.translate('profile.education.past1.period'),
-        institution  : this._transloco.translate('profile.education.past1.institution'),
-        qualification: this._transloco.translate('profile.education.past1.qualification')
-      },
-      {
-        period       : this._transloco.translate('profile.education.past2.period'),
-        institution  : this._transloco.translate('profile.education.past2.institution'),
-        qualification: this._transloco.translate('profile.education.past2.qualification')
-      },
-      {
-        period       : this._transloco.translate('profile.education.past3.period'),
-        institution  : this._transloco.translate('profile.education.past3.institution'),
-        qualification: this._transloco.translate('profile.education.past3.qualification')
-      }
-    ]);
+    const cP$ = this._transloco.selectTranslate('education.current.period',       {}, this._scope);
+    const cI$ = this._transloco.selectTranslate('education.current.institution',  {}, this._scope);
+    const cQ$ = this._transloco.selectTranslate('education.current.qualification',{}, this._scope);
+    const p1P$= this._transloco.selectTranslate('education.past1.period',         {}, this._scope);
+    const p1I$= this._transloco.selectTranslate('education.past1.institution',    {}, this._scope);
+    const p1Q$= this._transloco.selectTranslate('education.past1.qualification',  {}, this._scope);
+    const p2P$= this._transloco.selectTranslate('education.past2.period',         {}, this._scope);
+    const p2I$= this._transloco.selectTranslate('education.past2.institution',    {}, this._scope);
+    const p2Q$= this._transloco.selectTranslate('education.past2.qualification',  {}, this._scope);
+    const p3P$= this._transloco.selectTranslate('education.past3.period',         {}, this._scope);
+    const p3I$= this._transloco.selectTranslate('education.past3.institution',    {}, this._scope);
+    const p3Q$= this._transloco.selectTranslate('education.past3.qualification',  {}, this._scope);
+
+    return combineLatest([ cP$, cI$, cQ$, p1P$, p1I$, p1Q$, p2P$, p2I$, p2Q$, p3P$, p3I$, p3Q$ ]).pipe(
+      map(vals => {
+        const [
+          per0, ins0, qua0,
+          per1, ins1, qua1,
+          per2, ins2, qua2,
+          per3, ins3, qua3
+        ] = vals;
+        return [
+          { period: per0, institution: ins0, qualification: qua0 },
+          { period: per1, institution: ins1, qualification: qua1 },
+          { period: per2, institution: ins2, qualification: qua2 },
+          { period: per3, institution: ins3, qualification: qua3 }
+        ];
+      })
+    );
   }
 }

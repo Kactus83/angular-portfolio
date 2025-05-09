@@ -1,20 +1,21 @@
 <portfolio-card class="flex flex-col p-6 shadow-lg border border-hover">
-    <h3 class="text-xl font-semibold text-accent mb-4">Expériences</h3>
-    <div class="space-y-8">
-      <ng-container *ngFor="let e of experiences">
-        <div class="space-y-2">
-          <div class="flex justify-between items-center">
-            <span class="text-lg font-medium">{{ e.pole }}</span>
-            <span class="text-sm italic text-secondary">{{ e.period }}</span>
-          </div>
-          <div class="text-sm text-secondary mb-2">
-            {{ e.companies.join(' • ') }}
-          </div>
-          <ul class="list-disc list-inside space-y-1">
-            <li *ngFor="let d of e.details">{{ d }}</li>
-          </ul>
+  <h3 class="text-xl font-semibold text-accent mb-4">
+    {{ 'profile.experiencesCard.title' | transloco }}
+  </h3>
+  <div class="space-y-8">
+    <ng-container *ngFor="let e of experiences">
+      <div class="space-y-2">
+        <div class="flex justify-between items-center">
+          <span class="text-lg font-medium">{{ e.pole }}</span>
+          <span class="text-sm italic text-secondary">{{ e.period }}</span>
         </div>
-      </ng-container>
-    </div>
-  </portfolio-card>
-  
+        <div class="text-sm text-secondary mb-2">
+          {{ e.companies.join(' • ') }}
+        </div>
+        <ul class="list-disc list-inside space-y-1">
+          <li *ngFor="let d of e.details">{{ d }}</li>
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+</portfolio-card>

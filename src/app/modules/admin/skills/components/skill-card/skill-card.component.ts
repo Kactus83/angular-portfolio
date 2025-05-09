@@ -6,6 +6,7 @@ import { PortfolioCardComponent }            from '@portfolio/components/card';
 import { Skill, MasteryLevel }          from '../../skills.types';
 import { Project }                      from 'app/modules/admin/projects/projects.types';
 import { SkillDetailDialogComponent }   from '../skill-detail-dialog/skill-detail-dialog.component';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-skill-card',
@@ -14,11 +15,16 @@ import { SkillDetailDialogComponent }   from '../skill-detail-dialog/skill-detai
     CommonModule,
     PortfolioCardComponent,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope('skills')
   ],
   templateUrl: './skill-card.component.html',
   styleUrls: ['./skill-card.component.scss']
 })
+
 export class SkillCardComponent {
   @Input() skill!: Skill;
   @Input() projects: Project[] = [];

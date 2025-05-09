@@ -1,24 +1,25 @@
 <portfolio-card class="flex flex-col p-6 shadow-lg border border-hover">
-    <h3 class="text-xl font-semibold text-accent mb-4">Coordonnées</h3>
-    <div class="flex flex-col space-y-3">
-      <a
-        href="tel:{{contact.phone}}"
-        class="flex items-center px-3 py-2 rounded hover:bg-hover transition"
-      >
-        <mat-icon class="mr-2 text-secondary">phone</mat-icon>
-        <span>{{ contact.phone }}</span>
-      </a>
-      <a
-        href="mailto:{{contact.email}}"
-        class="flex items-center px-3 py-2 rounded hover:bg-hover transition"
-      >
-        <mat-icon class="mr-2 text-secondary">email</mat-icon>
-        <span>{{ contact.email }}</span>
-      </a>
-      <div class="flex items-center px-3 py-2">
-        <mat-icon class="mr-2 text-secondary">place</mat-icon>
-        <span>{{ contact.address }}</span>
-      </div>
+  <h3 class="text-xl font-semibold text-accent mb-4">
+    {{ 'profile.contactCard.title' | transloco }}
+  </h3>
+  <div class="flex flex-col space-y-3">
+    <a
+      href="tel:{{ contact.phone }}"
+      class="flex items-center px-3 py-2 rounded hover:bg-hover transition"
+    >
+      <mat-icon class="mr-2 text-secondary">phone</mat-icon>
+      <span>{{ contact.phone }}</span>
+    </a>
+    <a
+      href="mailto:{{ contact.email }}"
+      class="flex items-center px-3 py-2 rounded hover:bg-hover transition"
+    >
+      <mat-icon class="mr-2 text-secondary">email</mat-icon>
+      <span>{{ contact.email }}</span>
+    </a>
+    <div class="flex items-center px-3 py-2">
+      <mat-icon class="mr-2 text-secondary">place</mat-icon>
+      <span>{{ contact.address }}</span>
     </div>
-  </portfolio-card>
-  
+  </div>
+</portfolio-card>

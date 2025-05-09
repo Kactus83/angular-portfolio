@@ -1,10 +1,9 @@
-<ng-container *translocoScope="'skills'">
   <div class="flex flex-col min-h-[calc(100vh-64px)] p-6 sm:p-10 space-y-6">
     <h1 class="text-4xl font-extrabold">
-      {{ 'title' | transloco }}
+      {{ 'skills.title' | transloco }}
     </h1>
     <p class="text-lg text-secondary max-w-2xl">
-      {{ 'subtitle' | transloco }}
+      {{ 'skills.subtitle' | transloco }}
     </p>
 
     <ng-container *ngIf="vm$ | async as vm">
@@ -14,7 +13,7 @@
             {{ group.category | transloco }}
           </h2>
           <p class="text-sm text-secondary mb-4">
-            {{ 'categoriesDescription' | transloco: { category: (group.category | transloco) } }}
+            {{ 'skills.categoriesDescription' | transloco: { category: (group.category | transloco) } }}
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -28,4 +27,3 @@
       </ng-container>
     </ng-container>
   </div>
-</ng-container>
