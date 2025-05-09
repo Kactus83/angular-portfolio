@@ -1,0 +1,108 @@
+{
+  "title": "项目",
+  "personal": {
+    "heading": "我的个人项目",
+    "publicRepos": "{{count}} 个公共仓库",
+    "followers":   "{{count}} 位关注者",
+    "stars":       "{{count}} 颗⭐",
+    "description": "在我的 GitHub 个人资料上查看我的个人作品。"
+  },
+  "list": {
+    "seeDetails": "详情",
+    "repo":       "GitHub 仓库",
+    "demo":       "查看演示"
+  },
+  "detail": {
+    "description":           "描述",
+    "codeDistribution":      "代码分布",
+    "subSkills":             "子技能",
+    "gallery":               "图库",
+    "technicalDetails":      "技术详情",
+    "history":               "历史",
+    "architecture":          "架构",
+    "technicalChoices":      "技术选型",
+    "technicalReflections":  "技术思考",
+    "difficulties":          "难点",
+    "close":                 "关闭"
+  },
+  "space-invaders": {
+    "title": "Space Invaders",
+    "summary": "经典游戏 Space Invaders 的重制版。",
+    "description": "现代版 Space Invaders，具有增强的图形、流畅的动画和在线排行榜。",
+    "history": "2023 年在内部黑客马拉松中开发，之后作为个人项目维护。",
+    "architecture": "纯 Vanilla TS 一体式：主循环与输入/渲染处理分离。",
+    "technicalChoices": "使用 HTML5 Canvas 保证性能和兼容性，无第三方框架。",
+    "technicalReflections": "模块化 TS 架构便于添加新实体（敌人、增强道具）。",
+    "difficulties": "管理基础物理和碰撞检测以保持帧率稳定。"
+  },
+  "custom-logger": {
+    "title": "Custom Logger",
+    "summary": "适用于 Node.js 的模块化 NPM 日志包，可配置且可扩展。",
+    "description": "TypeScript 模块，提供集中式日志功能：级别（TRACE 至 ERROR）、主/子进程层次结构、彩色或经典样式、流式 API。易于集成到任意 Node.js 应用并支持自定义传输。",
+    "history": "2024 年 2 月 28 日创建并发布到 NPM（v0.1.11），用于实验 TypeScript 模块化日志。",
+    "architecture": "单例 `LoggingService` 协调内部服务（ProcessDatabase、StyleManager…），Main/SubProcess 客户端继承抽象基类。",
+    "technicalChoices": "– 单例模式； \n– 小服务组合分离职责； \n– TS 枚举/接口保证一致性； \n– ANSI 控制台输出，无外部依赖。",
+    "technicalReflections": "单例简化使用但灵活性受限；继承可用组合替代。下一步：添加文件/HTTP 传输。",
+    "difficulties": "– NPM 发布与打包（ESM vs CommonJS）； \n– 继承 vs 组合选择； \n– 设计丰富易用 API； \n– 初始缺少单元测试。"
+  },
+  "color-generator": {
+    "title": "Theme Color Generator",
+    "summary": "用于实时生成 CSS 主题的 Web 工具。",
+    "description": "创建自定义配色（HEX、RGB…），实时预览并自动生成相应 CSS 代码。",
+    "history": "2023 年 10 月 23 日创建，用于集中 CSS 主题生成；2025 年 5 月 5 日更新以改进 UX 和设计。",
+    "architecture": "`main.ts` 初始化 ColorsService、ColorsPaletteService、ThemeColorsService、ThemeDisplayService。DDD 结构，包含 `models`、`services`、`value-objects` 和 ThemeCSSGenerator，通过 Webpack 打包。",
+    "technicalChoices": "TypeScript 严格类型，HTML/CSS UI，Webpack+ts-loader 打包，服务/值对象架构分离业务逻辑和呈现。",
+    "technicalReflections": "后续：Tailwind 导出、SCSS/JSON 模板、CI/CD 集成 CLI。",
+    "difficulties": "无重大挑战；改进：单元测试、CI 流程、高级格式支持。"
+  },
+  "portfolio": {
+    "title": "Book 2023",
+    "summary": "响应式多页面作品集，带动画和可定制主题。",
+    "description": "静态多页面站点（landing、home、CV、skills、projects）由自制 Node.js 服务器提供。自定义光标、CSS 变量主题、动态项目数据加载。",
+    "history": "2023 年 10 月 24 日创建，作为匿名作品集模板，一次完成，之后无重大更新。",
+    "architecture": "多页面架构：每页独立（HTML/CSS/JS）。`server.js` 路由及静态文件，`main.js` 管理光标、主题和初始重定向。",
+    "technicalChoices": "Vanilla JS/CSS 轻量直接访问 DOM；CSS 变量主题；自制 Node.js 服务器，无 Express。",
+    "technicalReflections": "独立页面易维护，但使用打包工具（Webpack/Rollup）或轻量框架（Vite/Next.js）更佳；SPA 可提升体验。",
+    "difficulties": "跨浏览器光标、细粒度 CSS 变量/动画处理、无 FOUC 重定向、自制服务器结构。"
+  },
+  "idlesaur": {
+    "title": "The Idlesaur",
+    "summary": "跟踪虚拟恐龙需求、进度和业力，并带内置商店的挂机游戏。",
+    "description": "全栈挂机游戏：React 18 前端、Express/TS 后端、MariaDB 持久化。管理饥饿、XP、业力，循环 20 分钟，随机事件和内置商店。",
+    "history": "2024–2025 年为 BTS SLAM 开发，初为团队项目，后分叉为个人版以完善玩法模块和基础架构自动化。",
+    "architecture": "容器化三层架构：React 18 前端、Express/TS 后端、MariaDB，通过 Docker Compose 和 Terraform 在 AWS App Runner 上部署。",
+    "technicalChoices": "React 18 + Express.js 分离前后端，TypeScript 严格类型，Docker 多阶段，Terraform 可复现基础架构。",
+    "technicalReflections": "原始 SQL (mysql2) 透明但 Prisma ORM 更利于迁移；事件总线 (Kafka/RabbitMQ) 提高模块解耦。",
+    "difficulties": "实现健壮的 AuthService/AuthMiddleware、AWS HTTPS 配置、RDS 自动备份、无专用工具的 CI/CD。"
+  },
+  "app-template": {
+    "title": "App Template",
+    "summary": "具有 CLI、桌面向导和基础架构即代码的全栈模板。",
+    "description": "模块化 NestJS 后端、Angular 16 前端、`appwizard` CLI 和 Tauri+Rust 桌面向导。容器化服务（PostgreSQL、Vault、MailHog、Ganache），通过 Terraform 在 AWS/GCP 上提供。",
+    "history": "五年迭代成果（原 Auth-Boilerplate），通过 Git 子模块合并单一 monorepo，2024–2025 年开发以满足 SLAM 标准和自动化部署。",
+    "architecture": "Git 子模块 monorepo：NestJS+Prisma 后端、Angular PWA 前端、Docker Compose 支持服务、CLI/Tauri 向导完成安装。",
+    "technicalChoices": "NestJS 中使用 Passport-JWT & Guards、Prisma 迁移、Angular PWA+Tailwind/SCSS 前端、Solidity 智能合约、Docker+Terraform CI、Tauri/Rust 本地 UX。",
+    "technicalReflections": "计划重构后端身份验证以统一 Passport 策略，并将前端重写为 Portfolio 插件以实现无缝集成。",
+    "difficulties": "大型 monorepo、频繁的 Angular 更新、文档/代码维护、Terraform 零接触编排。"
+  },
+  "memory-game": {
+    "title": "Memory Game",
+    "summary": "React 记忆游戏，表情卡片网格翻转。",
+    "description": "简单实现：生成成对表情符号卡片，满足条件后显示胜利或失败提示。",
+    "history": "2024 年 10 月 22 日作为 React 学习项目启动。v1 稳定但简洁，无公开演示 (克隆仓库后 `npm start`) 。",
+    "architecture": "平铺 `src/` 结构：MemoryGame、Card、Controls、GameOver，无特性文件夹结构—需重构。",
+    "technicalChoices": "React 钩子 (useState, useEffect)、CSS3 动画实现翻转、四组件分离易于阅读。",
+    "technicalReflections": "v1 稳定但需特性分组、用户档案、难度级别、本地分数存储。",
+    "difficulties": "动画与计时同步、动画期间禁用点击、可靠管理 GameOver 状态。"
+  },
+  "vf-robber": {
+    "title": "VF Robber (Very Fast Robber)",
+    "summary": "跨平台桌面应用 (Tauri) Angular+Rust，用于批量重命名文件和文本。",
+    "description": "Angular 16+SCSS + Rust/Tauri 重写 Python 重命名脚本。复制源/目标、查找/替换、自动重命名，通过 IPC 事件实时显示进度。",
+    "history": "2025 年 5 月 3 日开始全面重构，基于 Python PoC，分叉个人版以完善模块和自动化基础架构。",
+    "architecture": "Tauri+Angular monorepo：Rust (`src-tauri/`) 处理 FS 和 IPC，Angular (`src/app/`) 负责配置和实时进度 UI。",
+    "technicalChoices": "Tauri+Rust 本地高性能，Angular 16/SCSS UI，高频 IPC 保持流畅 UX，npm & Cargo monorepo。",
+    "technicalReflections": "验证 Tauri/Angular 用于代码重构工具。后续：CSV/JSON 报告、纯 Rust CLI、框架预设。",
+    "difficulties": "Tauri 在 Windows/macOS/Linux 上配置、高频 IPC 无阻塞 UI、处理锁定文件/权限、跨平台打包。"
+  }
+}

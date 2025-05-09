@@ -9,6 +9,7 @@ import { Observable }                from 'rxjs';
 import { switchMap }                 from 'rxjs/operators';
 import { Project }                   from '../../projects.types';
 import { ProjectsService }           from '../../projects.service';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-project-detail',
@@ -19,7 +20,11 @@ import { ProjectsService }           from '../../projects.service';
     MatButtonModule,
     MatIconModule,
     MatProgressBarModule,
-    PortfolioCardComponent
+    PortfolioCardComponent,
+    TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope("projects")
   ],
   templateUrl: './project-detail.component.html'
 })

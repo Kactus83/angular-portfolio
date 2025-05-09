@@ -4,13 +4,18 @@ import { ProjectsService }      from './projects.service';
 import { Observable }           from 'rxjs';
 import { Project }              from './projects.types';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [
     CommonModule,
-    ProjectCardComponent
+    ProjectCardComponent,
+    TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope("projects")
   ],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']

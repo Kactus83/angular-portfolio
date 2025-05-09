@@ -1,13 +1,17 @@
 <div class="flex flex-col min-h-[calc(100vh-64px)]">
   <!-- Header -->
   <div class="bg-card flex border-b p-6 sm:px-10 sm:py-8">
-    <h1 class="text-3xl font-extrabold">Projets</h1>
+    <h1 class="text-3xl font-extrabold">
+      {{ 'projects.title' | transloco }}
+    </h1>
   </div>
 
   <div class="flex-auto p-6 sm:p-10 space-y-12">
     <!-- Accroche & GitHub Flip Card -->
     <section class="max-w-screen-md mx-auto text-center space-y-6">
-      <h2 class="text-2xl font-semibold">Mes Projets Personnels</h2>
+      <h2 class="text-2xl font-semibold">
+        {{ 'projects.personal.heading' | transloco }}
+      </h2>
 
       <div class="flip-card w-64 h-48 mx-auto">
         <div class="flip-card-inner">
@@ -28,15 +32,25 @@
             class="flip-card-back flex flex-col items-center justify-center p-4 bg-primary-500 text-white rounded-lg"
           >
             <div class="space-y-2">
-              <div class="text-sm"><strong>31</strong> dépôts publics</div>
-              <div class="text-sm"><strong>2</strong> followers</div>
-              <div class="text-sm"><strong>5</strong> stars</div>
+              <div class="text-sm">
+                <strong>{{ 31 }}</strong>
+                {{ 'projects.personal.publicRepos' | transloco: { count: 31 } }}
+              </div>
+              <div class="text-sm">
+                <strong>{{ 2 }}</strong>
+                {{ 'projects.personal.followers'   | transloco: { count: 2 } }}
+              </div>
+              <div class="text-sm">
+                <strong>{{ 5 }}</strong>
+                {{ 'projects.personal.stars'       | transloco: { count: 5 } }}
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <p class="text-base text-secondary">
-        Découvrez mes réalisations personnelles, disponibles sur mon profil GitHub.
+        {{ 'projects.personal.description' | transloco }}
       </p>
     </section>
 

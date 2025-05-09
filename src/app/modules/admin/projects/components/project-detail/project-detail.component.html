@@ -3,8 +3,14 @@
     <!-- Header -->
     <div class="bg-card flex border-b p-6 sm:px-10 sm:py-8">
       <div class="flex items-center justify-between w-full">
-        <h1 class="text-3xl font-extrabold">{{ project.title }}</h1>
-        <button mat-icon-button [routerLink]="['../']" aria-label="Fermer">
+        <h1 class="text-3xl font-extrabold">
+          {{ project.title }}
+        </h1>
+        <button
+          mat-icon-button
+          [routerLink]="['../']"
+          [attr.aria-label]="('projects.detail.close' | transloco)"
+        >
           <mat-icon>close</mat-icon>
         </button>
       </div>
@@ -24,13 +30,17 @@
 
       <!-- Description -->
       <portfolio-card class="p-6">
-        <h2 class="text-2xl font-semibold mb-4">Description</h2>
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'projects.detail.description' | transloco }}
+        </h2>
         <p class="text-base leading-relaxed">{{ project.description }}</p>
       </portfolio-card>
 
       <!-- Répartition du code -->
       <portfolio-card *ngIf="project.languageUsage?.length" class="p-6">
-        <h2 class="text-2xl font-semibold mb-4">Répartition du code</h2>
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'projects.detail.codeDistribution' | transloco }}
+        </h2>
         <div class="space-y-4">
           <div
             *ngFor="let lang of project.languageUsage"
@@ -49,7 +59,9 @@
 
       <!-- Sous-compétences -->
       <portfolio-card *ngIf="project.subSkills?.length" class="p-6">
-        <h2 class="text-2xl font-semibold mb-4">Sous-compétences</h2>
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'projects.detail.subSkills' | transloco }}
+        </h2>
         <div class="space-y-4">
           <div
             *ngFor="let ss of project.subSkills"
@@ -68,7 +80,9 @@
 
       <!-- Galerie -->
       <portfolio-card *ngIf="project.gallery?.length" class="p-6">
-        <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'projects.detail.gallery' | transloco }}
+        </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <img
             *ngFor="let img of project.gallery"
@@ -81,26 +95,38 @@
 
       <!-- Détails techniques -->
       <portfolio-card class="p-6">
-        <h2 class="text-2xl font-semibold mb-4">Détails techniques</h2>
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'projects.detail.technicalDetails' | transloco }}
+        </h2>
         <dl class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ng-container *ngIf="project.history">
-            <dt class="font-medium">Historique</dt>
+            <dt class="font-medium">
+              {{ 'projects.detail.history' | transloco }}
+            </dt>
             <dd>{{ project.history }}</dd>
           </ng-container>
           <ng-container *ngIf="project.architecture">
-            <dt class="font-medium">Architecture</dt>
+            <dt class="font-medium">
+              {{ 'projects.detail.architecture' | transloco }}
+            </dt>
             <dd>{{ project.architecture }}</dd>
           </ng-container>
           <ng-container *ngIf="project.technicalChoices">
-            <dt class="font-medium">Choix techniques</dt>
+            <dt class="font-medium">
+              {{ 'projects.detail.technicalChoices' | transloco }}
+            </dt>
             <dd>{{ project.technicalChoices }}</dd>
           </ng-container>
           <ng-container *ngIf="project.technicalReflections">
-            <dt class="font-medium">Réflexions techniques</dt>
+            <dt class="font-medium">
+              {{ 'projects.detail.technicalReflections' | transloco }}
+            </dt>
             <dd>{{ project.technicalReflections }}</dd>
           </ng-container>
           <ng-container *ngIf="project.difficulties">
-            <dt class="font-medium">Difficultés</dt>
+            <dt class="font-medium">
+              {{ 'projects.detail.difficulties' | transloco }}
+            </dt>
             <dd>{{ project.difficulties }}</dd>
           </ng-container>
         </dl>
@@ -115,7 +141,8 @@
           [href]="project.repoUrl"
           target="_blank"
         >
-          <mat-icon>code</mat-icon>&nbsp;Dépôt
+          <mat-icon>code</mat-icon>
+          &nbsp;{{ 'projects.list.repo'        | transloco }}
         </a>
         <a
           *ngIf="project.demoUrl"
@@ -124,7 +151,8 @@
           [href]="project.demoUrl"
           target="_blank"
         >
-          <mat-icon>launch</mat-icon>&nbsp;Démo
+          <mat-icon>launch</mat-icon>
+          &nbsp;{{ 'projects.list.demo'        | transloco }}
         </a>
       </div>
     </div>

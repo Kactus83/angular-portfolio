@@ -4,6 +4,7 @@ import { RouterModule, RouterLink }   from '@angular/router';
 import { MatIconModule }              from '@angular/material/icon';
 import { PortfolioCardComponent }          from '@portfolio/components/card';
 import { Project }                    from '../../projects.types';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-project-card',
@@ -13,7 +14,11 @@ import { Project }                    from '../../projects.types';
     RouterModule,
     RouterLink,
     MatIconModule,
-    PortfolioCardComponent
+    PortfolioCardComponent,
+    TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope("projects")
   ],
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.scss']
