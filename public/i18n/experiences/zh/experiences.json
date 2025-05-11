@@ -1,0 +1,355 @@
+{
+  "intro": {
+    "heading": "我的职业历程",
+    "subtitle": "从网络创业到海事解决方案，以下是我的关键经验概览。"
+  },
+  "sections": {
+    "entrepreneur": {
+      "heading": "创业经验",
+      "period": "自由职业 (2019-2022)"
+    },
+    "chess": {
+      "heading": "CHESS Maritime 经验",
+      "period": "CHESS Maritime (2023-至今)"
+    }
+  },
+  "card": {
+    "seeDetails": "查看详情",
+    "present": "至今"
+  },
+  "detail": {
+    "context": "背景",
+    "summary": "摘要",
+    "period": "期间",
+    "skills": "所用技能",
+    "difficulties": "遇到的挑战",
+    "gallery": "画廊",
+    "steps": "步骤",
+    "technologies": "使用技术"
+  },
+  "entrepreneur": {
+    "barong-cbd-web": {
+      "title": "创建与管理 – Barong CBD Shop",
+      "summary": "Barong CBD Shop 的 WordPress 电子商务网站",
+      "description": "设计、开发、维护并优化 Barong CBD Shop 电子商务网站的 SEO。",
+      "longDescription": "用定制 WordPress 网站替换了功能受限的 Shopify 商店，从零开始使用 Divi 构建页面。超过 100 个产品，完全重写主题，一年后进行全面改版，并在圣诞节集成了虚拟“刮刮卡”模块。此站点维护两年后移交给其他供应商。",
+      "skills": [
+        "WordPress",
+        "PHP",
+        "Divi",
+        "SEO",
+        "电子商务",
+        "响应式设计",
+        "网站性能"
+      ],
+      "difficulties": "确保从 Shopify 到 WordPress 的平滑过渡不影响 SEO，保持所有设备的响应式显示，并在流量高峰时保证页面加载速度。",
+      "steps": [
+        { "title": "审核并从 Shopify 迁移" },
+        { "title": "使用 Divi 从零开发主题" },
+        { "title": "SEO 优化与响应式设计" },
+        { "title": "全面图形改版（一年后）" },
+        { "title": "集成圣诞节“刮刮卡”模块" },
+        { "title": "维护移交给其他供应商" }
+      ],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "Divi",
+        "SEO"
+      ],
+      "startDate": "2019年10月",
+      "endDate": "2021年10月"
+    },
+    "barong-cbd-comm": {
+      "title": "视觉传播 – Barong CBD Shop",
+      "summary": "印刷和标识材料",
+      "description": "为 Barong CBD Shop 设计包装、店铺标识、传单和其他印刷物。",
+      "longDescription": "全面负责视觉和社交传播：\n• 创建所有印刷材料（传单、专业目录）\n• 为前三家门店设计标识\n• 在 Instagram 和 Facebook 上进行社区管理",
+      "skills": [
+        "Illustrator",
+        "Photoshop",
+        "InDesign",
+        "标识设计",
+        "包装设计",
+        "社区管理"
+      ],
+      "difficulties": "在紧迫的期限内交付大量风格统一的视觉，需遵守品牌标识和营销要求。",
+      "steps": [
+        { "title": "设计印刷材料（传单、包装、专业目录）" },
+        { "title": "为三家门店设计标识" },
+        { "title": "创建并发布社交媒体视觉" },
+        { "title": "定期更新促销视觉" }
+      ],
+      "technologies": [
+        "Illustrator",
+        "Photoshop",
+        "InDesign"
+      ],
+      "startDate": "2019年10月",
+      "endDate": "2021年10月"
+    },
+    "douma-automobiles": {
+      "title": "展示网站 – Douma Automobiles",
+      "summary": "豪华车辆非交易型电子商务展示",
+      "description": "为 Douma Automobiles 开发定制展示网站，集成高级筛选和目录管理。",
+      "longDescription": "通过 WooCommerce 实现在线目录，不含支付模块，展示豪华汽车，支持按品牌、型号、年份、里程等筛选。使用自定义 JavaScript 模块管理动态列表。",
+      "skills": [
+        "WordPress",
+        "WooCommerce",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "UX/UI 筛选"
+      ],
+      "difficulties": "在不含支付功能的情况下调整主题以实现目录模式，并开发自定义 JS 筛选同时保持流畅导航。",
+      "steps": [
+        { "title": "收集需求：用户流程与筛选" },
+        { "title": "选择并调整 WooCommerce 主题" },
+        { "title": "开发自定义 JS 模块实现筛选" },
+        { "title": "跨浏览器测试与性能优化" }
+      ],
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "JavaScript",
+        "SCSS"
+      ],
+      "startDate": "2019年9月",
+      "endDate": "2019年9月"
+    },
+    "international-events": {
+      "title": "展示网站 – International Events",
+      "summary": "奢华活动套餐（66号公路、徒步等）",
+      "description": "为奢华活动机构创建 WordPress 展示网站，因疫情停工。",
+      "longDescription": "从零构建 WordPress 主题，重点展示全屏视频和照片，风格类似奢华游艇机构。图形原型在 COVID-19 停工前已获批准。",
+      "skills": [
+        "WordPress",
+        "PHP",
+        "UX/UI 设计",
+        "丰富媒体布局"
+      ],
+      "difficulties": "管理高度视觉化的网站同时确保性能和移动适配；项目因疫情中断。",
+      "steps": [
+        { "title": "线框图与大尺寸原型" },
+        { "title": "从零开发 WordPress 主题" },
+        { "title": "集成媒体（HD 视频、照片）" },
+        { "title": "客户验证后项目中断（COVID-19）" }
+      ],
+      "technologies": [
+        "WordPress",
+        "PHP"
+      ],
+      "startDate": "2020年2月",
+      "endDate": "2020年3月"
+    },
+    "envergure-events": {
+      "title": "展示网站 – Envergure Events",
+      "summary": "婚礼展示站点",
+      "description": "开发 WordPress 网站并对客户进行自主维护培训。",
+      "longDescription": "使用 Elementor 构建网站并进行客户培训，随后因 Elementor 未更新漏洞而遭遇黑客入侵尝试。主要教训：保持网站更新以防漏洞。",
+      "skills": [
+        "WordPress",
+        "Elementor",
+        "Web 安全",
+        "客户培训"
+      ],
+      "difficulties": "因未及时更新导致严重安全事件；进行了补救并向客户普及最佳实践。",
+      "steps": [
+        { "title": "使用 Elementor 开发网站" },
+        { "title": "对客户进行维护培训" },
+        { "title": "安全事件：漏洞未修补" },
+        { "title": "尝试恢复管理员账户" },
+        { "title": "撰写安全最佳实践" }
+      ],
+      "technologies": [
+        "WordPress",
+        "Elementor"
+      ],
+      "startDate": "2019年8月",
+      "endDate": "2019年8月"
+    },
+    "services-particuliers": {
+      "title": "数字服务与维护 – 私人客户",
+      "summary": "宣传材料、智能家居与定制工具",
+      "description": "多样化服务：计算机维修、宣传材料、智能家居安装、实用脚本。",
+      "longDescription": "为私人客户的全方位项目：\n• 电脑维修与 HomeAssistant 维护\n• 为 Leboncoin/Vinted 制作传单与视觉素材\n• 开发 Chrome 扩展（游戏、远程 SoundCloud）",
+      "skills": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "HomeAssistant",
+        "电脑维修",
+        "Automation",
+        "No-code"
+      ],
+      "difficulties": "定义高度多样化的范围，并迅速提供可靠的解决方案。",
+      "steps": [
+        { "title": "诊断并维修电脑" },
+        { "title": "设计宣传材料（Leboncoin、Vinted）" },
+        { "title": "安装与配置 HomeAssistant" },
+        { "title": "开发 Chrome 扩展与实用脚本" }
+      ],
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "No-code"
+      ],
+      "startDate": "2020年6月",
+      "endDate": "2021年5月"
+    }
+  },
+  "chess": {
+    "chess-translation": {
+      "title": "海事软件翻译",
+      "summary": "FileMaker Pro 20 应用本地化（法语 ↔ 英语）",
+      "description": "",
+      "longDescription": "在 FileMaker Pro 20 上，我负责翻译 100 多个 UI 组件（界面、脚本、值列表）的中英文名称。由于 FileMaker 原生不支持本地化，我设计了“魔术值列表”系统，实现字符串的动态管理，同时保持模块可维护和可扩展。",
+      "skills": [
+        "FileMaker Pro 20",
+        "本地化 / L10n",
+        "魔术值列表模式",
+        "值列表管理",
+        "脚本自动化"
+      ],
+      "difficulties": "绕过 FileMaker Pro 对值列表和动态文本管理的限制，同时保证可维护性和可扩展性。",
+      "steps": [
+        { "title": "研究本地化选项并测试多种方案" },
+        { "title": "实现最初的魔术值列表原型" },
+        { "title": "扩展原型以覆盖内部值列表" },
+        { "title": "与项目团队验证系统" },
+        { "title": "部署并推广至所有生产数据库" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20",
+        "JavaScript（自动化脚本）"
+      ],
+      "startDate": "2023年10月",
+      "endDate": "2024年1月"
+    },
+    "chess-standards": {
+      "title": "海事软件合规升级",
+      "summary": "为 FileMaker CMS 实现 Bureau Veritas 合规要求",
+      "description": "",
+      "longDescription": "为 Bureau Veritas Maritime 我主导了对 FileMaker Pro 20 CMS 的审计和改造，解决了 50 多项不合规点。交付演示版，实施定向修复，并再次验证软件。",
+      "skills": [
+        "FileMaker Pro 20",
+        "合规审计",
+        "技术文档",
+        "补丁管理"
+      ],
+      "difficulties": "满足严格标准并保证变更可追溯，且不干扰现有功能。",
+      "steps": [
+        { "title": "准备演示版供初步验证" },
+        { "title": "由 Bureau Veritas 审计并收集 50+ 修复点" },
+        { "title": "在 CMS 中实施修复" },
+        { "title": "Bureau Veritas 最终审核与验证" },
+        { "title": "交付用户手册（由同事编写）" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20"
+      ],
+      "startDate": "2024年3月",
+      "endDate": "2024年7月"
+    },
+    "chess-web-refonte": {
+      "title": "WordPress 主题重构",
+      "summary": "双模式海事与游艇展示，100% 定制 WordPress 主题",
+      "description": "创建主题并添加“切换”以在航运和游艇模式间切换。",
+      "longDescription": "从零构建完全定制的 WordPress 主题，用户可通过开关在“航运”和“游艇”模式间切换。流程：Figma 线框图 → 本地集成 → 上线迁移。",
+      "skills": [
+        "WordPress",
+        "PHP",
+        "定制主题",
+        "多模式导航",
+        "Figma → 原型"
+      ],
+      "difficulties": "在不同模式下处理动态双语内容，同时保持移动兼容性和性能。",
+      "steps": [
+        { "title": "Figma 双模式原型设计" },
+        { "title": "本地集成 WordPress 主题" },
+        { "title": "开发内容与菜单切换逻辑" },
+        { "title": "跨设备测试与优化" },
+        { "title": "迁移到现有服务器" }
+      ],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "JavaScript"
+      ],
+      "startDate": "2024年8月",
+      "endDate": "2024年10月"
+    },
+    "chess-maquette": {
+      "title": "海事软件原型",
+      "summary": "Figma 原型（约150个界面）用于内部验证",
+      "description": "",
+      "longDescription": "在 Figma 中创建约150个界面，以模拟新海事管理软件的工作流程。供内部快速测试和迭代使用。",
+      "skills": [
+        "Figma",
+        "设计系统",
+        "原型制作"
+      ],
+      "difficulties": "未收到负面反馈，与项目团队迭代顺畅。",
+      "steps": [
+        { "title": "范围定义与 Brief（约150界面）" },
+        { "title": "创建设计系统与风格指南" },
+        { "title": "在 Figma 上制作界面" },
+        { "title": "团队验证与资源导出" }
+      ],
+      "technologies": [
+        "Figma"
+      ],
+      "startDate": "2024年7月",
+      "endDate": "2024年10月"
+    },
+    "chess-doc-gen": {
+      "title": "法规文档生成器",
+      "summary": "基于 FileMaker + JS 的 XML/CSV 导出",
+      "description": "",
+      "longDescription": "开发海事文档生成引擎（SMS/PMS），基于带标签的文本模板，直接导出可被 FileMaker Pro 或其他客户端软件使用的 XML/CSV。",
+      "skills": [
+        "FileMaker Pro 20",
+        "JavaScript",
+        "XML/CSV",
+        "业务规则逻辑"
+      ],
+      "difficulties": "实现复杂的海事法规业务逻辑，并优化处理大数据量的性能。",
+      "steps": [
+        { "title": "带标签的模板建模与层级结构" },
+        { "title": "根据输入数据组装文本片段脚本" },
+        { "title": "与客户端 SMS/PMS 同步导出 XML/CSV" },
+        { "title": "性能测试与边缘情况处理" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20",
+        "JavaScript"
+      ],
+      "startDate": "2024年10月",
+      "endDate": "2025年1月"
+    },
+    "chess-cms-maritime": {
+      "title": "海事 CMS 重构",
+      "summary": "FileMaker CMS 的 UI/UX 与架构重设计，完整业务模块",
+      "description": "",
+      "longDescription": "参与 CMS 完整重构项目的早期阶段（维修、船员、财务、法规文档、费用），目标：提升易用性并降低技术债务。",
+      "skills": [
+        "FileMaker Pro 20",
+        "无代码",
+        "UI/UX 设计",
+        "软件架构"
+      ],
+      "difficulties": "在 FileMaker 限制下设计模块化架构，并规划现有数据迁移。",
+      "steps": [
+        { "title": "范围研讨与架构设计" },
+        { "title": "UI/UX 模块原型" },
+        { "title": "迁移计划与用户培训" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20"
+      ],
+      "startDate": "2024年9月",
+      "endDate": null
+    }
+  }
+}

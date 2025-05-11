@@ -14,6 +14,9 @@
       <ng-container *ngIf="skills$ | async as skills">
         <app-skills-card [skills]="skills"></app-skills-card>
       </ng-container>
+      <ng-container *ngIf="languages$ | async as languages">
+        <app-languages-card [languages]="languages"></app-languages-card>
+      </ng-container>
     </div>
 
     <!-- COLONNE DROITE -->

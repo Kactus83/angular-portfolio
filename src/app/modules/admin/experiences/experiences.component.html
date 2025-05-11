@@ -1,16 +1,22 @@
 <div class="flex flex-col min-h-[calc(100vh-64px)] p-6 sm:p-10 space-y-12">
   <!-- Accroche générale -->
   <section class="max-w-screen-md mx-auto text-center space-y-4">
-    <h2 class="text-2xl font-semibold">Mon Parcours Professionnel</h2>
+    <h2 class="text-2xl font-semibold">
+      {{ 'experiences.intro.heading' | transloco }}
+    </h2>
     <p class="text-base text-secondary">
-      De l’entrepreneuriat web à la réalisation de solutions maritimes, voici un aperçu de mes expériences clés.
+      {{ 'experiences.intro.subtitle' | transloco }}
     </p>
   </section>
 
   <!-- Entrepreneurial -->
   <section>
-    <h3 class="text-3xl font-extrabold">Expériences Entrepreneuriales</h3>
-    <p class="text-secondary mt-1">Freelance (2019-2022)</p>
+    <h3 class="text-3xl font-extrabold">
+      {{ 'experiences.sections.entrepreneur.heading' | transloco }}
+    </h3>
+    <p class="text-secondary mt-1">
+      {{ 'experiences.sections.entrepreneur.period' | transloco }}
+    </p>
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <app-experience-card
         *ngFor="let exp of entrepreneurExps$ | async"
@@ -21,8 +27,12 @@
 
   <!-- CHESS Maritime -->
   <section>
-    <h3 class="text-3xl font-extrabold">Expérience chez CHESS Maritime</h3>
-    <p class="text-secondary mt-1">CHESS Maritime (2023-Présent)</p>
+    <h3 class="text-3xl font-extrabold">
+      {{ 'experiences.sections.chess.heading' | transloco }}
+    </h3>
+    <p class="text-secondary mt-1">
+      {{ 'experiences.sections.chess.period' | transloco }}
+    </p>
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <app-experience-card
         *ngFor="let exp of chessExps$ | async"

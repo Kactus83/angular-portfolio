@@ -1,55 +1,55 @@
 <div class="flex flex-col p-6 sm:p-10 max-w-xl mx-auto space-y-6">
   <h1 class="text-3xl font-extrabold">
-    {{ 'title' | transloco }}
+    {{ 'contact.title' | transloco }}
   </h1>
 
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
     <mat-form-field appearance="fill" class="w-full">
-      <mat-label>{{ 'form.nameLabel' | transloco }}</mat-label>
+      <mat-label>{{ 'contact.form.nameLabel' | transloco }}</mat-label>
       <input
         matInput
         formControlName="name"
-        [placeholder]="'form.namePlaceholder' | transloco"
+        [placeholder]="'contact.form.namePlaceholder' | transloco"
       />
       <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
-        {{ 'form.nameRequired' | transloco }}
+        {{ 'contact.form.nameRequired' | transloco }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="w-full">
-      <mat-label>{{ 'form.emailLabel' | transloco }}</mat-label>
+      <mat-label>{{ 'contact.form.emailLabel' | transloco }}</mat-label>
       <input
         matInput
         formControlName="email"
-        [placeholder]="'form.emailPlaceholder' | transloco"
+        [placeholder]="'contact.form.emailPlaceholder' | transloco"
       />
       <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
-        {{ 'form.emailRequired' | transloco }}
+        {{ 'contact.form.emailRequired' | transloco }}
       </mat-error>
       <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
-        {{ 'form.emailInvalid' | transloco }}
+        {{ 'contact.form.emailInvalid' | transloco }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="w-full">
-      <mat-label>{{ 'form.subjectLabel' | transloco }}</mat-label>
+      <mat-label>{{ 'contact.form.subjectLabel' | transloco }}</mat-label>
       <input
         matInput
         formControlName="subject"
-        [placeholder]="'form.subjectPlaceholder' | transloco"
+        [placeholder]="'contact.form.subjectPlaceholder' | transloco"
       />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="w-full">
-      <mat-label>{{ 'form.messageLabel' | transloco }}</mat-label>
+      <mat-label>{{ 'contact.form.messageLabel' | transloco }}</mat-label>
       <textarea
         matInput
         formControlName="message"
         rows="6"
-        [placeholder]="'form.messagePlaceholder' | transloco"
+        [placeholder]="'contact.form.messagePlaceholder' | transloco"
       ></textarea>
       <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
-        {{ 'form.messageRequired' | transloco }}
+        {{ 'contact.form.messageRequired' | transloco }}
       </mat-error>
     </mat-form-field>
 
@@ -59,7 +59,7 @@
       type="submit"
       [disabled]="contactForm.invalid"
     >
-      {{ 'form.submitButton' | transloco }}
+      {{ 'contact.form.submitButton' | transloco }}
     </button>
   </form>
 </div>

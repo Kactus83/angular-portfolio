@@ -1,0 +1,33 @@
+{
+    "navigation": {
+      "home": {
+        "title": "Home",
+        "desc": "Pagina iniziale"
+      },
+      "profile": {
+        "title": "Profilo",
+        "desc": "Scopri il mio percorso e le mie informazioni di contatto."
+      },
+      "skills": {
+        "title": "Competenze",
+        "desc": "Le mie competenze tecniche e la mia esperienza."
+      },
+      "experiences": {
+        "title": "Esperienze",
+        "desc": "Le mie esperienze professionali più significative."
+      },
+      "projects": {
+        "title": "Progetti",
+        "desc": "Progetti professionali e personali dettagliati."
+      },
+      "veille": {
+        "title": "Tech Watch",
+        "desc": "Tieniti aggiornato sulle ultime tendenze del web."
+      },
+      "contact": {
+        "title": "Contatto",
+        "desc": "Mettiamoci in contatto per collaborare!"
+      }
+    }
+  }
+  

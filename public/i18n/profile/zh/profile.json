@@ -116,5 +116,14 @@
       "institution": "Lycée du Coudon",
       "qualification": "普通高中毕业证"
     }
+  },
+  "languages": {
+    "title": "语言",
+    "fr"   : "法语",
+    "en"   : "英语",
+    "it"   : "意大利语",
+    "es"   : "西班牙语",
+    "zh"   : "中文",
+    "phrase": "我可以用 {{ language }} 与您交流，熟练度为 {{ percent }}%。"
   }
 }

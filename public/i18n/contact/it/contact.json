@@ -1,0 +1,21 @@
+{
+    "title": "Contattami",
+    "form": {
+      "nameLabel": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "nameRequired": "Il nome è obbligatorio",
+      "emailLabel": "Email",
+      "emailPlaceholder": "La tua email",
+      "emailRequired": "L'email è obbligatoria",
+      "emailInvalid": "Email non valida",
+      "subjectLabel": "Oggetto",
+      "subjectPlaceholder": "Oggetto",
+      "messageLabel": "Messaggio",
+      "messagePlaceholder": "Il tuo messaggio",
+      "messageRequired": "Il messaggio è obbligatorio",
+      "submitButton": "Invia"
+    },
+    "success": "Grazie! Il tuo messaggio è stato inviato con successo.",
+    "error": "Ops! Si è verificato un errore."
+  }
+  

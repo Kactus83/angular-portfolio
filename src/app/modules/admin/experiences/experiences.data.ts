@@ -182,9 +182,30 @@ export const CHESS_EXPS: Experience[] = [
     id: 'chess-translation',
     title: 'Traduction Logiciel Maritime',
     summary:
-      'Traduction du logiciel FileMaker (No-code orienté base de données)',
+      'Localisation en français et anglais d’une application FileMaker Pro 20',
     description: '',
-    technologies: ['FileMaker', 'No-code'],
+    longDescription: `
+      Sur FileMaker Pro 20, j’ai assuré la traduction de plus d’une centaine de composants UI  
+      (interfaces, scripts, listes de valeurs) du français vers l’anglais et réciproquement.  
+      N’étant pas prévu nativement dans FileMaker, j’ai conçu un système de “magic value list”  
+      réadapté pour gérer dynamiquement les chaînes, tout en gardant le module maintenable et évolutif.`,
+    skills: [
+      'FileMaker Pro 20',
+      'Localisation / L10n',
+      'Magic Value List Pattern',
+      'Gestion de listes de valeurs',
+      'Automatisation de scripts'
+    ],
+    difficulties:
+      'Contourner les limitations de FileMaker Pro pour la gestion des listes de valeurs et des textes dynamiques, tout en garantissant une facilité de maintenance et d’évolution.',
+    steps: [
+      { title: 'Étude des possibilités de traduction natives et tests de plusieurs approches' },
+      { title: 'Implémentation initiale d’un prototype de magic value list' },
+      { title: 'Extension du prototype pour couvrir les listes de valeurs internes' },
+      { title: 'Validation du système par l’équipe projet' },
+      { title: 'Déploiement et généralisation sur l’ensemble des bases en production' }
+    ],
+    technologies: ['FileMaker Pro 20', 'JavaScript (scripts d’automatisation)'],
     startDate: '2023-10',
     endDate: '2024-01'
   },
@@ -192,9 +213,28 @@ export const CHESS_EXPS: Experience[] = [
     id: 'chess-standards',
     title: 'Mise aux normes Logiciel Maritime',
     summary:
-      'Mise aux normes pour validation par un organisme certification',
+      'Conformité Bureau Veritas d’un CMS FileMaker pour le secteur maritime',
     description: '',
-    technologies: ['FileMaker', 'No-code'],
+    longDescription: `
+      Pour le Bureau Veritas Maritime, j’ai piloté l’audit et l’adaptation d’un logiciel CMS  
+      sous FileMaker Pro 20 afin de satisfaire plus de cinquante points de non-conformité.  
+      Livraison d’une version demo, corrections ciblées, puis revalidation du logiciel.`,
+    skills: [
+      'FileMaker Pro 20',
+      'Audit de conformité',
+      'Documentation technique',
+      'Gestion de correctifs'
+    ],
+    difficulties:
+      'Respecter des normes strictes et assurer la traçabilité des modifications sans perturber les fonctionnalités existantes.',
+    steps: [
+      { title: 'Préparation d’une version démo pour vérification initiale' },
+      { title: 'Audit par le Bureau Veritas et recueil de la liste de 50+ points à corriger' },
+      { title: 'Implémentation des correctifs dans le CMS FileMaker' },
+      { title: 'Revue et validation finale par le Bureau Veritas' },
+      { title: 'Livraison du manuel utilisateur (rédigé par ma collègue)' }
+    ],
+    technologies: ['FileMaker Pro 20'],
     startDate: '2024-03',
     endDate: '2024-07'
   },
@@ -202,9 +242,29 @@ export const CHESS_EXPS: Experience[] = [
     id: 'chess-web-refonte',
     title: 'Refonte site WordPress',
     summary:
-      'Refonte du site WordPress avec thème personnalisé from scratch',
-    description: 'Création d’un thème sur mesure et optimisation front-end.',
-    technologies: ['WordPress', 'PHP', 'Tailwind CSS'],
+      'Double vitrine maritime et yachting sous un thème WordPress 100 % sur-mesure',
+    description: 'Création d’un thème et d’un mode « switch » pour basculer entre services maritimes et yachting.',
+    longDescription: `
+      Développement d’un thème WordPress entièrement construit from scratch  
+      permettant de passer d’une navigation « shipping » à un univers « yachting » via un simple switch.  
+      Workflow : wireframes sur Figma → intégration locale → migration vers l’hébergement en place.`,
+    skills: [
+      'WordPress',
+      'PHP',
+      'Thème sur-mesure',
+      'Multimode navigation',
+      'Figma → prototypage'
+    ],
+    difficulties:
+      'Gérer un contenu dynamique et bilingue selon le mode choisi, tout en maintenant la compatibilité mobile et des performances optimales.',
+    steps: [
+      { title: 'Conception de la maquette double-mode sur Figma' },
+      { title: 'Intégration du thème WordPress en local' },
+      { title: 'Développement du switch de contenu et de menu dynamique' },
+      { title: 'Tests cross-device et optimisation' },
+      { title: 'Migration et mise en ligne sur le serveur existant' }
+    ],
+    technologies: ['WordPress', 'PHP', 'JavaScript'],
     startDate: '2024-08',
     endDate: '2024-10'
   },
@@ -212,9 +272,20 @@ export const CHESS_EXPS: Experience[] = [
     id: 'chess-maquette',
     title: 'Maquette Logiciel Maritime',
     summary:
-      'Participation à la maquette du nouveau logiciel de gestion Maritime',
+      'Prototype Figma (~150 vues) pour validation interne de la future interface',
     description: '',
-    technologies: ['Figma', 'UX'],
+    longDescription: `
+      Réalisation d’environ 150 écrans sur Figma pour modéliser les workflows du nouveau logiciel  
+      de gestion maritime. Destiné à l’équipe interne pour tests et itérations rapides.`,
+    skills: ['Figma', 'Design System', 'Prototypage'],
+    difficulties: 'Aucun retour négatif, itérations fluides avec l’équipe projet.',
+    steps: [
+      { title: 'Brief et définition du périmètre (~150 vues)' },
+      { title: 'Création du Design System et guide de style' },
+      { title: 'Production des écrans sur Figma' },
+      { title: 'Validation par l’équipe et export des assets' }
+    ],
+    technologies: ['Figma'],
     startDate: '2024-07',
     endDate: '2024-10'
   },
@@ -222,19 +293,54 @@ export const CHESS_EXPS: Experience[] = [
     id: 'chess-doc-gen',
     title: 'Générateur de Documents Réglementaires',
     summary:
-      'Logiciel FileMaker + JavaScript pour générer des documents réglementaires',
+      'Assemblage XML/CSV pour export vers systèmes tiers, en FileMaker + JS',
     description: '',
-    technologies: ['FileMaker', 'JavaScript'],
+    longDescription: `
+      Développement d’un moteur de génération de documents maritimes  
+      (SMS/PMS) basé sur des templates textuels avec balises, export XML/CSV  
+      directement exploitables par FileMaker Pro ou autres logiciels clients.`,
+    skills: [
+      'FileMaker Pro 20',
+      'JavaScript',
+      'XML/CSV',
+      'Logic Business Rules'
+    ],
+    difficulties:
+      'Implémenter des logiques métiers complexes de législation maritime et optimiser le traitement de gros volumes de données.',
+    steps: [
+      { title: 'Modélisation des templates avec balises et structure hiérarchique' },
+      { title: 'Script d’assemblage des morceaux de texte selon les données saisies' },
+      { title: 'Gestion des exports XML/CSV synchronisés avec SMS/PMS du client' },
+      { title: 'Tests de performance et correction des cas complexes' }
+    ],
+    technologies: ['FileMaker Pro 20', 'JavaScript'],
     startDate: '2024-10',
     endDate: '2025-01'
   },
   {
     id: 'chess-cms-maritime',
-    title: 'Refonte Logiciel Maritime',
+    title: 'Refonte CMS Logiciel Maritime',
     summary:
-      'Refonte du logiciel de gestion maritime (FileMaker No-code orienté BD)',
+      'Refonte UI/UX et architecture d’un CMS FileMaker Pro, modules métier complets',
     description: '',
-    technologies: ['FileMaker', 'No-code'],
+    longDescription: `
+      Participation aux premières phases d’un projet de refonte totale du CMS  
+      (gestion maintenance, équipage, finances, documents réglementaires, frais).  
+      Objectif : améliorer l’ergonomie et réduire la dette technique.`,
+    skills: [
+      'FileMaker Pro 20',
+      'No-code',
+      'UI/UX Design',
+      'Architecture logicielle'
+    ],
+    difficulties:
+      'Concevoir une architecture modulable dans les contraintes de FileMaker tout en planifiant la migration des données existantes.',
+    steps: [
+      { title: 'Atelier de cadrage et design de l’architecture' },
+      { title: 'Prototype des nouveaux modules UI/UX' },
+      { title: 'Plan de migration et formation des utilisateurs' }
+    ],
+    technologies: ['FileMaker Pro 20'],
     startDate: '2024-09'
   }
 ];

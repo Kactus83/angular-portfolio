@@ -1,0 +1,93 @@
+{
+    "title": "Le mie competenze",
+    "subtitle": "Scopri qui i miei ambiti di competenza, i livelli di padronanza e i progetti correlati per ciascuno.",
+    "categories": {
+      "programming": "Programmazione Informatica",
+      "security": "Rete / Sicurezza",
+      "misc": "Varie"
+    },
+    "categoriesDescription": "{{ category }}: panoramica delle competenze e dei livelli.",
+    "masteryLevels": {
+      "expert": "Esperto",
+      "advanced": "Avanzato",
+      "intermediate": "Intermedio",
+      "beginner": "Principiante"
+    },
+    "skills": {
+      "wordpressCms": {
+        "name": "Gestione CMS (WordPress)",
+        "subSkills": {
+          "installation": "Installazione",
+          "configuration": "Configurazione",
+          "securisation": "Messa in sicurezza",
+          "optimisation": "Ottimizzazione"
+        },
+        "description": "Installazione, configurazione, messa in sicurezza e ottimizzazione di siti WordPress.",
+        "personalNotes": "Ho installato e messo in sicurezza oltre 10 siti per clienti, gestendo hosting e aggiornamenti."
+      },
+      "typescriptAngular": {
+        "name": "TypeScript / Angular",
+        "subSkills": {
+          "rxjs": "RxJS",
+          "ngrx": "NgRx",
+          "routing": "Routing",
+          "forms": "Forms"
+        },
+        "description": "Sviluppo di applicazioni single-page con Angular.",
+        "personalNotes": "Ho progettato vari moduli riutilizzabili e ottimizzato le prestazioni tramite lazy-loading."
+      },
+      "algorithmique": {
+        "name": "Algoritmica",
+        "subSkills": {
+          "complexite": "Complessità",
+          "structures": "Strutture dati"
+        },
+        "description": "Progettazione e ottimizzazione di algoritmi.",
+        "personalNotes": "Ho partecipato a sfide di codice su HackerRank e LeetCode."
+      },
+      "web3Solidity": {
+        "name": "Nozioni Web3 (Solidity)",
+        "subSkills": {
+          "smartContracts": "Smart Contracts"
+        },
+        "description": "Sperimentazioni di base su Remix e Truffle.",
+        "personalNotes": ""
+      },
+      "osiModel": {
+        "name": "Modello OSI",
+        "subSkills": {
+          "physique": "Livello fisico",
+          "reseau": "Livello di rete"
+        },
+        "description": "Comprensione dei 7 livelli e del loro ruolo.",
+        "personalNotes": "Implementazione di firewall e VLAN in ambiente professionale."
+      },
+      "wirelessComm": {
+        "name": "Comunicazione wireless",
+        "subSkills": {
+          "wifi": "Wi-Fi",
+          "bluetooth": "Bluetooth"
+        },
+        "description": "",
+        "personalNotes": "Implementazione di reti Wi-Fi aziendali, ottimizzazione della copertura."
+      },
+      "adobeCc": {
+        "name": "Adobe Creative Cloud",
+        "subSkills": {
+          "illustrator": "Illustrator",
+          "photoshop": "Photoshop",
+          "indesign": "InDesign"
+        },
+        "description": "Illustrator, Photoshop e InDesign per supporti stampa e web.",
+        "personalNotes": "Progettazione di linee guida grafiche e loghi per startup."
+      }
+    },
+    "labels": {
+      "description": "Descrizione",
+      "personalNotes": "Note personali",
+      "subSkills": "Sottocompetenze",
+      "relatedProjects": "Progetti correlati",
+      "close": "Chiudi"
+    }
+  }
+  

@@ -4,16 +4,23 @@ import {
   ChangeDetectionStrategy,
   ViewEncapsulation,
   ViewChild,
-  ElementRef
+  ElementRef,
+  OnInit,
+  OnDestroy,
+  ChangeDetectorRef
 } from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { RouterLink }     from '@angular/router';
 import { MatIconModule }  from '@angular/material/icon';
 import { UserService }    from 'app/core/user/user.service';
-import { Observable }     from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Observable, Subscription } from 'rxjs';
+import { switchMap, filter, take } from 'rxjs/operators';
+import {
+  TranslocoModule,
+  TranslocoService,
+  provideTranslocoScope
+} from '@ngneat/transloco';
 import { TypewriterDirective } from './directives/typewriter.directive';
-import { TranslocoModule, TranslocoService, provideTranslocoScope } from '@ngneat/transloco';
 
 interface Section {
   title: string;
@@ -32,86 +39,67 @@ interface Section {
     TypewriterDirective,
     TranslocoModule
   ],
-  providers: [
+  providers      : [
     provideTranslocoScope('home')
   ],
   templateUrl    : './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation  : ViewEncapsulation.None
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('particleCanvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>;
 
-  readonly greetLine1$: Observable<string> = this._userService.user$.pipe(
-    switchMap(user => {
-      const who = user && user.name !== 'Invité'
-        ? user.name
-        : '';
-      return this._transloco.selectTranslate('home.greetLine1', { who });
-    })
-  );
-
-  readonly greetLine2: string = this._transloco.translate('home.greetLine2');
-  readonly line3: string      = this._transloco.translate('home.line3');
+  greetLine1$!: Observable<string>;
+  greetLine2 = '';
+  line3     = '';
+  /** Devient `true` dès que la traduction `home` est chargée */
+  ready     = false;
 
   readonly sections: Section[] = [
-    {
-      title: 'home.navigation.profile.title',
-      icon : 'heroicons_solid:user-circle',
-      desc : 'home.navigation.profile.desc',
-      link : '/profile'
-    },
-    {
-      title: 'home.navigation.skills.title',
-      icon : 'heroicons_solid:academic-cap',
-      desc : 'home.navigation.skills.desc',
-      link : '/skills'
-    },
-    {
-      title: 'home.navigation.experiences.title',
-      icon : 'heroicons_solid:briefcase',
-      desc : 'home.navigation.experiences.desc',
-      link : '/experiences'
-    },
-    {
-      title: 'home.navigation.projects.title',
-      icon : 'heroicons_solid:folder',
-      desc : 'home.navigation.projects.desc',
-      link : '/projects'
-    },
-    {
-      title: 'home.navigation.veille.title',
-      icon : 'heroicons_solid:magnifying-glass',
-      desc : 'home.navigation.veille.desc',
-      link : '/veille'
-    },
-    {
-      title: 'home.navigation.contact.title',
-      icon : 'heroicons_solid:at-symbol',
-      desc : 'home.navigation.contact.desc',
-      link : '/contact'
-    }
+    { title: 'home.navigation.profile.title',     icon: 'heroicons_solid:user-circle',      desc: 'home.navigation.profile.desc',        link: '/profile'     },
+    { title: 'home.navigation.skills.title',      icon: 'heroicons_solid:academic-cap',     desc: 'home.navigation.skills.desc',         link: '/skills'      },
+    { title: 'home.navigation.experiences.title', icon: 'heroicons_solid:briefcase',        desc: 'home.navigation.experiences.desc',    link: '/experiences' },
+    { title: 'home.navigation.projects.title',    icon: 'heroicons_solid:folder',           desc: 'home.navigation.projects.desc',       link: '/projects'    },
+    { title: 'home.navigation.veille.title',      icon: 'heroicons_solid:magnifying-glass', desc: 'home.navigation.veille.desc',         link: '/veille'      },
+    { title: 'home.navigation.contact.title',     icon: 'heroicons_solid:at-symbol',        desc: 'home.navigation.contact.desc',        link: '/contact'     }
   ];
 
+  private _subs = new Subscription();
+
   constructor(
-    public _userService: UserService,
-    private _transloco: TranslocoService
+    public  _userService: UserService,
+    private _transloco:  TranslocoService,
+    private _cdr:        ChangeDetectorRef
   ) {}
 
+  ngOnInit(): void {
+    // On attend la toute première traduction du scope 'home' avant d'afficher les titres animés
+    this._subs.add(
+      this._transloco.events$
+        .pipe(
+          filter(e => e.type === 'translationLoadSuccess'),
+          take(1)
+        )
+        .subscribe(() => {
+          this.ready = true;
+          this._cdr.markForCheck();
+        })
+    );
+  }
+
   ngAfterViewInit(): void {
+    // ==== ton code particles, inchangé ====
     const canvasEl = this.canvas.nativeElement;
     const ctx      = canvasEl.getContext('2d')!;
     const particles: any[] = [];
 
-    // --- UTIL : récupère une CSS-var avec fallback ---
     const getVar = (name: string) => {
       const v1 = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
       if (v1) return v1;
       return getComputedStyle(document.body).getPropertyValue(name).trim();
     };
 
-    // --- REDIMENSIONNEMENT CANVAS ---
     const resize = () => {
       canvasEl.width  = canvasEl.clientWidth;
       canvasEl.height = canvasEl.clientHeight;
@@ -119,7 +107,6 @@ export class HomeComponent implements AfterViewInit {
     resize();
     window.addEventListener('resize', resize);
 
-    // --- GÉNÈRE DES PARTICULES À CHAQUE MOUVEMENT ---
     let lastX = 0, lastY = 0, lastT = performance.now();
     const host = canvasEl.parentElement!;
     host.addEventListener('mousemove', (e: MouseEvent) => {
@@ -127,7 +114,7 @@ export class HomeComponent implements AfterViewInit {
       const dt  = now - lastT || 16;
       const dx  = e.clientX - lastX;
       const dy  = e.clientY - lastY;
-      const velocity = Math.hypot(dx, dy) / dt; // px/ms
+      const velocity = Math.hypot(dx, dy) / dt;
 
       lastX = e.clientX;
       lastY = e.clientY;
@@ -165,7 +152,6 @@ export class HomeComponent implements AfterViewInit {
       }
     });
 
-    // --- BOUCLE D’ANIM ---
     const animate = () => {
       ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
       for (let i = particles.length - 1; i >= 0; i--) {
@@ -186,5 +172,9 @@ export class HomeComponent implements AfterViewInit {
       requestAnimationFrame(animate);
     };
     animate();
+  }
+
+  ngOnDestroy(): void {
+    this._subs.unsubscribe();
   }
 }

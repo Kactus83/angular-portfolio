@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { PortfolioCardComponent } from '@portfolio/components/card';
 import { Experience } from '../../experiences.types';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-experience-card',
@@ -12,7 +13,11 @@ import { Experience } from '../../experiences.types';
     CommonModule,
     RouterModule,
     MatIconModule,
-    PortfolioCardComponent
+    PortfolioCardComponent,
+    TranslocoModule
+  ],
+  providers: [
+    provideTranslocoScope('experiences')
   ],
   templateUrl: './experience-card.component.html'
 })

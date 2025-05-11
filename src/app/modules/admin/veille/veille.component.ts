@@ -4,9 +4,9 @@ import { RouterModule }      from '@angular/router';
 import { MatIconModule }     from '@angular/material/icon';
 import { MatButtonModule }   from '@angular/material/button';
 import { PortfolioCardComponent } from '@portfolio/components/card';
-
 import { VeilleService } from './veille.service';
 import { Sector, Article } from './veille.types';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector   : 'app-veille',
@@ -16,7 +16,12 @@ import { Sector, Article } from './veille.types';
     RouterModule,
     MatIconModule,
     MatButtonModule,
-    PortfolioCardComponent
+    PortfolioCardComponent,
+    TranslocoModule
+  ],
+  providers  : [
+    VeilleService,
+    provideTranslocoScope('veille')
   ],
   templateUrl: './veille.component.html',
   styleUrls  : ['./veille.component.scss']

@@ -1,97 +1,112 @@
 <ng-container *ngIf="experience$ | async as exp">
-    <div class="flex flex-col min-h-[100vh]">
-      <!-- Header -->
-      <div class="bg-card flex items-center justify-between border-b p-6 sm:px-10 sm:py-8">
-        <h1 class="text-3xl font-extrabold">{{ exp.title }}</h1>
-        <button mat-icon-button [routerLink]="['../']" aria-label="Fermer">
-          <mat-icon>close</mat-icon>
-        </button>
-      </div>
-  
-      <div class="flex-auto overflow-auto p-6 sm:p-10 space-y-8 max-w-4xl mx-auto">
-        <!-- Longue description -->
-        <section *ngIf="exp.longDescription">
-          <h2 class="text-2xl font-semibold mb-4">Contexte</h2>
-          <p class="text-base leading-relaxed">{{ exp.longDescription }}</p>
-        </section>
-  
-        <!-- Résumé & description courte -->
-        <section>
-          <h2 class="text-2xl font-semibold mb-4">Résumé</h2>
-          <p class="text-base leading-relaxed">{{ exp.summary }}</p>
-        </section>
-  
-        <!-- Période -->
-        <section>
-          <h2 class="text-2xl font-semibold mb-4">Période</h2>
-          <p class="text-base">
-            {{ exp.startDate }} – {{ exp.endDate || 'Présent' }}
-          </p>
-        </section>
-  
-        <!-- Compétences -->
-        <section *ngIf="exp.skills?.length">
-          <h2 class="text-2xl font-semibold mb-4">Compétences travaillées</h2>
-          <div class="flex flex-wrap gap-2">
-            <span
-              *ngFor="let skill of exp.skills"
-              class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
-            >
-              {{ skill }}
-            </span>
-          </div>
-        </section>
-  
-        <!-- Difficultés -->
-        <section *ngIf="exp.difficulties">
-          <h2 class="text-2xl font-semibold mb-4">Difficultés rencontrées</h2>
-          <p class="text-base leading-relaxed">{{ exp.difficulties }}</p>
-        </section>
-  
-        <!-- Galerie -->
-        <section *ngIf="exp.gallery?.length">
-          <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <img
-              *ngFor="let img of exp.gallery"
-              [src]="img"
-              class="w-full h-32 object-cover rounded"
-              [alt]="exp.title"
-            />
-          </div>
-        </section>
-  
-        <!-- Arborescence d’étapes -->
-        <section *ngIf="exp.steps?.length">
-          <h2 class="text-2xl font-semibold mb-4">Étapes</h2>
-          <ul class="list-disc pl-5 space-y-2">
-            <ng-container *ngFor="let step of exp.steps">
-              <li>
-                <strong>{{ step.title }}</strong>
-                <p *ngIf="step.description" class="text-sm">{{ step.description }}</p>
-                <ul *ngIf="step.subSteps?.length" class="list-decimal pl-5">
-                  <li *ngFor="let sub of step.subSteps">
-                    {{ sub.title }}
-                  </li>
-                </ul>
-              </li>
-            </ng-container>
-          </ul>
-        </section>
-  
-        <!-- Technologies utilisées -->
-        <section *ngIf="exp.technologies?.length">
-          <h2 class="text-2xl font-semibold mb-4">Technologies</h2>
-          <div class="flex flex-wrap gap-2">
-            <span
-              *ngFor="let tech of exp.technologies"
-              class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
-            >
-              {{ tech }}
-            </span>
-          </div>
-        </section>
-      </div>
+  <div class="flex flex-col min-h-[100vh]">
+    <!-- Header -->
+    <div class="bg-card flex items-center justify-between border-b p-6 sm:px-10 sm:py-8">
+      <h1 class="text-3xl font-extrabold">{{ exp.title }}</h1>
+      <button mat-icon-button [routerLink]="['../']" aria-label="Fermer">
+        <mat-icon>close</mat-icon>
+      </button>
     </div>
-  </ng-container>
-  
+
+    <div class="flex-auto overflow-auto p-6 sm:p-10 space-y-8 max-w-4xl mx-auto">
+      <!-- Longue description -->
+      <section *ngIf="exp.longDescription">
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.context' | transloco }}
+        </h2>
+        <p class="text-base leading-relaxed">{{ exp.longDescription }}</p>
+      </section>
+
+      <!-- Résumé & description courte -->
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.summary' | transloco }}
+        </h2>
+        <p class="text-base leading-relaxed">{{ exp.summary }}</p>
+      </section>
+
+      <!-- Période -->
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.period' | transloco }}
+        </h2>
+        <p class="text-base">
+          {{ exp.startDate }} – {{ exp.endDate || ( 'experiences.card.present' | transloco ) }}
+        </p>
+      </section>
+
+      <!-- Compétences -->
+      <section *ngIf="exp.skills?.length">
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.skills' | transloco }}
+        </h2>
+        <div class="flex flex-wrap gap-2">
+          <span
+            *ngFor="let skill of exp.skills"
+            class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+          >
+            {{ skill }}
+          </span>
+        </div>
+      </section>
+
+      <!-- Difficultés -->
+      <section *ngIf="exp.difficulties">
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.difficulties' | transloco }}
+        </h2>
+        <p class="text-base leading-relaxed">{{ exp.difficulties }}</p>
+      </section>
+
+      <!-- Galerie -->
+      <section *ngIf="exp.gallery?.length">
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.gallery' | transloco }}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <img
+            *ngFor="let img of exp.gallery"
+            [src]="img"
+            class="w-full h-32 object-cover rounded"
+            [alt]="exp.title"
+          />
+        </div>
+      </section>
+
+      <!-- Arborescence d’étapes -->
+      <section *ngIf="exp.steps?.length">
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.steps' | transloco }}
+        </h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <ng-container *ngFor="let step of exp.steps">
+            <li>
+              <strong>{{ step.title }}</strong>
+              <p *ngIf="step.description" class="text-sm">{{ step.description }}</p>
+              <ul *ngIf="step.subSteps?.length" class="list-decimal pl-5">
+                <li *ngFor="let sub of step.subSteps">
+                  {{ sub.title }}
+                </li>
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+      </section>
+
+      <!-- Technologies utilisées -->
+      <section *ngIf="exp.technologies?.length">
+        <h2 class="text-2xl font-semibold mb-4">
+          {{ 'experiences.detail.technologies' | transloco }}
+        </h2>
+        <div class="flex flex-wrap gap-2">
+          <span
+            *ngFor="let tech of exp.technologies"
+            class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+          >
+            {{ tech }}
+          </span>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-container>

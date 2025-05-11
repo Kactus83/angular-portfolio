@@ -1,5 +1,6 @@
 {
         "greetLine1": "你好，{{ who }}！",
+        "unknownUsername": "神秘访客",
         "greetLine2": "欢迎来到我的作品集。",
         "line3": "我叫Florian Morena，我是一名开发者。",
         "description": "作为一名充满激情的开发者，我在BTS SIO考试中构建了此作品集，灵感来自现代应用，并按照专业最佳实践进行结构设计，以确保代码质量和最佳用户体验。",

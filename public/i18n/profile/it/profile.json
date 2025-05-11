@@ -1,0 +1,130 @@
+{
+    "contactCard": {
+      "title": "Informazioni di contatto"
+    },
+    "educationCard": {
+      "title": "Formazione"
+    },
+    "experiencesCard": {
+      "title": "Esperienze"
+    },
+    "skillsCard": {
+      "title": "Competenze"
+    },
+    "personal": {
+      "title": "Apprendista BTS SIO",
+      "summary": "Autodidatta appassionato di informatica e fondatore di una SASU di servizi digitali, aspiro a rafforzare le mie competenze in team esperti."
+    },
+    "contactInfo": {
+      "phone": "06 20 93 33 90",
+      "email": "florian.morena@gmail.com",
+      "address": "12 rue Pierre Renaudel, 83210 Solliès Pont, Francia"
+    },
+    "skills": {
+      "programming": "Programmazione",
+      "programmingItems": [
+        "WordPress",
+        "Algorithmique",
+        "Git & Docker",
+        "TypeScript & Angular",
+        "C / C++ (principiante)",
+        "Web3 (Solidity)"
+      ],
+      "network": "Rete & Sicurezza",
+      "networkItems": [
+        "Modello OSI",
+        "Componenti hardware",
+        "Comunicazione wireless"
+      ],
+      "misc": "Varie",
+      "miscItems": [
+        "Adobe CC",
+        "AutoDesk (in corso)"
+      ]
+    },
+    "experiences": {
+      "dev": {
+        "pole": "SVILUPPO FRONTEND/BACKEND",
+        "companies": ["CHESS MARITIME"],
+        "period": "2023 – 2024",
+        "details": [
+          "Gestione CMS WordPress interna",
+          "Strumenti IT vari",
+          "Sviluppo di un CMS marittimo"
+        ]
+      },
+      "sasu": {
+        "pole": "SERVIZI DIGITALI (S.A.S.U.)",
+        "companies": ["La mia SASU"],
+        "period": "2020 – 2022",
+        "details": [
+          "Siti WordPress & e-commerce",
+          "Script (mailing, scraping…)",
+          "SEO & Google Tools",
+          "Grafica & packaging",
+          "Manutenzione e assistenza di rete"
+        ]
+      },
+      "educ": {
+        "pole": "ISTRUZIONE SPECIALIZZATA",
+        "companies": [
+          "M.E.C.S. La Valbourdine",
+          "M.E.C.S. La Déferlante",
+          "S.A.M.S.A.H. – S.A.M.V.A. A.D.A.P.E.I."
+        ],
+        "period": "2015 – 2019",
+        "details": [
+          "Supporto a persone in difficoltà",
+          "Laboratori tecnici & animazione",
+          "Redazione di rapporti & verbali",
+          "Animazione di riunioni"
+        ]
+      },
+      "elec": {
+        "pole": "ELETTRICITÀ INDUSTRIALE & DOMESTICA",
+        "companies": [
+          "Sud Elec Industrie",
+          "Centre Var Électricité",
+          "Entreprise générale d'électricité MORENA"
+        ],
+        "period": "2011 – 2015",
+        "details": [
+          "Creazione/Rinova di impianti elettrici",
+          "Domotica & Automazioni",
+          "Reti informatiche & Bassa tensione"
+        ]
+      }
+    },
+    "education": {
+      "current": {
+        "period": "2023 – in corso",
+        "institution": "Maestris BTS",
+        "qualification": "BTS SIO"
+      },
+      "past1": {
+        "period": "2015 – 2019",
+        "institution": "IRFSS Croix Rouge",
+        "qualification": "Educatore specializzato"
+      },
+      "past2": {
+        "period": "2011 – 2013",
+        "institution": "CFA du Bâtiment",
+        "qualification": "CAP & BP Elettricità"
+      },
+      "past3": {
+        "period": "2007 – 2010",
+        "institution": "Lycée du Coudon",
+        "qualification": "Diploma di maturità"
+      }
+    },
+    "languages": {
+      "title": "Lingue",
+      "fr": "Francese",
+      "en": "Inglese",
+      "it": "Italiano",
+      "es": "Spagnolo",
+      "zh": "Cinese",
+      "phrase": "Posso conversare con voi in {{ language }} al {{ percent }} %."
+    }
+  }
+  

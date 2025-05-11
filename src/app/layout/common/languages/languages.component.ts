@@ -70,7 +70,6 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
     // -----------------------------------------------------------------------------------------------------
 
     ngOnInit(): void {
-        console.log('[Languages] ngOnInit');
 
         // 0) Vérifie si une langue préférée est déjà enregistrée dans le local storage
         const saved = localStorage.getItem(STORAGE_KEY);
@@ -80,19 +79,16 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
 
         // 1) Récupère les langues disponibles et initialise les drapeaux
         this.availableLangs = this._translocoService.getAvailableLangs();
+        // Penser ajouter it et es quand traduit
         this.flagCodes = { en: 'us', fr: 'fr', zh: 'zh' };
-        console.log('[Languages] availableLangs:', this.availableLangs);
-        console.log('[Languages] flagCodes:', this.flagCodes);
 
         // 2) Langue active actuelle
         this.activeLang = this._translocoService.getActiveLang();
-        console.log('[Languages] Langue initiale:', this.activeLang);
 
         // 3) Écoute le premier événement de changement de langue pour init
         this._translocoService.langChanges$
             .pipe(take(1))
             .subscribe((lang) => {
-                console.log('[Languages] Initial langChange event:', lang, 'flag:', this.flagCodes[lang]);
                 this._doTranslate(lang);
             });
 
@@ -100,14 +96,12 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
         this._translocoService.langChanges$
             .pipe(skip(1))
             .subscribe((lang) => {
-                console.log('[Languages] langChange ultérieur event:', lang, 'flag before set:', this.flagCodes[this.activeLang]);
                 this._doTranslate(lang);
             });
     }
 
     ngAfterViewInit(): void {
         // Dès que la view est ready, répète la traduction pour être sûr
-        console.log('[Languages] ngAfterViewInit, component nav:', this._navComponent);
         this._doTranslate(this.activeLang);
     }
 
@@ -145,9 +139,7 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
      * Traduit tous les items de navigation pour la langue donnée
      */
     private _doTranslate(lang: string): void {
-        console.log('[Languages] _doTranslate start for', lang);
         this.activeLang = lang;
-        console.log('[Languages] activeLang set to:', this.activeLang);
 
         const navComponent =
             this._navComponent ||
@@ -159,7 +151,6 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
         }
 
         const navigation = navComponent.navigation;
-        console.log('[Languages] navigation items count:', navigation.length);
 
         // Traduction **asynchrone** des titres et descriptions
         navigation.forEach((item) => {
@@ -167,7 +158,6 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
             this._translocoService.selectTranslate(titleKey, {}, 'navigation')
                 .pipe(take(1))
                 .subscribe(translatedTitle => {
-                    console.debug(`[Languages] translating ${titleKey} =>`, translatedTitle);
                     item.title = translatedTitle;
                     navComponent.refresh();
                 });
@@ -177,7 +167,6 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
                 this._translocoService.selectTranslate(descKey, {}, 'navigation')
                     .pipe(take(1))
                     .subscribe(translatedDesc => {
-                        console.debug(`[Languages] translating ${descKey} =>`, translatedDesc);
                         (item as any).desc = translatedDesc;
                         navComponent.refresh();
                     });

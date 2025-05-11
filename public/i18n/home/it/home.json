@@ -1,0 +1,38 @@
+{
+    "greetLine1": "Ciao {{ who }}!",
+    "unknownUsername": "Utente sconosciuto",
+    "greetLine2": "Benvenuto nel mio portfolio.",
+    "line3": "Mi chiamo Florian Morena, sono uno sviluppatore.",
+    "description": "Sviluppatore appassionato, ho realizzato questo portfolio per l'esame BTS SIO, ispirato alle applicazioni moderne e strutturato secondo le migliori pratiche professionali per garantire qualità del codice e un'esperienza utente ottimale.",
+    "navigation": {
+      "home": {
+        "title": "Home",
+        "desc": "Pagina iniziale"
+      },
+      "profile": {
+        "title": "Profilo",
+        "desc": "Scopri il mio percorso e le mie informazioni di contatto."
+      },
+      "skills": {
+        "title": "Competenze",
+        "desc": "Le mie competenze tecniche e la mia esperienza."
+      },
+      "experiences": {
+        "title": "Esperienze",
+        "desc": "Le mie esperienze professionali più significative."
+      },
+      "projects": {
+        "title": "Progetti",
+        "desc": "Progetti professionali e personali dettagliati."
+      },
+      "veille": {
+        "title": "Tech Watch",
+        "desc": "Tieniti aggiornato sulle ultime tendenze del web."
+      },
+      "contact": {
+        "title": "Contatto",
+        "desc": "Mettiamoci in contatto per collaborare!"
+      }
+    }
+  }
+  

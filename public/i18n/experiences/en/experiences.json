@@ -1,0 +1,355 @@
+{
+  "intro": {
+    "heading": "My Professional Journey",
+    "subtitle": "From web entrepreneurship to maritime solutions, here’s an overview of my key experiences."
+  },
+  "sections": {
+    "entrepreneur": {
+      "heading": "Entrepreneurial Experiences",
+      "period": "Freelance (2019-2022)"
+    },
+    "chess": {
+      "heading": "Experience at CHESS Maritime",
+      "period": "CHESS Maritime (2023-Present)"
+    }
+  },
+  "card": {
+    "seeDetails": "See Details",
+    "present": "Present"
+  },
+  "detail": {
+    "context": "Context",
+    "summary": "Summary",
+    "period": "Period",
+    "skills": "Skills Worked On",
+    "difficulties": "Challenges Faced",
+    "gallery": "Gallery",
+    "steps": "Steps",
+    "technologies": "Technologies Used"
+  },
+  "entrepreneur": {
+    "barong-cbd-web": {
+      "title": "Creation & Management – Barong CBD Shop",
+      "summary": "WordPress e-commerce site for Barong CBD Shop",
+      "description": "Design, development, maintenance and SEO optimization of the Barong CBD Shop e-commerce site.",
+      "longDescription": "Replaced a Shopify store deemed too limited with a fully custom WordPress site, built from scratch using Divi as a page-builder. Over 100 product references, complete theme rewrite, then full redesign after one year, and integration of a temporary “scratch cards” module for Christmas. Site maintained for two years before hand-off to another provider.",
+      "skills": [
+        "WordPress",
+        "PHP",
+        "Divi",
+        "SEO",
+        "E-commerce",
+        "Responsive Design",
+        "Web Performance"
+      ],
+      "difficulties": "Ensuring a smooth transition from Shopify to WordPress without SEO loss, maintaining responsive rendering across all devices, and guaranteeing optimal load times during traffic peaks.",
+      "steps": [
+        { "title": "Audit and migration from Shopify" },
+        { "title": "Theme development from scratch under Divi" },
+        { "title": "SEO optimization & responsive design" },
+        { "title": "Complete graphic redesign (after 1 year)" },
+        { "title": "Added a “scratch card” module for Christmas" },
+        { "title": "Maintenance hand-off to another provider" }
+      ],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "Divi",
+        "SEO"
+      ],
+      "startDate": "October 2019",
+      "endDate": "October 2021"
+    },
+    "barong-cbd-comm": {
+      "title": "Visual Communication – Barong CBD Shop",
+      "summary": "Print & signage materials",
+      "description": "Creation of packaging, store signage, flyers and other print materials for Barong CBD Shop.",
+      "longDescription": "Full management of visual and social communication:\n• Created all print materials (flyers, catalogs for professionals)\n• Designed signage for the first three points of sale\n• Community management on Instagram & Facebook to animate the brand",
+      "skills": [
+        "Illustrator",
+        "Photoshop",
+        "InDesign",
+        "Signage",
+        "Packaging",
+        "Community Management"
+      ],
+      "difficulties": "Delivering a large volume of coherent visuals under tight deadlines while respecting the brand’s identity and marketing requirements.",
+      "steps": [
+        { "title": "Design of print materials (flyers, packaging, professional catalogs)" },
+        { "title": "Signage design for three store locations" },
+        { "title": "Creation and publication of social media visuals" },
+        { "title": "Regular updates of promotional visuals" }
+      ],
+      "technologies": [
+        "Illustrator",
+        "Photoshop",
+        "InDesign"
+      ],
+      "startDate": "October 2019",
+      "endDate": "October 2021"
+    },
+    "douma-automobiles": {
+      "title": "Showcase Site – Douma Automobiles",
+      "summary": "Non-transactional e-commerce showcase for high-end vehicles",
+      "description": "Custom showcase site for Douma Automobiles with advanced filters and catalog management.",
+      "longDescription": "Implemented an online catalog via WooCommerce without a payment module, showcasing luxury cars with filters by brand, model, year, mileage… Custom JavaScript modules for dynamic listing management.",
+      "skills": [
+        "WordPress",
+        "WooCommerce",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "UX/UI Filters"
+      ],
+      "difficulties": "Adapting an existing theme for a catalog-only use, developing custom JS filters while ensuring smooth navigation.",
+      "steps": [
+        { "title": "Gathering requirements: user flows & filters" },
+        { "title": "Selecting and adapting a WooCommerce theme" },
+        { "title": "Developing custom JS modules for filters" },
+        { "title": "Cross-browser testing & performance optimization" }
+      ],
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "JavaScript",
+        "SCSS"
+      ],
+      "startDate": "September 2019",
+      "endDate": "September 2019"
+    },
+    "international-events": {
+      "title": "Showcase Site – International Events",
+      "summary": "Luxury event packages (Route 66, treks, etc.)",
+      "description": "WordPress showcase site for a luxury event agency, interrupted by the COVID-19 lockdown.",
+      "longDescription": "Custom WordPress theme built from scratch with full-screen video and photo displays, aesthetics akin to a luxury yachting agency. Graphic prototypes validated before project halt due to COVID-19.",
+      "skills": [
+        "WordPress",
+        "PHP",
+        "UX/UI Design",
+        "Media-rich Layouts"
+      ],
+      "difficulties": "Managing a highly visual site while ensuring performance and mobile adaptability; project stopped by the lockdown.",
+      "steps": [
+        { "title": "Wireframes and large-format mockups" },
+        { "title": "WordPress theme development from scratch" },
+        { "title": "Integration of media (HD videos, photos)" },
+        { "title": "Client validation then project halt (COVID-19)" }
+      ],
+      "technologies": [
+        "WordPress",
+        "PHP"
+      ],
+      "startDate": "February 2020",
+      "endDate": "March 2020"
+    },
+    "envergure-events": {
+      "title": "Showcase Site – Envergure Events",
+      "summary": "Wedding showcase for a sole proprietor",
+      "description": "WordPress site development and client training for autonomous maintenance.",
+      "longDescription": "Site built with Elementor and client training delivered, followed by an attempted recovery after a hack (outdated Elementor vulnerability). Main lesson: keep your site up to date to avoid security issues.",
+      "skills": [
+        "WordPress",
+        "Elementor",
+        "Web Security",
+        "Client Training"
+      ],
+      "difficulties": "Critical security incident due to an unpatched update; managed the workaround and educated the client on best practices.",
+      "steps": [
+        { "title": "Site development under Elementor" },
+        { "title": "Client training for site maintenance" },
+        { "title": "Security incident: unpatched vulnerability" },
+        { "title": "Admin account recovery attempt" },
+        { "title": "Drafting security best practices" }
+      ],
+      "technologies": [
+        "WordPress",
+        "Elementor"
+      ],
+      "startDate": "August 2019",
+      "endDate": "August 2019"
+    },
+    "services-particuliers": {
+      "title": "Digital Services & Troubleshooting – Private Clients",
+      "summary": "Com’ materials, home automation & custom tools",
+      "description": "Various services: computer repair, communication materials, domotics installations, utility scripts.",
+      "longDescription": "A catch-all project for private clients:\n• PC repair & HomeAssistant maintenance\n• Flyers and visuals for Leboncoin/Vinted\n• Chrome extensions development (games, remote SoundCloud)",
+      "skills": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "HomeAssistant",
+        "PC Repair",
+        "Automation",
+        "No-code"
+      ],
+      "difficulties": "Defining a very heterogeneous scope and delivering fast, reliable solutions for each specific request.",
+      "steps": [
+        { "title": "Diagnosis and PC repair" },
+        { "title": "Design of visuals (Leboncoin, Vinted)" },
+        { "title": "HomeAssistant installation & configuration" },
+        { "title": "Development of Chrome extensions & utility scripts" }
+      ],
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "No-code"
+      ],
+      "startDate": "June 2020",
+      "endDate": "May 2021"
+    }
+  },
+  "chess": {
+    "chess-translation": {
+      "title": "Maritime Software Translation",
+      "summary": "Localization of a FileMaker Pro 20 app in French & English",
+      "description": "",
+      "longDescription": "On FileMaker Pro 20, I translated over a hundred UI components (interfaces, scripts, value-lists) between French and English. Since FM doesn’t natively support localization, I designed a “magic value list” system to manage strings dynamically while keeping the module maintainable and extensible.",
+      "skills": [
+        "FileMaker Pro 20",
+        "Localization / L10n",
+        "Magic Value List Pattern",
+        "Value-list Management",
+        "Script Automation"
+      ],
+      "difficulties": "Working around FileMaker Pro’s limitations for value-list and dynamic text management while ensuring maintainability and extensibility.",
+      "steps": [
+        { "title": "Studied native translation options & tested multiple approaches" },
+        { "title": "Built initial magic value list prototype" },
+        { "title": "Extended prototype to cover internal value-lists" },
+        { "title": "Validated system with the project team" },
+        { "title": "Deployed and generalized across all production databases" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20",
+        "JavaScript (automation scripts)"
+      ],
+      "startDate": "October 2023",
+      "endDate": "January 2024"
+    },
+    "chess-standards": {
+      "title": "Maritime Software Compliance",
+      "summary": "Bureau Veritas compliance upgrade for a FileMaker CMS",
+      "description": "",
+      "longDescription": "For Bureau Veritas Maritime, I led the audit and adaptation of a FileMaker Pro 20 CMS to resolve over fifty non-compliance points. Delivered a demo version, applied targeted fixes, and re-validated the software.",
+      "skills": [
+        "FileMaker Pro 20",
+        "Compliance Audit",
+        "Technical Documentation",
+        "Patch Management"
+      ],
+      "difficulties": "Meeting strict standards and ensuring traceability of changes without disrupting existing functionality.",
+      "steps": [
+        { "title": "Prepared a demo version for initial review" },
+        { "title": "Audited by Bureau Veritas and collected 50+ correction points" },
+        { "title": "Implemented fixes in the FileMaker CMS" },
+        { "title": "Final review and validation by Bureau Veritas" },
+        { "title": "Delivered the user manual (written by colleague)" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20"
+      ],
+      "startDate": "March 2024",
+      "endDate": "July 2024"
+    },
+    "chess-web-refonte": {
+      "title": "WordPress Rebuild",
+      "summary": "Dual maritime & yachting showcase under a custom WordPress theme",
+      "description": "Created a WordPress theme with a “switch” to toggle between shipping and yachting modes.",
+      "longDescription": "Built a fully from-scratch WordPress theme allowing users to switch between “shipping” and “yachting” modes via a toggle. Workflow: Figma wireframes → local integration → migration to live hosting.",
+      "skills": [
+        "WordPress",
+        "PHP",
+        "Custom Theme",
+        "Multi-mode Navigation",
+        "Figma → Prototyping"
+      ],
+      "difficulties": "Managing dynamic, bilingual content based on mode while maintaining mobile compatibility and performance.",
+      "steps": [
+        { "title": "Figma double-mode mockup design" },
+        { "title": "Local WordPress theme integration" },
+        { "title": "Developed content & menu switch logic" },
+        { "title": "Cross-device testing & optimization" },
+        { "title": "Migration to existing server" }
+      ],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "JavaScript"
+      ],
+      "startDate": "August 2024",
+      "endDate": "October 2024"
+    },
+    "chess-maquette": {
+      "title": "Maritime Software Prototype",
+      "summary": "Figma prototype (~150 screens) for internal validation",
+      "description": "",
+      "longDescription": "Created ~150 screens in Figma to model workflows for the new maritime management software. Used internally for rapid testing and iterations.",
+      "skills": [
+        "Figma",
+        "Design System",
+        "Prototyping"
+      ],
+      "difficulties": "No negative feedback; smooth iterations with the project team.",
+      "steps": [
+        { "title": "Scope definition & briefing (~150 screens)" },
+        { "title": "Design System and style guide creation" },
+        { "title": "Screen production in Figma" },
+        { "title": "Team validation & asset export" }
+      ],
+      "technologies": [
+        "Figma"
+      ],
+      "startDate": "July 2024",
+      "endDate": "October 2024"
+    },
+    "chess-doc-gen": {
+      "title": "Regulatory Document Generator",
+      "summary": "XML/CSV assembly for third-party export, in FileMaker + JS",
+      "description": "",
+      "longDescription": "Built a maritime document generator (SMS/PMS) based on text templates with tags, exporting XML/CSV directly consumable by FileMaker Pro or other client software.",
+      "skills": [
+        "FileMaker Pro 20",
+        "JavaScript",
+        "XML/CSV",
+        "Business Rules Logic"
+      ],
+      "difficulties": "Implementing complex maritime regulation rules and optimizing for large data volumes.",
+      "steps": [
+        { "title": "Template modeling with tags & hierarchical structure" },
+        { "title": "Scripted assembly of text segments according to input data" },
+        { "title": "Synchronized XML/CSV exports with client SMS/PMS" },
+        { "title": "Performance testing & edge-case handling" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20",
+        "JavaScript"
+      ],
+      "startDate": "October 2024",
+      "endDate": "January 2025"
+    },
+    "chess-cms-maritime": {
+      "title": "Maritime CMS Overhaul", 
+      "summary": "UI/UX and architecture redesign of a FileMaker CMS, full business modules",
+      "description": "",
+      "longDescription": "Participated in the early phases of a complete CMS overhaul (maintenance, crew, finances, regulatory documents, expenses). Goal: improve ergonomics and reduce technical debt.",
+      "skills": [
+        "FileMaker Pro 20",
+        "No-code",
+        "UI/UX Design",
+        "Software Architecture"
+      ],
+      "difficulties": "Designing a modular architecture within FileMaker constraints while planning data migration.",
+      "steps": [
+        { "title": "Scoping workshop & architecture design" },
+        { "title": "UI/UX module prototyping" },
+        { "title": "Migration plan & user training" }
+      ],
+      "technologies": [
+        "FileMaker Pro 20"
+      ],
+      "startDate": "September 2024",
+      "endDate": null
+    }
+  }
+}

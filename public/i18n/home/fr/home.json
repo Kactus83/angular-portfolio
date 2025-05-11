@@ -1,5 +1,6 @@
 {
       "greetLine1": "Bonjour {{ who }} !",
+      "unknownUsername": "Mysterieux inconnu",
       "greetLine2": "Bienvenue dans mon portfolio.",
       "line3": "Je m'appelle Florian Morena, je suis développeur.",
       "description": "Développeur passionné, j’ai conçu ce portfolio dans le cadre de l’examen BTS SIO, inspiré des applications modernes et structuré selon les meilleures pratiques professionnelles pour garantir qualité de code et expérience utilisateur optimale.",

@@ -14,24 +14,27 @@
       class="relative z-10 flex flex-col items-center text-center text-on-accent
              px-4 sm:px-6 lg:px-8 pt-20 max-w-xl mx-auto space-y-2"
     >
-      <!-- ligne 1 animée -->
-      <h1
-        [appTypewriter]="'home.greetLine1' | transloco: { who: (_userService.user$ | async)?.name !== 'Invité' ? (_userService.user$ | async)?.name : '' }"
-        [speed]="50"
-        [startDelay]="0"
-        class="text-3xl sm:text-4xl md:text-5xl font-extrabold
-               whitespace-pre-wrap break-words"
-      ></h1>
-  
-      <!-- ligne 2 animée -->
-      <h1
-        [appTypewriter]="'home.greetLine2' | transloco"
-        [speed]="45"
-        [startDelay]="1200"
-        class="text-2xl sm:text-3xl md:text-4xl font-semibold
-               whitespace-pre-wrap break-words
-               h-8 sm:h-9 md:h-10 overflow-hidden"
-      ></h1>
+      <!-- on n’affiche les lignes animées qu’une fois les traductions chargées -->
+      <ng-container *ngIf="ready">
+        <!-- ligne 1 animée -->
+        <h1
+          [appTypewriter]="'home.greetLine1' | transloco: { who: (_userService.user$ | async)?.name !== 'Invité' ? (_userService.user$ | async)?.name : 'home.unknownUsername' | transloco}"
+          [speed]="50"
+          [startDelay]="0"
+          class="text-3xl sm:text-4xl md:text-5xl font-extrabold
+                 whitespace-pre-wrap break-words"
+        ></h1>
+    
+        <!-- ligne 2 animée -->
+        <h1
+          [appTypewriter]="'home.greetLine2' | transloco"
+          [speed]="45"
+          [startDelay]="1200"
+          class="text-2xl sm:text-3xl md:text-4xl font-semibold
+                 whitespace-pre-wrap break-words
+                 h-8 sm:h-9 md:h-10 overflow-hidden"
+        ></h1>
+      </ng-container>
   
       <!-- ligne 3 fixe -->
       <h2

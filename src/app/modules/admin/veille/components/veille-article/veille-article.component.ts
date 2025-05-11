@@ -8,6 +8,7 @@ import { Article } from '../../veille.types';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { PortfolioCardComponent } from '@portfolio/components/card';
+import { TranslocoModule, provideTranslocoScope } from '@ngneat/transloco';
 
 @Component({
   selector           : 'app-veille-article',
@@ -17,7 +18,12 @@ import { PortfolioCardComponent } from '@portfolio/components/card';
     RouterModule,
     MatIconModule,
     MatButtonModule,
-    PortfolioCardComponent
+    PortfolioCardComponent,
+    TranslocoModule
+  ],
+  providers          : [
+    VeilleService,
+    provideTranslocoScope('veille')
   ],
   templateUrl        : './veille-article.component.html',
   changeDetection    : ChangeDetectionStrategy.OnPush

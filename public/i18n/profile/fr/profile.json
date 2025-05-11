@@ -116,5 +116,14 @@
       "institution": "Lycée du Coudon",
       "qualification": "Baccalauréat Général"
     }
+  },
+  "languages": {
+    "title": "Langues",
+    "fr"   : "Français",
+    "en"   : "Anglais",
+    "it"   : "Italien",
+    "es"   : "Espagnol",
+    "zh"   : "Chinois",
+    "phrase": "Je peux échanger avec vous en {{ language }} à {{ percent }} %."
   }
 }
