@@ -21,7 +21,7 @@ import { Subject, take, skip } from 'rxjs';
 import { provideTranslocoScope } from '@ngneat/transloco';
 
 // Clé pour stocker le la langue préférée dans le local storage
-const STORAGE_KEY = 'preferredLang';
+export const STORAGE_KEY = 'preferredLang';
 
 /**
  * Composant de sélection de la langue et traduction de la navigation

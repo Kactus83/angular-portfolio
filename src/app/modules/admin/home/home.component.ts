@@ -21,6 +21,7 @@ import {
   provideTranslocoScope
 } from '@ngneat/transloco';
 import { TypewriterDirective } from './directives/typewriter.directive';
+import { STORAGE_KEY } from 'app/layout/common/languages/languages.component';
 
 interface Section {
   title: string;
@@ -74,6 +75,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    
+    // 0) Vérifie si une langue préférée est déjà enregistrée dans le local storage
+    // const saved = localStorage.getItem(STORAGE_KEY);
+    // if (saved && this._transloco.getAvailableLangs().some(l => l.id === saved)) {
+    //   this._transloco.setActiveLang(saved);
+    // }else{
+    //   this._transloco.setActiveLang(this._transloco.getDefaultLang());
+    // }
+
     // On attend la toute première traduction du scope 'home' avant d'afficher les titres animés
     this._subs.add(
       this._transloco.events$
