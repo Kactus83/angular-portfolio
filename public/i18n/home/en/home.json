@@ -3,7 +3,7 @@
         "unknownUsername": "Mysterious visitor",
         "greetLine2": "Welcome to my portfolio.",
         "line3": "My name is Florian Morena, I am a developer.",
-        "description": "A passionate developer, I built this portfolio as part of the BTS SIO exam, inspired by modern applications and structured according to professional best practices to ensure code quality and optimal user experience.",
+        "description": "Passionate developer, I designed this portfolio as part of the BTS SIO exam, inspired by modern applications and structured according to best professional practices. You can customize your experience using the settings menu on the right side of the screen and the language menu. I wish you a pleasant visit.",
         "navigation": {
           "home": { "title": "Home", "desc": "Homepage" },
           "profile": { "title": "Profile", "desc": "Learn more about my background and contact info." },

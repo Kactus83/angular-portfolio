@@ -1,0 +1,356 @@
+{
+    "intro": {
+      "heading": "Il mio percorso professionale",
+      "subtitle": "Dall'imprenditoria web alla realizzazione di soluzioni marittime, ecco una panoramica delle mie esperienze chiave."
+    },
+    "sections": {
+      "entrepreneur": {
+        "heading": "Esperienze imprenditoriali",
+        "period": "Freelance (2019-2022)"
+      },
+      "chess": {
+        "heading": "Esperienza presso CHESS Maritime",
+        "period": "CHESS Maritime (2023-Presente)"
+      }
+    },
+    "card": {
+      "seeDetails": "Vedi dettagli",
+      "present": "Presente"
+    },
+    "detail": {
+      "context": "Contesto",
+      "summary": "Sommario",
+      "period": "Periodo",
+      "skills": "Competenze sviluppate",
+      "difficulties": "Sfide affrontate",
+      "gallery": "Galleria",
+      "steps": "Fasi",
+      "technologies": "Tecnologie utilizzate"
+    },
+    "entrepreneur": {
+      "barong-cbd-web": {
+        "title": "Creazione e gestione – Barong CBD Shop",
+        "summary": "Sito e-commerce WordPress per Barong CBD Shop",
+        "description": "Progettazione, sviluppo, manutenzione e ottimizzazione SEO del sito e-commerce Barong CBD Shop.",
+        "longDescription": "Sostituzione di un negozio Shopify ritenuto troppo limitato con un sito WordPress su misura, sviluppato da zero con Divi come page-builder. Oltre 100 referenze di prodotti, riscrittura completa del tema, revisione grafica dopo un anno e integrazione di un modulo temporaneo di “gratta e vinci” virtuali per Natale. Sito mantenuto per due anni prima di essere trasferito a un altro fornitore.",
+        "skills": [
+          "WordPress",
+          "PHP",
+          "Divi",
+          "SEO",
+          "E-commerce",
+          "Responsive Design",
+          "Prestazioni web"
+        ],
+        "difficulties": "Garantire una transizione fluida da Shopify a WordPress senza perdita SEO, mantenere un rendering responsive su tutti i dispositivi e garantire tempi di caricamento ottimali durante i picchi di traffico.",
+        "steps": [
+          { "title": "Audit e migrazione da Shopify" },
+          { "title": "Sviluppo del tema da zero con Divi" },
+          { "title": "Ottimizzazione SEO e design responsive" },
+          { "title": "Revisione grafica completa (dopo 1 anno)" },
+          { "title": "Aggiunta di un modulo “gratta e vinci” per Natale" },
+          { "title": "Passaggio di manutenzione a un altro fornitore" }
+        ],
+        "technologies": [
+          "WordPress",
+          "PHP",
+          "Divi",
+          "SEO"
+        ],
+        "startDate": "ottobre 2019",
+        "endDate": "ottobre 2021"
+      },
+      "barong-cbd-comm": {
+        "title": "Comunicazione visiva – Barong CBD Shop",
+        "summary": "Materiali stampa e segnaletica",
+        "description": "Realizzazione di packaging, insegne per negozi, flyer e altri supporti per Barong CBD Shop.",
+        "longDescription": "Gestione completa della comunicazione visiva e sui social:\n• Creazione di tutti i materiali stampa (flyer, cataloghi per professionisti)\n• Progettazione delle insegne per i primi tre punti vendita\n• Social media management su Instagram e Facebook per animare il brand",
+        "skills": [
+          "Illustrator",
+          "Photoshop",
+          "InDesign",
+          "Segnaletica",
+          "Packaging",
+          "Gestione social"
+        ],
+        "difficulties": "Produrre un elevato volume di visual coerenti in tempi ristretti rispettando la brand identity e le esigenze di marketing.",
+        "steps": [
+          { "title": "Progettazione dei materiali stampa (flyer, packaging, cataloghi professionali)" },
+          { "title": "Design delle insegne per tre punti vendita" },
+          { "title": "Creazione e pubblicazione dei visual per i social media" },
+          { "title": "Aggiornamento regolare dei visual per le promozioni" }
+        ],
+        "technologies": [
+          "Illustrator",
+          "Photoshop",
+          "InDesign"
+        ],
+        "startDate": "ottobre 2019",
+        "endDate": "ottobre 2021"
+      },
+      "douma-automobiles": {
+        "title": "Sito vetrina – Douma Automobiles",
+        "summary": "Vetrina e-commerce senza pagamento online per veicoli di fascia alta",
+        "description": "Sviluppo di un sito vetrina su misura per Douma Automobiles, con filtri avanzati e gestione del catalogo.",
+        "longDescription": "Implementazione di un catalogo online tramite WooCommerce senza modulo di pagamento, per presentare auto di lusso con filtri per marca, modello, anno, chilometraggio… Numerosi moduli JavaScript personalizzati per la gestione dinamica delle liste.",
+        "skills": [
+          "WordPress",
+          "WooCommerce",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Filtri UX/UI"
+        ],
+        "difficulties": "Adattare un tema esistente a un uso da catalogo senza pagamento, sviluppando moduli JS per filtri personalizzati garantendo una navigazione fluida.",
+        "steps": [
+          { "title": "Raccolta dei requisiti: percorsi utente e filtri" },
+          { "title": "Scelta e adattamento del tema WooCommerce" },
+          { "title": "Sviluppo dei moduli JavaScript per i filtri" },
+          { "title": "Test cross-browser e ottimizzazione delle prestazioni" }
+        ],
+        "technologies": [
+          "WordPress",
+          "WooCommerce",
+          "JavaScript",
+          "SCSS"
+        ],
+        "startDate": "settembre 2019",
+        "endDate": "settembre 2019"
+      },
+      "international-events": {
+        "title": "Sito vetrina – International Events",
+        "summary": "Pacchetti eventi di lusso (Route 66, trekking, ecc.)",
+        "description": "Creazione di un sito vetrina WordPress per un’agenzia di eventi di lusso, interrotto dal lockdown.",
+        "longDescription": "Tema WordPress costruito da zero, con evidenza di video e foto a tutto schermo, strategia estetica simile a quella di un’agenzia yachting di lusso. Prototipi grafici validati prima dell’interruzione dovuta al COVID-19.",
+        "skills": [
+          "WordPress",
+          "PHP",
+          "UX/UI Design",
+          "Layout ricchi di media"
+        ],
+        "difficulties": "Gestire un sito altamente visivo garantendo performance e adattabilità mobile; progetto interrotto dal lockdown.",
+        "steps": [
+          { "title": "Wireframe e mockup di grande formato" },
+          { "title": "Sviluppo del tema WordPress da zero" },
+          { "title": "Integrazione dei media (video HD, foto)" },
+          { "title": "Validazione cliente e interruzione del progetto (COVID-19)" }
+        ],
+        "technologies": [
+          "WordPress",
+          "PHP"
+        ],
+        "startDate": "febbraio 2020",
+        "endDate": "marzo 2020"
+      },
+      "envergure-events": {
+        "title": "Sito vetrina – Envergure Events",
+        "summary": "Vetrina matrimonio per auto-imprenditore",
+        "description": "Sviluppo di un sito WordPress e formazione alla manutenzione autonoma.",
+        "longDescription": "Progettazione del sito con Elementor e formazione del cliente, seguito da un tentativo di recupero dopo un hack (vulnerabilità di Elementor non aggiornata). Lezione principale: mantenere il sito aggiornato per evitare vulnerabilità.",
+        "skills": [
+          "WordPress",
+          "Elementor",
+          "Sicurezza web",
+          "Formazione cliente"
+        ],
+        "difficulties": "Incidente di sicurezza critico a causa della mancata aggiornamento; gestione del workaround e sensibilizzazione del cliente alle best practice.",
+        "steps": [
+          { "title": "Sviluppo del sito con Elementor" },
+          { "title": "Formazione del cliente alla manutenzione del sito" },
+          { "title": "Incidente di sicurezza: vulnerabilità non patchata" },
+          { "title": "Tentativo di recupero dell’account admin" },
+          { "title": "Redazione delle linee guida per la sicurezza" }
+        ],
+        "technologies": [
+          "WordPress",
+          "Elementor"
+        ],
+        "startDate": "agosto 2019",
+        "endDate": "agosto 2019"
+      },
+      "services-particuliers": {
+        "title": "Servizi digitali e assistenza – Privati",
+        "summary": "Materiali di comunicazione, domotica e strumenti su misura",
+        "description": "Prestazioni varie: assistenza informatica, materiali di comunicazione, installazioni domotiche, script utilitari.",
+        "longDescription": "Progetto vario per privati:\n• Assistenza PC e manutenzione HomeAssistant\n• Creazione di flyer e visual per Leboncoin/Vinted\n• Sviluppo di estensioni Chrome (giochi, SoundCloud remoto)",
+        "skills": [
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "HomeAssistant",
+          "Assistenza PC",
+          "Automazione",
+          "No-code"
+        ],
+        "difficulties": "Definire un perimetro molto eterogeneo e fornire rapidamente soluzioni affidabili per ogni richiesta specifica.",
+        "steps": [
+          { "title": "Diagnosi e assistenza PC" },
+          { "title": "Progettazione di visual (Leboncoin, Vinted)" },
+          { "title": "Installazione e configurazione di HomeAssistant" },
+          { "title": "Sviluppo di estensioni Chrome e script utilitari" }
+        ],
+        "technologies": [
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "No-code"
+        ],
+        "startDate": "giugno 2020",
+        "endDate": "maggio 2021"
+      }
+    },
+    "chess": {
+      "chess-translation": {
+        "title": "Traduzione software marittimo",
+        "summary": "Localizzazione di un'app FileMaker Pro 20 in francese e inglese",
+        "description": "",
+        "longDescription": "Su FileMaker Pro 20, ho tradotto oltre cento componenti dell'interfaccia utente (interfacce, script, liste di valori) dal francese all'inglese e viceversa. Non essendo previsto nativamente in FileMaker, ho progettato un sistema di “magic value list” adattato per gestire dinamicamente le stringhe, mantenendo il modulo manutenibile ed estensibile.",
+        "skills": [
+          "FileMaker Pro 20",
+          "Localizzazione / L10n",
+          "Pattern Magic Value List",
+          "Gestione liste di valori",
+          "Automazione di script"
+        ],
+        "difficulties": "Superare le limitazioni di FileMaker Pro per la gestione delle liste di valori e dei testi dinamici, garantendo facilità di manutenzione e evolutività.",
+        "steps": [
+          { "title": "Analisi delle opzioni di traduzione native e test di diverse soluzioni" },
+          { "title": "Implementazione iniziale del prototipo di magic value list" },
+          { "title": "Estensione del prototipo per coprire le liste di valori interne" },
+          { "title": "Validazione del sistema dal team di progetto" },
+          { "title": "Deploy e generalizzazione su tutte le basi in produzione" }
+        ],
+        "technologies": [
+          "FileMaker Pro 20",
+          "JavaScript (script di automazione)"
+        ],
+        "startDate": "ottobre 2023",
+        "endDate": "gennaio 2024"
+      },
+      "chess-standards": {
+        "title": "Adeguamento software marittimo alle norme",
+        "summary": "Conformità per Bureau Veritas di un CMS FileMaker",
+        "description": "",
+        "longDescription": "Per Bureau Veritas Maritime, ho coordinato l'audit e l'adattamento di un CMS FileMaker Pro 20 per risolvere oltre cinquanta punti di non conformità. Consegna di una versione demo, correzioni mirate e successiva revalidazione del software.",
+        "skills": [
+          "FileMaker Pro 20",
+          "Audit di conformità",
+          "Documentazione tecnica",
+          "Gestione patch"
+        ],
+        "difficulties": "Rispettare norme rigorose e garantire la tracciabilità delle modifiche senza compromettere le funzionalità esistenti.",
+        "steps": [
+          { "title": "Preparazione di una versione demo per la verifica iniziale" },
+          { "title": "Audit da parte di Bureau Veritas e raccolta di oltre 50 punti da correggere" },
+          { "title": "Implementazione delle correzioni nel CMS FileMaker" },
+          { "title": "Revisione e validazione finale da parte di Bureau Veritas" },
+          { "title": "Consegna del manuale utente (redatto da collega)" }
+        ],
+        "technologies": [
+          "FileMaker Pro 20"
+        ],
+        "startDate": "marzo 2024",
+        "endDate": "luglio 2024"
+      },
+      "chess-web-refonte": {
+        "title": "Rifacimento sito WordPress",
+        "summary": "Doppia vetrina marittima e yachting con tema WordPress personalizzato al 100%",
+        "description": "Creazione di un tema e di una modalità “switch” per passare tra servizi marittimi e yachting.",
+        "longDescription": "Sviluppo di un tema WordPress completamente costruito da zero che permette di passare da una navigazione “shipping” a un universo “yachting” tramite un semplice switch. Workflow: wireframe su Figma → integrazione locale → migrazione sull'hosting esistente.",
+        "skills": [
+          "WordPress",
+          "PHP",
+          "Tema personalizzato",
+          "Navigazione multimodale",
+          "Figma → prototipazione"
+        ],
+        "difficulties": "Gestire contenuti dinamici e bilingue in base alla modalità scelta, mantenendo compatibilità mobile e prestazioni ottimali.",
+        "steps": [
+          { "title": "Progettazione del mockup dual-mode su Figma" },
+          { "title": "Integrazione del tema WordPress in locale" },
+          { "title": "Sviluppo della logica di switch per contenuti e menu dinamici" },
+          { "title": "Test cross-device e ottimizzazione" },
+          { "title": "Migrazione e pubblicazione sul server esistente" }
+        ],
+        "technologies": [
+          "WordPress",
+          "PHP",
+          "JavaScript"
+        ],
+        "startDate": "agosto 2024",
+        "endDate": "ottobre 2024"
+      },
+      "chess-maquette": {
+        "title": "Prototipo software marittimo",
+        "summary": "Prototipo Figma (~150 schermate) per validazione interna",
+        "description": "",
+        "longDescription": "Realizzazione di circa 150 schermate su Figma per modellare i workflow del nuovo software di gestione marittima. Destinato al team interno per test rapidi e iterazioni.",
+        "skills": [
+          "Figma",
+          "Design System",
+          "Prototipazione"
+        ],
+        "difficulties": "Nessun feedback negativo, iterazioni fluide con il team di progetto.",
+        "steps": [
+          { "title": "Brief e definizione del perimetro (~150 schermate)" },
+          { "title": "Creazione del Design System e guida di stile" },
+          { "title": "Produzione delle schermate su Figma" },
+          { "title": "Validazione dal team ed esportazione degli asset" }
+        ],
+        "technologies": [
+          "Figma"
+        ],
+        "startDate": "luglio 2024",
+        "endDate": "ottobre 2024"
+      },
+      "chess-doc-gen": {
+        "title": "Generatore di documenti normativi",
+        "summary": "Assemblaggio XML/CSV per esportazione verso sistemi esterni, in FileMaker + JS",
+        "description": "",
+        "longDescription": "Sviluppo di un motore di generazione di documenti marittimi (SMS/PMS) basato su template testuali con tag, esportazione XML/CSV direttamente utilizzabile da FileMaker Pro o altri software client.",
+        "skills": [
+          "FileMaker Pro 20",
+          "JavaScript",
+          "XML/CSV",
+          "Logiche di business"
+        ],
+        "difficulties": "Implementare regole di business complesse della legislazione marittima e ottimizzare il trattamento di grandi volumi di dati.",
+        "steps": [
+          { "title": "Modellazione dei template con tag e struttura gerarchica" },
+          { "title": "Script di assemblaggio dei segmenti di testo in base ai dati inseriti" },
+          { "title": "Gestione delle esportazioni XML/CSV sincronizzate con SMS/PMS del cliente" },
+          { "title": "Test di performance e correzione dei casi complessi" }
+        ],
+        "technologies": [
+          "FileMaker Pro 20",
+          "JavaScript"
+        ],
+        "startDate": "ottobre 2024",
+        "endDate": "gennaio 2025"
+      },
+      "chess-cms-maritime": {
+        "title": "Rifacimento CMS software marittimo",
+        "summary": "Restyling UI/UX e architettura di un CMS FileMaker Pro, moduli business completi",
+        "description": "",
+        "longDescription": "Partecipazione alle prime fasi di un progetto di rifacimento totale del CMS (gestione manutenzione, equipaggio, finanze, documenti normativi, spese). Obiettivo: migliorare l'ergonomia e ridurre la debito tecnico.",
+        "skills": [
+          "FileMaker Pro 20",
+          "No-code",
+          "UI/UX Design",
+          "Architettura software"
+        ],
+        "difficulties": "Progettare un'architettura modulare nei vincoli di FileMaker garantendo la pianificazione della migrazione dei dati esistenti.",
+        "steps": [
+          { "title": "Workshop di definizione e progettazione dell'architettura" },
+          { "title": "Prototipazione dei nuovi moduli UI/UX" },
+          { "title": "Piano di migrazione e formazione degli utenti" }
+        ],
+        "technologies": [
+          "FileMaker Pro 20"
+        ],
+        "startDate": "settembre 2024",
+        "endDate": null
+      }
+    }
+  }
+  

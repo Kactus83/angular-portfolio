@@ -80,7 +80,7 @@ export class LanguagesComponent implements OnInit, AfterViewInit, OnDestroy {
         // 1) Récupère les langues disponibles et initialise les drapeaux
         this.availableLangs = this._translocoService.getAvailableLangs();
         // Penser ajouter it et es quand traduit
-        this.flagCodes = { en: 'us', fr: 'fr', zh: 'zh' };
+        this.flagCodes = { en: 'us', fr: 'fr', zh: 'zh', es: 'es', it: 'it' };
 
         // 2) Langue active actuelle
         this.activeLang = this._translocoService.getActiveLang();

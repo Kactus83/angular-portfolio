@@ -63,7 +63,15 @@ export const appConfig: ApplicationConfig = {
                     {
                         id: 'zh',
                         label: '中文',
-                    }
+                    },
+                    {
+                        id: 'es',
+                        label: 'Español',
+                    },
+                    {
+                        id: 'it',
+                        label: 'Italiano',
+                    },
                 ],
                 defaultLang: 'fr',
                 fallbackLang: 'fr',
