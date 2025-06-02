@@ -11,6 +11,7 @@ export const PROJECTS: Project[] = [
     repoUrl: 'https://github.com/Kactus83/space-invaders',
     demoUrl: '',
     imageUrl: 'project-ressources/space-invaders/space-invaders.png',
+    videoUrl: 'project-ressources/space-invaders/space-invaders.mp4',
     languageUsage: [
       { name: 'TypeScript', percent: 70 },
       { name: 'Canvas API', percent: 20 },
